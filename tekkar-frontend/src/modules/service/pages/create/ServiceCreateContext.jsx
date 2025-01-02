@@ -51,13 +51,14 @@ export const ServiceCreateProvider = (props) => {
 	const valueObj = {
 		handleSubmitService,
 		service: {
-			car_id: 1,
-			date: "",
+			car_id: router.query.car_id,
 			description: "",
-			km_next_service: "",
-			km_service: "",
-			title: "",
+			next_service_mileage: "",
+			performed_at: "",
 			price: "",
+			service_mileage: "",
+			service_duration: "",
+			title: "",
 		},
 		serviceValidation,
 	};

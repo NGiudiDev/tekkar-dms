@@ -6,7 +6,8 @@ describe("car flow", () => {
     cy.get("input[name='email']").type("nicolas.m.giudice@gmail.com");
     cy.get("input[name='password']").type("Pass1234");
     cy.get("button[type='submit']").click();
-
+    cy.wait(500);
+    
     //? navigate to the car creation page.
     cy.contains('button', 'Nuevo').click();
     cy.wait(500);
