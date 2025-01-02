@@ -8,5 +8,5 @@ export const SETTINGS = {
   DECIMAL_POINT: 2,
   
   //? lists settings.
-  PAGE_LIMIT: 2,
+  PAGE_LIMIT: 20,
 };

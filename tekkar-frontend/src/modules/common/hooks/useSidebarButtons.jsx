@@ -13,7 +13,7 @@ export const useSidebarButtons = () => {
 			to: PATH.cars,
 		},
 		{
-			icon: "car",
+			icon: "wrench",
 			label: "Servicios",
 			onClick: () => router.push(PATH.services),
 			to: PATH.services,

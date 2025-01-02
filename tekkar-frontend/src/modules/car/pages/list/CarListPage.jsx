@@ -18,7 +18,7 @@ const CarListPage = () => {
 		<ListPageLayout
 			emptyMessage={{
 				button: {
-					children: "Agregar vehículo",
+					children: "Nuevo",
 					onClick: handleNewCar,
 				},
 				description: "Parece que aún no has agregado ningún vehículo. Haz clic en el botón de abajo para agregar tu primer vehículo.",
