@@ -1,0 +1,54 @@
+import { cars, services } from "../database/database.js";
+
+//? constants.
+import { ENDPOINTS_ATRS } from "../constants/tables.js";
+import { SETTINGS } from "../constants/settings.js";
+
+const create = async (data) => {
+	const service  = await services.create(data);
+	return service;
+};
+
+const getOne = async (whereObj) => {
+	const service = await services.findOne({
+		attributes: ENDPOINTS_ATRS.SERVICE.DETAIL,
+		where: whereObj,
+	});
+
+	return service;
+};
+
+const getPage = async (page, whereObj) => {
+	let queryObj = {
+		attributes: ENDPOINTS_ATRS.SERVICE.LIST,
+		include: [
+			{
+				attributes: ENDPOINTS_ATRS.SERVICE.LIST_CAR,
+				model: cars,
+			}
+		],
+		limit: SETTINGS.PAGE_LIMIT,
+		offset: (page - 1) * SETTINGS.PAGE_LIMIT,
+		order: [["created_at", "DESC"]],
+		where: whereObj,
+	};
+
+	const servicesObj = await services.findAndCountAll(queryObj);
+
+	return servicesObj;
+};
+
+const update = async (service_id, data) => {
+	const service = await services.update(data, { 
+		where: { id: service_id },
+	});
+
+	return service;
+};
+
+export const serviceModel = {
+	create,
+	getOne,
+	getPage,
+	update,
+};

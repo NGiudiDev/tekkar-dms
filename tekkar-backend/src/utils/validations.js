@@ -1,0 +1,166 @@
+import joi from "joi";
+
+import { VALIDATIONS } from "../constants/validations.consts.js";
+
+/******************************************************************************
+														🏎️  AUX FUNCTIONS  🏎️
+     ********************************************************************/ 
+
+export const validate = (schema, values) => {
+	const options = {
+		abortEarly: false,
+	};
+
+	let { error } = schema.validate(values, options);
+
+	if (error)
+		error = error.details.map((detail) => ({
+			field: detail.context.key,
+			message: detail.message,
+		}));
+
+	return error || null;
+};
+
+/******************************************************************************
+													🏎️  CAR VALIDATIONS  🏎️
+     ********************************************************************/ 
+
+export const createCarValidation = car => {
+	const carSchema = joi.object({
+		brand: VALIDATIONS.COMMON.TEXT.required(),
+		license_plate: VALIDATIONS.CAR.LICENSE_PLATE.required(),
+		model: VALIDATIONS.COMMON.TEXT.required(),
+		owner_doc_number: VALIDATIONS.PERSON.DOC_NUMBER.required(),			
+		owner_name: VALIDATIONS.COMMON.TEXT.required(),
+		owner_phone: VALIDATIONS.PERSON.PHONE.required(),
+		production_year: VALIDATIONS.CAR.PRODUCTION_YEAR.required(),
+	});
+
+	return validate(carSchema, car);
+};
+
+export const getOneCarValidation = (qParams) => {
+	const carSchema = joi.object({
+		id: VALIDATIONS.COMMON.ID.required(),
+	});
+
+	return validate(carSchema, qParams);
+};
+
+export const getCarPageValidation = (qParams) => {
+	const carSchema = joi.object({
+		page: VALIDATIONS.COMMON.PAGE,
+	});
+
+	return validate(carSchema, qParams);
+};
+
+export const updateCarValidation = (qParams) => {
+	const carSchema = joi.object({
+		brand: VALIDATIONS.COMMON.TEXT,
+		license_plate: VALIDATIONS.CAR.LICENSE_PLATE,
+		model: VALIDATIONS.COMMON.TEXT,
+		owner_doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
+		owner_name: VALIDATIONS.COMMON.TEXT,
+		owner_phone: VALIDATIONS.PERSON.PHONE,
+		production_year: VALIDATIONS.CAR.PRODUCTION_YEAR,
+	});
+
+	return validate(carSchema, qParams);
+};
+
+/******************************************************************************
+												🛠️ SERVICE VALIDATIONS 🛠️
+     ********************************************************************/ 
+
+export const createServiceValidation = service => {
+	const serviceSchema = joi.object({
+		car_id: VALIDATIONS.COMMON.ID.required(),
+		description: VALIDATIONS.SERVICE.DESCRIPTION,
+		next_service_mileage: VALIDATIONS.SERVICE.MILEAGE,
+		performed_at: VALIDATIONS.SERVICE.PERFORMED_AT.required(),
+		price: VALIDATIONS.COMMON.PRICE.required(),
+		service_mileage: VALIDATIONS.SERVICE.MILEAGE.required(),
+		service_duration: VALIDATIONS.SERVICE.SERVICE_DURATION.required(),
+		title: VALIDATIONS.COMMON.TEXT.required(),
+	});
+
+	return validate(serviceSchema, service);
+};
+
+export const getOneServiceValidation = data => {
+	const dataSchema = joi.object({
+		id: VALIDATIONS.COMMON.ID,
+	});
+
+	return validate(dataSchema, data);
+};
+
+export const getServicePageValidation = (qParams) => {
+	const carSchema = joi.object({
+		car_id: VALIDATIONS.COMMON.ID,
+		page: joi.number().integer().min(1),
+	});
+
+	return validate(carSchema, qParams);
+};
+
+export const updateServiceValidation = (qParams) => {
+	const serviceSchema = joi.object({
+		car_id: VALIDATIONS.COMMON.ID,
+		description: VALIDATIONS.SERVICE.DESCRIPTION,
+		next_service_mileage: VALIDATIONS.SERVICE.MILEAGE,
+		performed_at: VALIDATIONS.SERVICE.PERFORMED_AT,
+		price: VALIDATIONS.COMMON.PRICE,
+		service_mileage: VALIDATIONS.SERVICE.MILEAGE,
+		service_duration: VALIDATIONS.SERVICE.SERVICE_DURATION,
+		title: VALIDATIONS.COMMON.TEXT,
+	});
+
+	return validate(serviceSchema, qParams);
+};
+
+/******************************************************************************
+											🛠️ SERVICE REPORT VALIDATIONS 🛠️
+     ********************************************************************/
+
+export const getOneServiceReportValidation = (qParams) => {
+	const carSchema = joi.object({
+		license_plate: VALIDATIONS.CAR.LICENSE_PLATE.required(),
+		owner_doc_number: VALIDATIONS.PERSON.DOC_NUMBER.required(),
+		page: VALIDATIONS.COMMON.PAGE,
+	});
+
+	return validate(carSchema, qParams);
+};
+												
+/******************************************************************************
+													👥 USER VALIDATIONS 👥
+     ********************************************************************/
+
+export const authenticationValidation = user => {
+	const userSchema = joi.object({
+		token: joi.string().required(),
+		user_id: joi.number().required(),
+	});
+
+	return validate(userSchema, user);
+};
+
+export const loginValidation = user => {
+	const userSchema = joi.object({
+		email: joi.string().required(),
+		password: joi.string().required(),
+	});
+
+	return validate(userSchema, user);
+};
+
+export const logoutValidation = user => {
+	const userSchema = joi.object({
+		user_id: joi.number().required(),
+	});
+
+	return validate(userSchema, user);
+};
