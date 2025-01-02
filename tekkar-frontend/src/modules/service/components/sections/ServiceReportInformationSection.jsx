@@ -1,0 +1,42 @@
+import PropTypes from "prop-types";
+
+import { Columns, Divider, Text } from "ds-loud-ng";
+
+import { formatDate } from "../../../common/utils/forms.utils";
+
+export const ServiceReportInformationSection = (props) => {
+  const { isLastItem, service } = props;
+
+  return (
+    <>
+      <Text color="black_400" type="captionRegular">
+        {formatDate(service.performed_at)}
+      </Text>
+      
+      <Text margin="b-8" type="subtitle">
+        {service.title}
+      </Text>
+
+      <Text>
+        {service.description}
+      </Text>
+
+      <Columns margin="t-24">
+        <Text>
+         Kilometraje: {service.service_mileage} 
+        </Text>
+
+        <Text>
+          Próximo servicio: {service.next_service_mileage}
+        </Text>
+      </Columns>
+
+      {!isLastItem && <Divider margin="y-16" />}
+    </>
+  );
+}
+
+ServiceReportInformationSection.propTypes = {
+  isLastItem: PropTypes.bool,
+  service: PropTypes.object,
+};
