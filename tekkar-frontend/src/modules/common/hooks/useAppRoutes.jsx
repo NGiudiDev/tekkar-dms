@@ -19,6 +19,16 @@ import { PATH } from "../constants/routes.consts";
 export const useAppRoutes = () => {
   return [
     {
+      element: <LoginPage />,
+      name: "admin",
+      options: {
+        isFreeAccess: true,
+        isPrivated: false,
+        useAppLayout: false,
+      },
+      path: PATH.admin,
+    },
+    {
       element: <CarCreatePage />,
       name: "car_create",
       options: {

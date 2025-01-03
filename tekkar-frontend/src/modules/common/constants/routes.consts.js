@@ -1,4 +1,5 @@
 export const PATH = {
+	admin: "/admin",
 	cars: "/cars",
 	carCreate: "/cars/new",
 	carDetail: "/cars/:id",
