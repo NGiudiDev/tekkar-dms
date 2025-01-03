@@ -2,7 +2,6 @@ import express from "express";
 import dotenv from "dotenv";
 import cors  from "cors";
 
-//? routers
 import carRouter from "./routers/car.router.js";
 import serviceRouter from "./routers/service.router.js";
 import serviceReportRouter from "./routers/service_report.router.js";

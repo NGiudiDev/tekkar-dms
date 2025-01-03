@@ -1,6 +1,5 @@
 import { cars, services } from "../database/database.js";
 
-//? constants.
 import { ENDPOINTS_ATRS } from "../constants/tables.js";
 import { SETTINGS } from "../constants/settings.js";
 

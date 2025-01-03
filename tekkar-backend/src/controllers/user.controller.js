@@ -1,14 +1,11 @@
-//? service
 import { userService } from "../services/user.service.js";
 
-//? functions
 import {
 	authenticationValidation,
 	loginValidation,
 	logoutValidation,
 } from "../utils/validations.js";
 
-//? constants
 import { MESSAGES } from "../constants/messages.js";
 
 const authentication = async (req, res) => {
@@ -44,7 +41,7 @@ const login = async (req, res) => {
 		const user = await userService.login(email, password);
 
 		if (!user)
-			return res.status(422).json({ errros: [{ message: MESSAGES.USER_INVALID_LOGIN}]});
+			return res.status(422).json({ errros: [{ message: MESSAGES.USER_INVALID_LOGIN }]});
 
 		return res.status(200).json({ user });
 	} catch(err) {

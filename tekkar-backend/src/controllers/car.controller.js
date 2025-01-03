@@ -1,7 +1,5 @@
-//? service
 import { carService } from "../services/car.service.js";
 
-//? functions
 import {
 	createCarValidation,
 	getOneCarValidation,
@@ -9,7 +7,6 @@ import {
 	updateCarValidation,
 } from "../utils/validations.js";
 
-//? constants
 import { MESSAGES } from "../constants/messages.js";
 
 const create = async (req, res) => {

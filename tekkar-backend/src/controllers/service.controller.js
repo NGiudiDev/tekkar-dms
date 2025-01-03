@@ -1,7 +1,5 @@
-//? service
 import { serviceService } from "../services/service.service.js";
 
-//? functions
 import {
 	createServiceValidation,
 	getOneServiceValidation,
@@ -9,7 +7,6 @@ import {
 	updateServiceValidation,
 } from "../utils/validations.js";
 
-//? constants
 import { MESSAGES } from "../constants/messages.js";
 
 const create = async (req, res) => {

@@ -1,9 +1,7 @@
 import joi from "joi";
 
-//? functions
 import { getYear, isArLicensePlate } from "../utils/forms.js";
 
-//? constants
 import { REGEXS } from "./regex.js";
 
 const DOC_NUMBER_LENGTH = 8;

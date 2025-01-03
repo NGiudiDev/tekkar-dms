@@ -32,11 +32,11 @@ export const serviceTable = (sequelize, type) => {
 			allowNull: false,
 			type: type.DECIMAL(SETTINGS.DECIMAL_LENGTH, SETTINGS.DECIMAL_POINT),
 		},
-		service_mileage: {
+		service_duration: {
 			allowNull: false,
 			type: type.INTEGER,
 		},
-		service_duration: {
+		service_mileage: {
 			allowNull: false,
 			type: type.INTEGER,
 		},

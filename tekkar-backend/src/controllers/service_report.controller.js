@@ -1,7 +1,5 @@
-//? service
 import { serviceReportService } from "../services/service_report.service.js";
 
-//? functions
 import { getOneServiceReportValidation } from "../utils/validations.js";
 
 const getOne = async (req, res) => {
@@ -18,7 +16,6 @@ const getOne = async (req, res) => {
     
     return res.status(200).json(car);
   } catch(err) {
-    console.log(err);
     return res.status(500).json({ err });
   }
 };
