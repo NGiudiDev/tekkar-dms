@@ -2,11 +2,13 @@ import express from "express";
 
 import { userController } from "../controllers/user.controller.js";
 
+import { authTokenMiddleware } from "../middlewares/userMiddleware.js";
+
 const router = express.Router();
 
 //? session endpoints.
 router.post("/authentication", userController.authentication);
 router.post("/login", userController.login);
-router.post("/logout", userController.logout);
+router.post("/logout", authTokenMiddleware, userController.logout);
 
 export default router;
