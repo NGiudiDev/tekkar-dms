@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { getLoginOfLocalStorage } from "../../session/services/session.local_storage";
+
 export const axiosClient = axios.create({
 	baseURL: import.meta.env.VITE_API_URL,
 	headers: {
@@ -8,21 +10,53 @@ export const axiosClient = axios.create({
 });
 
 export const deleteAxios = (url) => {
-	return axiosClient.delete(url)
+	const { token } = getLoginOfLocalStorage();
+
+	const options = {
+		headers: {
+			"Authorization": `${token}`,
+		}
+	};
+
+	return axiosClient.delete(url, options)
 		.then((res) => res.data);
 };
 
 export const getAxios = (url) => {
-	return axiosClient.get(url)
+	const { token } = getLoginOfLocalStorage();
+
+	const options = {
+		headers: {
+			"Authorization": `${token}`,
+		}
+	};
+
+	return axiosClient.get(url, options)
 		.then((res) => res.data);
 };
 
 export const postAxios = (url, data) => {
-	return axiosClient.post(url, data)
+	const { token } = getLoginOfLocalStorage();
+
+	const options = {
+		headers: {
+			"Authorization": `${token}`,
+		}
+	};
+
+	return axiosClient.post(url, data, options)
 		.then((res) => res.data);
 };
 
 export const putAxios = (url, data) => {
-	return axiosClient.put(url, data)
+	const { token } = getLoginOfLocalStorage();
+
+	const options = {
+		headers: {
+			"Authorization": `${token}`,
+		}
+	};
+
+	return axiosClient.put(url, data, options)
 		.then((res) => res.data);
 };
