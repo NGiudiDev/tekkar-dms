@@ -8,12 +8,13 @@ Currently, the application is targeted at the Argentine market, but future plans
 
 ## Main Features
 
-- **Vehicle listing**: View all vehicles registered in the system.
-- **Vehicle creation**: Add new vehicles to the inventory.
-- **Vehicle editing**: Update the information of registered vehicles.
 - **Service listing**: View all services performed on the vehicles.
 - **Service creation**: Record new services performed on a vehicle.
 - **Service editing**: Update the details of recorded services.
+- **User listing**: View all users registered in the system.
+- **Vehicle listing**: View all vehicles registered in the system.
+- **Vehicle creation**: Add new vehicles to the inventory.
+- **Vehicle editing**: Update the information of registered vehicles.
 
 ## Pending Features
 
