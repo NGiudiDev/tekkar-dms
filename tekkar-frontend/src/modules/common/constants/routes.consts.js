@@ -8,4 +8,6 @@ export const PATH = {
 	serviceCreate: "/services/new",
 	serviceDetail: "/services/:id",
 	serviceReport: "/",
+	users: "/users",
+	userCreate: "/users/new",
 };

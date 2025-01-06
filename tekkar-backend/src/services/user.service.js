@@ -1,6 +1,7 @@
 import { userModel } from "../models/user.model.js";
 
 import { compareEncrypt, createToken, verifyToken } from "../utils/hashes.js";
+import { getPaginationStats } from "../utils/tables.js";
 
 const authentication = async (user_id, token) => {
 	const decoded = verifyToken(token);
@@ -19,6 +20,16 @@ const authentication = async (user_id, token) => {
 const getOne = async (whereObj, attributes) => {
 	const user = await userModel.getOne(whereObj, attributes);
 	return user;
+};
+
+const getPage = async (page) => {
+	const options = {};
+
+	const { count, rows } = await userModel.getPage(page, options);
+
+	const stats = await getPaginationStats(page, count);
+
+	return { pagination: stats, list: rows};
 };
 
 const login = async (email, password) => {
@@ -51,6 +62,7 @@ const logout = async (user_id) => {
 export const userService = {
 	authentication,
   getOne,
+	getPage,
 	login,
 	logout,
 };

@@ -14,6 +14,9 @@ import {
 //? service report pages
 import { ServiceReportPage } from "../../service_report/pages";
 
+//? user pages
+import { UserListPage } from "../../user/pages";
+
 import { PATH } from "../constants/routes.consts";
 
 export const useAppRoutes = () => {
@@ -107,6 +110,16 @@ export const useAppRoutes = () => {
         useAppLayout: false,
       },
       path: PATH.serviceReport,
+    },
+    {
+      element: <UserListPage />,
+      name: "users",
+      options: {
+        isFreeAccess: false,
+        isPrivated:true,
+        useAppLayout: true,
+      },
+      path: PATH.users,
     },
   ];
 };

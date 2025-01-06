@@ -2,6 +2,7 @@ import { userService } from "../services/user.service.js";
 
 import {
 	authenticationValidation,
+	getUserPageValidation,
 	loginValidation,
 	logoutValidation,
 } from "../utils/validations.js";
@@ -24,6 +25,23 @@ const authentication = async (req, res) => {
 		}
 	
 		return res.status(200).json({ user });
+	} catch(err) {
+		return res.status(500).json({ err });
+	}
+};
+
+const getPage = async (req, res) => {
+	const errors = getUserPageValidation(req.query);
+
+	if (errors)
+		return res.status(422).json({ errors });
+	
+	try {
+		const page = parseInt(req.query.page) || 1;
+
+		const usersObj = await userService.getPage(page || 1, req.headers);
+
+		return res.status(200).json(usersObj);
 	} catch(err) {
 		return res.status(500).json({ err });
 	}
@@ -71,6 +89,7 @@ const logout = async (req, res) => {
 
 export const userController = {
 	authentication,
+	getPage,
 	login,
 	logout,
 };

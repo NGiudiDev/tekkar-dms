@@ -17,6 +17,12 @@ export const useSidebarButtons = () => {
 			label: "Servicios",
 			onClick: () => router.push(PATH.services),
 			to: PATH.services,
+		},
+		{
+			icon: "users",
+			label: "Usuarios",
+			onClick: () => router.push(PATH.users),
+			to: PATH.users,
 		}
   ];
 
