@@ -15,6 +15,9 @@ const userSlice = createSlice({
 			state.user = null;
 			state.isLogged = false;
 		},
+		updateUser(state, action) {
+			state.user = action.payload;
+		}
 	}
 });
 
@@ -22,6 +25,7 @@ const userSlice = createSlice({
 export const {
 	login,
 	logout,
+	updateUser,
 } = userSlice.actions;
 
 export const store = configureStore({

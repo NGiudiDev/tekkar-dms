@@ -13,6 +13,6 @@ router.post("/logout", authTokenMiddleware, userController.logout);
 
 //? CRUD endpoints.
 router.get("/", authTokenMiddleware, userController.getPage);
-
+router.get("/:id", authTokenMiddleware, userController.getOne);
 
 export default router;

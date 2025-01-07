@@ -2,6 +2,7 @@ import { userService } from "../services/user.service.js";
 
 import {
 	authenticationValidation,
+	getOneUserValidation,
 	getUserPageValidation,
 	loginValidation,
 	logoutValidation,
@@ -25,6 +26,26 @@ const authentication = async (req, res) => {
 		}
 	
 		return res.status(200).json({ user });
+	} catch(err) {
+		return res.status(500).json({ err });
+	}
+};
+
+const getOne = async (req, res) => {
+	const id = parseInt(req.params.id);
+
+	const errors = getOneUserValidation({ id });
+
+	if (errors)
+		return res.status(422).json({ errors });
+	
+	try {
+		const user = await userService.getOne({ id });
+		
+		if (!user)
+			return res.status(404).json({ errros: [{ message: USER_NOT_FOUND }]});
+
+		return res.status(200).json(user);
 	} catch(err) {
 		return res.status(500).json({ err });
 	}
@@ -89,6 +110,7 @@ const logout = async (req, res) => {
 
 export const userController = {
 	authentication,
+	getOne,
 	getPage,
 	login,
 	logout,

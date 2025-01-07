@@ -1,9 +1,9 @@
 import { useContext } from "react";
 
-import { ServiceDetailContext } from "./ServiceDetailContext";
+import { UserDetailContext } from "./UserDetailContext";
 
-import { ServiceInformationForm, ServiceInformationSection } from "../../components";
-import { Form, Formik } from "formik";
+import { UserInformationSection, UserInformationForm } from "../../components";
+import { Formik, Form } from "formik";
 import {
 	PageLoadingLayout,
 	PageMessageLayout,
@@ -12,8 +12,8 @@ import {
 
 import { Box, Flex, IconButton, Text } from "ds-loud-ng";
 
-export const ServiceDetailContent = () => {
-	const ctx = useContext(ServiceDetailContext);
+export const UserDetailContent = () => {
+	const ctx = useContext(UserDetailContext);
 
 	if (ctx.isLoading) return <PageLoadingLayout />;
 
@@ -31,35 +31,35 @@ export const ServiceDetailContent = () => {
 		<>
 			<Flex hAlign="space-between" margin="b-24">
 				<Text type="title">
-					Servicio
+					Datos personales
 				</Text>
-
+				
 				<IconButton
-					icon={{ icon: ctx.isServiceEditing ? "times" : "pencil" }}
+					icon={{ icon: ctx.isUserEditing ? "times" : "pencil" }}
 					margin="r-8"
-					onClick={ctx.handleServiceEdit}
+					onClick={ctx.handleUserEdit}
 				/>
 			</Flex>
 
 			<Box margin="x-10">
-				{ctx.isServiceEditing ? (
+				{ctx.isUserEditing ? (
 					<Formik
-						initialValues={ctx.formService}
-						onSubmit={ctx.handleSubmitService}
-						validationSchema={ctx.serviceValidation}
+						initialValues={ctx.formUser}
+						onSubmit={ctx.handleSubmitUser}
+						validationSchema={ctx.userValidation}
 					>
 						{formik => (
 							<Form>
-								<ServiceInformationForm />
-							
+								<UserInformationForm isMyself={ctx.isLoggedUser} />
+								
 								<Flex margin="b-32 t-8" hAlign="end">
 									<UpdateButton disabled={!(formik.dirty && formik.isValid)} />
 								</Flex>
 							</Form>
 						)}
 					</Formik>	
-				) :(
-					<ServiceInformationSection service={ctx.service} />
+				) : (
+					<UserInformationSection user={ctx.user} />
 				)}
 			</Box>
 		</>

@@ -148,6 +148,14 @@ export const authenticationValidation = user => {
 	return validate(userSchema, user);
 };
 
+export const getOneUserValidation = data => {
+	const dataSchema = joi.object({
+		id: VALIDATIONS.COMMON.ID,
+	});
+
+	return validate(dataSchema, data);
+};
+
 export const getUserPageValidation = (qParams) => {
 	const carSchema = joi.object({
 		page: VALIDATIONS.COMMON.PAGE,

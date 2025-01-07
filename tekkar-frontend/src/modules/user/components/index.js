@@ -1,3 +1,15 @@
+//? forms
+export { UserInformationForm } from "./forms/UserInformationForm";
+
+//? inputs
+export { UserDocNumberInput } from "./inputs/UserDocNumberInput";
+export { UserEmailInput } from "./inputs/UserEmailInput";
+export { UserNameInput } from "./inputs/UserNameInput";
+export { UserPhoneInput } from "./inputs/UserPhoneInput";
+
+//? sections
+export { UserInformationSection } from "./sections/user_information/UserInformationSection";
+
 //? table columns
 export { UserDocNumber } from "./tables/columns/UserDocNumber";
 export { UserEmail } from "./tables/columns/UserEmail";

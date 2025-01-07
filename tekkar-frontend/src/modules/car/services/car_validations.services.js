@@ -1,14 +1,15 @@
 import * as yup from "yup";
 
 import { COMMON_VALIDATIONS } from "../../common/constants/common_validations.consts";
+import { USER_VALIDATIONS } from "../../user/constants/user_validations.consts";
 import { CAR_VALIDATIONS } from "../constants/car_validations.consts";
 
 export const carValidation = yup.object().shape({
 	brand: COMMON_VALIDATIONS.TEXT.required("Campo requerido"),
 	license_plate: CAR_VALIDATIONS.LICENSE_PLATE.required("Campo requerido"),
 	model: CAR_VALIDATIONS.MODEL.required("Campo requerido"),
-	owner_doc_number: CAR_VALIDATIONS.OWNER_DOC_NUMBER.required("Campo requerido"),
-	owner_name: CAR_VALIDATIONS.OWNER_NAME.required("Campo requerido"),
-	owner_phone: CAR_VALIDATIONS.OWNER_PHONE.required("Campo requerido"),
+	owner_doc_number: USER_VALIDATIONS.DOC_NUMBER.required("Campo requerido"),
+	owner_name: USER_VALIDATIONS.NAME.required("Campo requerido"),
+	owner_phone: USER_VALIDATIONS.PHONE.required("Campo requerido"),
 	production_year: CAR_VALIDATIONS.PRODUCTION_YEAR.required("Campo requerido"),
 });

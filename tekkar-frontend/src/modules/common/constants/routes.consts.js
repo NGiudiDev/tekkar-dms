@@ -10,4 +10,5 @@ export const PATH = {
 	serviceReport: "/",
 	users: "/users",
 	userCreate: "/users/new",
+	userDetail: "/users/:id",
 };

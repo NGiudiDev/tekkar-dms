@@ -3,7 +3,7 @@ import { useRouter } from "../../../common/hooks/useRouter";
 import { ListPageLayout, NewButton } from "../../../common/components";
 import { UsersTable } from "../../components";
 
-import { getUserPage } from "../../services/user.services";
+import { getUserPage } from "../../services/user.requests";
 
 import { PATH } from "../../../common/constants/routes.consts";
 
