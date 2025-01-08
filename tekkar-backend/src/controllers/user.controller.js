@@ -6,6 +6,7 @@ import {
 	getUserPageValidation,
 	loginValidation,
 	logoutValidation,
+	updateUserValidation,
 } from "../utils/validations.js";
 
 import { MESSAGES } from "../constants/messages.js";
@@ -108,10 +109,29 @@ const logout = async (req, res) => {
 	}
 };
 
+const update = async (req, res) => {
+	const errors = updateUserValidation(req.body);
+
+	if (errors)
+		return res.status(422).json({ errors });
+	
+	try {
+		const user = await userService.update(req.params.id, req.body);
+
+		if (!user)
+			return res.status(404).json({ errros: [{ message: USER_NOT_FOUND }]});
+
+		return res.status(200).json({ user });
+	} catch(err) {
+		return res.status(500).json({ err });
+	}
+};
+
 export const userController = {
 	authentication,
 	getOne,
 	getPage,
 	login,
 	logout,
+	update,
 };

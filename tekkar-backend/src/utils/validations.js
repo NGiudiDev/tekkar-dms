@@ -166,8 +166,8 @@ export const getUserPageValidation = (qParams) => {
  
 export const loginValidation = user => {
 	const userSchema = joi.object({
-		email: joi.string().required(),
-		password: joi.string().required(),
+		email: VALIDATIONS.PERSON.EMAIL.required(),
+		password: VALIDATIONS.USER.PASSWORD.required(),
 	});
 
 	return validate(userSchema, user);
@@ -175,7 +175,18 @@ export const loginValidation = user => {
 
 export const logoutValidation = user => {
 	const userSchema = joi.object({
-		user_id: joi.number().required(),
+		user_id: VALIDATIONS.COMMON.ID.required(),
+	});
+
+	return validate(userSchema, user);
+};
+
+export const updateUserValidation = user => {
+	const userSchema = joi.object({
+		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
+		email: VALIDATIONS.PERSON.EMAIL,
+		name: VALIDATIONS.COMMON.TEXT,
+		phone: VALIDATIONS.PERSON.PHONE,
 	});
 
 	return validate(userSchema, user);

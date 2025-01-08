@@ -59,10 +59,19 @@ const logout = async (user_id) => {
 	return user;
 };
 
+const update = async (user_id, data) => {	
+	await userModel.update(user_id, data);
+
+	const user = await getOne({ id: user_id });
+	
+	return user;
+};
+
 export const userService = {
 	authentication,
   getOne,
 	getPage,
 	login,
 	logout,
+	update,
 };

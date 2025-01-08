@@ -28,6 +28,10 @@ export const VALIDATIONS = {
 	},
 	PERSON: {
 		DOC_NUMBER: joi.string().length(DOC_NUMBER_LENGTH).regex(REGEXS.DOC_NUMBER_STRING),
+		EMAIL: joi.string().email(),
 		PHONE: joi.string(), //TODO: validar con una librería que valida números telefónicos.
+	},
+	USER: {
+		PASSWORD: joi.string(),
 	},
 };
