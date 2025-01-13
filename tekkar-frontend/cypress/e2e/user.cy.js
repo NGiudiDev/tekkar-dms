@@ -34,13 +34,13 @@ describe("user flow", () => {
     cy.contains("test@gmail.com").click();
     cy.wait(500);
 
-    //? edit the service details by updating the model.
+    //? edit the user details by updating the model.
     cy.get('.fa-pencil').click();
     cy.get("input[name='name']").clear();
     cy.get("input[name='name']").type("Prueba Final");
     cy.get("button[type='submit']").click();
 
-    //? verify that the updated car details are reflected in the car list.
+    //? verify that the updated user details are reflected in the user list.
     cy.contains("Prueba Final").should("be.visible");
   });
 });
