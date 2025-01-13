@@ -1,6 +1,6 @@
 import { userModel } from "../models/user.model.js";
 
-import { compareEncrypt, createToken, verifyToken } from "../utils/hashes.js";
+import { compareEncrypt, createToken, hashEncrypt, verifyToken } from "../utils/hashes.js";
 import { getPaginationStats } from "../utils/tables.js";
 
 const authentication = async (user_id, token) => {
@@ -15,6 +15,32 @@ const authentication = async (user_id, token) => {
 		return null;
 	
 	return user;
+};
+
+const create = async (data) => {
+	//? add user in database.
+	data.password = hashEncrypt(data.password);
+
+	let user = await userModel.create(data);
+	
+	//? create token.
+	const USER_TOKEN_OBJ = {
+		user_id: user.id,
+	};
+
+	user.token = createToken(USER_TOKEN_OBJ);
+
+	await user.save();
+
+	//? return user.
+	user = await getOne({ id: user.id });
+
+	return user;
+};
+
+const existEmail = async (email) => {
+	const user = await getOne({ email });
+	return !!user;
 };
 
 const getOne = async (whereObj, attributes) => {
@@ -69,6 +95,8 @@ const update = async (user_id, data) => {
 
 export const userService = {
 	authentication,
+	create,
+	existEmail,
   getOne,
 	getPage,
 	login,

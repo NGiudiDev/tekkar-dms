@@ -3,6 +3,7 @@ export { ProfileAvatar } from "./avatars/ProfileAvatar";
 
 //? buttons
 export { ActionsButton } from "./buttons/ActionsButton/ActionsButton";
+export { CreateButton } from "./buttons/CreateButton";
 export { NewButton } from "./buttons/NewButton";
 export { UpdateButton } from "./buttons/UpdateButton";
 

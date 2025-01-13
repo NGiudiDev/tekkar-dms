@@ -1,4 +1,8 @@
-import { getAxios, putAxios } from "../../common/services/axios.services";
+import { getAxios, postAxios, putAxios } from "../../common/services/axios.services";
+
+export const createUser = (user) => {
+	return postAxios("/users", user);
+};
 
 export const getUserDetail = (id) => {
 	return getAxios(`/users/${id}`);

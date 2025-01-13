@@ -9,5 +9,6 @@ export const USER_VALIDATIONS = {
     .matches(USER_REGEXS.DOC_NUMBER_STRING, "Formato de documento inválido"),
   EMAIL: yup.string().email(),
   NAME: yup.string(),
+  PASSWORD: yup.string(),
   PHONE: yup.string(),
 };

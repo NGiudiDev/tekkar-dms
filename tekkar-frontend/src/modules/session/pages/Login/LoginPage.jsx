@@ -4,7 +4,9 @@ import { useRouter } from "../../../common/hooks/useRouter";
 import { useMutation } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
 
-import { Button, Input, Text } from "ds-loud-ng";
+import { UserEmailInput, UserPasswordInput } from "../../../user/components";
+
+import { Button, Text } from "ds-loud-ng";
 import { Form, Formik } from "formik";
 
 import { loginValidation } from "../../services/session.validations";
@@ -65,18 +67,9 @@ const LoginPage = () => {
 				validationSchema={loginValidation}
 			>
 				<Form>
-          <Input
-            label="Email"
-            margin="b-8"
-            name="email"
-          />
+					<UserEmailInput margin="b-8" />
 
-          <Input
-            label="Contraseña"
-            margin="b-12"
-            name="password"
-            type="password"
-          />
+          <UserPasswordInput />
 					
 					{error && (
 						<Text margin="b-20">

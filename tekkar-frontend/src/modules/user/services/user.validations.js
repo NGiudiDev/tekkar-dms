@@ -8,3 +8,11 @@ export const userValidation = yup.object().shape({
   name: USER_VALIDATIONS.NAME.required("Campo requerido."),
   phone: USER_VALIDATIONS.PHONE.required("Campo requerido."),
 });
+
+export const userCreateValidation = yup.object().shape({
+  doc_number: USER_VALIDATIONS.DOC_NUMBER.required("Campo requerido."),
+  email: USER_VALIDATIONS.EMAIL.required("Campo requerido."),
+  name: USER_VALIDATIONS.NAME.required("Campo requerido."),
+  password: USER_VALIDATIONS.PASSWORD.required("Campo requerido."),
+  phone: USER_VALIDATIONS.PHONE.required("Campo requerido."),
+});

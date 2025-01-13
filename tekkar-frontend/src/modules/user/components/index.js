@@ -6,7 +6,8 @@ export { UserDocNumberInput } from "./inputs/UserDocNumberInput";
 export { UserEmailInput } from "./inputs/UserEmailInput";
 export { UserNameInput } from "./inputs/UserNameInput";
 export { UserPhoneInput } from "./inputs/UserPhoneInput";
-
+export { UserPasswordInput } from "./inputs/UserPasswordInput";
+ 
 //? sections
 export { UserInformationSection } from "./sections/user_information/UserInformationSection";
 

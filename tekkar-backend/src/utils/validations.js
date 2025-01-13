@@ -32,7 +32,7 @@ export const createCarValidation = car => {
 		license_plate: VALIDATIONS.CAR.LICENSE_PLATE.required(),
 		model: VALIDATIONS.COMMON.TEXT.required(),
 		owner_doc_number: VALIDATIONS.PERSON.DOC_NUMBER.required(),			
-		owner_name: VALIDATIONS.COMMON.TEXT.required(),
+		owner_name: VALIDATIONS.PERSON.NAME.required(),
 		owner_phone: VALIDATIONS.PERSON.PHONE.required(),
 		production_year: VALIDATIONS.CAR.PRODUCTION_YEAR.required(),
 	});
@@ -62,7 +62,7 @@ export const updateCarValidation = (qParams) => {
 		license_plate: VALIDATIONS.CAR.LICENSE_PLATE,
 		model: VALIDATIONS.COMMON.TEXT,
 		owner_doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
-		owner_name: VALIDATIONS.COMMON.TEXT,
+		owner_name: VALIDATIONS.PERSON.NAME,
 		owner_phone: VALIDATIONS.PERSON.PHONE,
 		production_year: VALIDATIONS.CAR.PRODUCTION_YEAR,
 	});
@@ -148,6 +148,18 @@ export const authenticationValidation = user => {
 	return validate(userSchema, user);
 };
 
+export const createUserValidation = user => {
+	const userSchema = joi.object({
+		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
+		email: VALIDATIONS.PERSON.EMAIL,
+		name: VALIDATIONS.PERSON.NAME,
+		phone: VALIDATIONS.PERSON.PHONE,
+		password: VALIDATIONS.USER.PASSWORD,
+	});
+
+	return validate(userSchema, user);
+};
+
 export const getOneUserValidation = data => {
 	const dataSchema = joi.object({
 		id: VALIDATIONS.COMMON.ID,
@@ -185,7 +197,7 @@ export const updateUserValidation = user => {
 	const userSchema = joi.object({
 		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
 		email: VALIDATIONS.PERSON.EMAIL,
-		name: VALIDATIONS.COMMON.TEXT,
+		name: VALIDATIONS.PERSON.NAME,
 		phone: VALIDATIONS.PERSON.PHONE,
 	});
 

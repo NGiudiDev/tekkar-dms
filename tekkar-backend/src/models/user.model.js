@@ -3,6 +3,11 @@ import { users } from "../database/database.js";
 import { ENDPOINTS_ATRS } from "../constants/tables.js";
 import { SETTINGS } from "../constants/settings.js";
 
+const create = async (data) => {
+	const user  = await users.create(data);
+	return user;
+};
+
 const getOne = async (whereObj, attributes = []) => {
 	const user = await users.findOne({
 		attributes: [...ENDPOINTS_ATRS.USER.DETAIL, ...attributes],
@@ -35,6 +40,7 @@ const update = async (user_id, data) => {
 };
 
 export const userModel = {
+	create,
   getOne,
 	getPage,
 	update,

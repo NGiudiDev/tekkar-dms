@@ -2,6 +2,7 @@ import { userService } from "../services/user.service.js";
 
 import {
 	authenticationValidation,
+	createUserValidation,
 	getOneUserValidation,
 	getUserPageValidation,
 	loginValidation,
@@ -26,6 +27,26 @@ const authentication = async (req, res) => {
 			return res.status(422).json({ errros: [{ message: MESSAGES.USER_UNAUTHORIZED }]});
 		}
 	
+		return res.status(200).json({ user });
+	} catch(err) {
+		return res.status(500).json({ err });
+	}
+};
+
+const create = async (req, res) => {
+	const errors = createUserValidation(req.body);
+
+	if (errors)
+		return res.status(422).json({ errors });
+	
+	try {
+		const invalidEmail = await userService.existEmail(req.body.email);
+
+		if (invalidEmail)
+			return res.status(409).json({ errors: [{ message: MESSAGES.USER_EMAIL_DUPLICATED }]});
+
+		const user = await userService.create(req.body, req.headers);
+
 		return res.status(200).json({ user });
 	} catch(err) {
 		return res.status(500).json({ err });
@@ -129,6 +150,7 @@ const update = async (req, res) => {
 
 export const userController = {
 	authentication,
+	create,
 	getOne,
 	getPage,
 	login,

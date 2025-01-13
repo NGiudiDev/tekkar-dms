@@ -15,7 +15,7 @@ import {
 import { ServiceReportPage } from "../../service_report/pages";
 
 //? user pages
-import { UserDetailPage, UserListPage } from "../../user/pages";
+import { UserCreatePage, UserDetailPage, UserListPage } from "../../user/pages";
 
 import { PATH } from "../constants/routes.consts";
 
@@ -110,6 +110,16 @@ export const useAppRoutes = () => {
         useAppLayout: false,
       },
       path: PATH.serviceReport,
+    },
+    {
+      element: <UserCreatePage />,
+      name: "user_create",
+      options: {
+        isFreeAccess: false,
+        isPrivated:true,
+        useAppLayout: true,
+      },
+      path: PATH.userCreate,
     },
     {
       element: <UserDetailPage />,
