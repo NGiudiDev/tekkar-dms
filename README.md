@@ -12,6 +12,8 @@ Currently, the application is targeted at the Argentine market, but future plans
 - **Service creation**: Record new services performed on a vehicle.
 - **Service editing**: Update the details of recorded services.
 - **User listing**: View all users registered in the system.
+- **User creation**: Add new users to the inventory.
+- **User editing**: Update the information of registered users.
 - **Vehicle listing**: View all vehicles registered in the system.
 - **Vehicle creation**: Add new vehicles to the inventory.
 - **Vehicle editing**: Update the information of registered vehicles.
@@ -27,8 +29,6 @@ Currently, the application is targeted at the Argentine market, but future plans
 - **Service deletion**: Option to delete recorded services.
 
 - **PDF service report generation**: Download a detailed report of services performed on a vehicle in PDF format.
-
-- **User management**: Manage user accounts within the application.
 
 - **User roles**: Assign roles to control access and permissions within the system.
 
