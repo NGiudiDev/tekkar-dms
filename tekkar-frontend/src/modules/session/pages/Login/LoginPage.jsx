@@ -77,7 +77,7 @@ const LoginPage = () => {
 						</Text>
 					)}
 
-					<Button fullWidth type="submit">
+					<Button fullWidth margin="t-24" type="submit">
 						Iniciar sesión
 					</Button>
 				</Form>
