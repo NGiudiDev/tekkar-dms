@@ -7,6 +7,7 @@
 # envoirement
 */logs
 */.env
+*/uploads
 
 # production
 */build
