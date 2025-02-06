@@ -27,6 +27,10 @@ export const userTable = (sequelize, type) => {
 			allowNull: true,
 			type: type.STRING,
 		},
+		profile_image_url: {
+			allowNull: true,
+			type: type.STRING,
+		},
 		token: {
 			allowNull: true,
 			type: type.STRING,

@@ -1,5 +1,6 @@
 export const MESSAGES = {
   CAR_NOT_FOUND: "car not found",
+  IMAGE_NO_UPDATED: "No image was provided",
   INVALID_TOKEN: "invalid token",
   SERVICE_NOT_FOUND: "service not found",
   TOKEN_REQUIRED: "authorization header is required",

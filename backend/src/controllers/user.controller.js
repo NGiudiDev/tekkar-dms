@@ -1,5 +1,6 @@
-import { userService } from "../services/user.service.js";
+import dotenv from "dotenv";
 
+import { userService } from "../services/user.service.js";
 import {
 	authenticationValidation,
 	createUserValidation,
@@ -11,6 +12,8 @@ import {
 } from "../utils/validations.js";
 
 import { MESSAGES } from "../constants/messages.js";
+
+dotenv.config();
 
 const authentication = async (req, res) => {
 	const errors = authenticationValidation(req.body);
@@ -148,6 +151,20 @@ const update = async (req, res) => {
 	}
 };
 
+const updateProfileImage = async (req, res) => {	
+	try {
+		const updatedUser = { 
+			profile_image_url: req.imageUrl,
+		};
+
+		const user = await userService.update(req.params.id, updatedUser);
+
+    res.status(200).json({ user });
+  } catch (err) {
+    return res.status(500).json({ err });
+  }
+};
+
 export const userController = {
 	authentication,
 	create,
@@ -156,4 +173,5 @@ export const userController = {
 	login,
 	logout,
 	update,
+	updateProfileImage,
 };

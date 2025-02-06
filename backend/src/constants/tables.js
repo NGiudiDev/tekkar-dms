@@ -19,7 +19,7 @@ export const ENDPOINTS_ATRS = {
     SERVICE_LIST: ["id", "description", "next_service_mileage", "performed_at", "service_mileage", "service_duration", "title"],
   },
   USER: {
-    DETAIL: ["id", "doc_number", "email", "name", "phone"], 
+    DETAIL: ["id", "doc_number", "email", "name", "phone", "profile_image_url"], 
     LIST: ["id", "doc_number", "email", "name"],
   }
 };

@@ -199,6 +199,7 @@ export const updateUserValidation = user => {
 		email: VALIDATIONS.PERSON.EMAIL,
 		name: VALIDATIONS.PERSON.NAME,
 		phone: VALIDATIONS.PERSON.PHONE,
+		profile_image_url: VALIDATIONS.COMMON.TEXT,
 	});
 
 	return validate(userSchema, user);
