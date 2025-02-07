@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 
 import { DataText } from "../../../../common/components";
 
+import { Image } from "ds-loud-ng";
+
 import { Styles } from "./UserInformationSection.styles";
 
 const DEFAULT_PROPS = {
@@ -42,6 +44,10 @@ export const UserInformationSection = (props) => {
 					text={attrs.user.phone}
 					title="Teléfono"
 				/>
+			</Styles.Row>
+
+			<Styles.Row>
+				<Image img={attrs.user.profile_image_url} size="lg" type="round" />
 			</Styles.Row>
 		</Styles.Grid>
 	);

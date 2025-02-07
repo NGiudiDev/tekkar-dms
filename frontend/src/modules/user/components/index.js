@@ -15,6 +15,7 @@ export { UserInformationSection } from "./sections/user_information/UserInformat
 export { UserDocNumber } from "./tables/columns/UserDocNumber";
 export { UserEmail } from "./tables/columns/UserEmail";
 export { UserName } from "./tables/columns/UserName";
+export { UserProfileImage } from "./tables/columns/UserProfileImage";
 
 //? tables
 export { UsersTable } from "./tables/UsersTable";

@@ -6,11 +6,13 @@ import {
 	UserDocNumber,
 	UserEmail,
 	UserName,
+	UserProfileImage,
 } from "../";
 
 import { Table } from "ds-loud-ng";
 
 import { PATH } from "../../../common/constants/routes.consts";
+import { Flex } from "ds-loud-ng/dist/components/layout";
 
 const DEFAULT_PROPS = {
 	list: [],
@@ -26,19 +28,24 @@ export const UsersTable = (props) => {
 
 	const columns = [
 		{
-			content: (user) => <UserName margin="y-10" user={user} />,
+			content: (user) => (
+				<Flex>
+					<UserProfileImage user={user} />
+					<UserName margin="l-8 y-10" user={user} />
+				</Flex>	
+			),
 			label: "Nombre",
-			width: "33%",
+			width: "35%",
 		},
 		{
 			content: (user) => <UserEmail margin="y-10" user={user} />,
 			label: "Email",
-			width: "33%",
+			width: "40%",
 		},
 		{
 			content: (user) => <UserDocNumber margin="y-10" user={user} />,
 			label: "Documento",
-			width: "33%",
+			width: "25%",
 		},
 	];
 

@@ -20,6 +20,6 @@ export const ENDPOINTS_ATRS = {
   },
   USER: {
     DETAIL: ["id", "doc_number", "email", "name", "phone", "profile_image_url"], 
-    LIST: ["id", "doc_number", "email", "name"],
+    LIST: ["id", "doc_number", "email", "name", "profile_image_url"],
   }
 };
