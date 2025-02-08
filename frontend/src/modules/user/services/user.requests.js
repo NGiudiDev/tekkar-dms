@@ -17,3 +17,7 @@ export const getUserPage = (paramsObj) => {
 export const updateUserDetail = (id, data) => {
 	return putAxios(`/users/${id}`, data);
 };
+
+export const updateUserImage = (id, data, headers) => {
+	return putAxios(`/users/${id}/profile_image`, data, headers);
+};

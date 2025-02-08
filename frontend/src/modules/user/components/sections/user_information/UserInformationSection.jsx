@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 
 import { DataText } from "../../../../common/components";
-
-import { Image } from "ds-loud-ng";
+import { UserProfileImageInput } from "../../";
 
 import { Styles } from "./UserInformationSection.styles";
 
@@ -47,7 +46,7 @@ export const UserInformationSection = (props) => {
 			</Styles.Row>
 
 			<Styles.Row>
-				<Image img={attrs.user.profile_image_url} size="lg" type="round" />
+				<UserProfileImageInput user={attrs.user} />
 			</Styles.Row>
 		</Styles.Grid>
 	);

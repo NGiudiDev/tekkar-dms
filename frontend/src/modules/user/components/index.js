@@ -7,7 +7,8 @@ export { UserEmailInput } from "./inputs/UserEmailInput";
 export { UserNameInput } from "./inputs/UserNameInput";
 export { UserPhoneInput } from "./inputs/UserPhoneInput";
 export { UserPasswordInput } from "./inputs/UserPasswordInput";
- 
+export { UserProfileImageInput } from "./inputs/UserProfileImageInput/UserProfileImageInput"; 
+
 //? sections
 export { UserInformationSection } from "./sections/user_information/UserInformationSection";
 
