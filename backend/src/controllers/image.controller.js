@@ -1,9 +1,12 @@
 import { v2 as cloudinary } from "cloudinary";
+import dotenv from "dotenv";
 import fs from "fs";
 
 import { MESSAGES } from "../constants/messages.js";
 
-export const updateImageMiddleware = async (req, res, next) => {
+dotenv.config();
+
+const uploadImage = async (req, res) => {
   try {
     cloudinary.config({ 
       cloud_name: process.env.CLOUDINARY_API_NAME,
@@ -37,10 +40,12 @@ export const updateImageMiddleware = async (req, res, next) => {
     //? deletes the temporarily stored image.
     fs.unlinkSync(req.file.path);
 
-    req.imageUrl = uploadResult.secure_url;
-
-    next();
+    return res.status(200).json({ url: uploadResult.secure_url });
   } catch (err) {
     return res.status(500).json({ err });
   }
+};
+
+export const imageController = {
+	uploadImage,
 };

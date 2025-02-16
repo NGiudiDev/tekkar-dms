@@ -35,12 +35,13 @@ export const getAxios = (url) => {
 		.then((res) => res.data);
 };
 
-export const postAxios = (url, data) => {
+export const postAxios = (url, data, headers) => {
 	const { token } = getLoginOfLocalStorage();
 
 	const options = {
 		headers: {
 			"Authorization": `${token}`,
+			...headers,
 		}
 	};
 

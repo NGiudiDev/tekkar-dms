@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors  from "cors";
 
 import carRouter from "./routers/car.router.js";
+import imageRouter from "./routers/images.router.js";
 import serviceRouter from "./routers/service.router.js";
 import serviceReportRouter from "./routers/service_report.router.js";
 import userRouter from "./routers/user.router.js";
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //? routers
 app.use("/cars", carRouter);
+app.use("/images", imageRouter);
 app.use("/services", serviceRouter);
 app.use("/service_report", serviceReportRouter);
 app.use("/users", userRouter);

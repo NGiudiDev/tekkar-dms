@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
 import { getChangedFields, isEmptyObject } from "../../../common/utils/forms.utils";
-import { getUserDetail, updateUserDetail, updateUserImage } from "../../services/user.requests";
+import { getUserDetail, updateUserDetail } from "../../services/user.requests";
+import { uploadImage } from "../../../common/services/images.services.js";
 import { userValidation } from "../../services/user.validations.js";
 import { updateUser } from "../../../session/store/store";
 import toast from "react-hot-toast";
@@ -47,12 +48,14 @@ export const UserDetailProvider = (props) => {
 	});
 	
 	const userImageMutation =  useMutation({
-		mutationFn: (modifiedObj) => {
+		mutationFn: async (modifiedObj) => {
 			const headers = {
 				"Content-Type": "multipart/form-data",
 			};
 
-			return updateUserImage(id, modifiedObj, headers);
+			const img = await uploadImage(modifiedObj, headers); 
+
+			return updateUserDetail(id, { profile_image_url: img.url });
 		},
 		onError: (err) => {
 			const { status } = err.response;
@@ -137,7 +140,7 @@ export const UserDetailProvider = (props) => {
 	const handleSubmitImageUser = (values) => {
 		const file = values.profile_image[0].file;
 		const formData = new FormData();
-		
+
     formData.append("image", file);
 
 		userImageMutation.mutate(formData);
