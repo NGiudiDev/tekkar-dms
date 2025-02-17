@@ -37,3 +37,5 @@ Currently, the application is targeted at the Argentine market, but future plans
 - **Parts inventory management**: For workshops, manage the inventory of spare parts.
 
 - **Customer management**: Manage customer data for those who have vehicles registered in the system.
+
+- **Guardar datos del motor**: Holguras del motor u otros datos mecánicos.

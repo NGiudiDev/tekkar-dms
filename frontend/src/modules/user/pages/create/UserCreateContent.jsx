@@ -7,7 +7,9 @@ import { Formik, Form } from "formik";
 import { UserInformationForm, UserPasswordInput } from "../../components";
 import { CreateButton } from "../../../common/components";
 
-import { Box, Columns, Flex, Text } from "ds-loud-ng";
+import { Box, Flex, Text } from "ds-loud-ng";
+
+import { Styles } from "./UserCreateContent.styles";
 
 export const UserCreateContent = () => {
 	const ctx = useContext(UserCreateContext);
@@ -28,12 +30,11 @@ export const UserCreateContent = () => {
 						<Form>
 							<UserInformationForm />
 
-							{/* TODO: diseñar un componente de Grid y usarlo aca. */}
-							<Columns>
-								<UserPasswordInput />
-								<div/>
-								<div/>
-							</Columns>
+							<Styles.Grid>
+								<Styles.Row>
+									<UserPasswordInput />
+								</Styles.Row>
+							</Styles.Grid>
 							
 							<Flex margin="b-32 t-8" hAlign="end">
 								<CreateButton disabled={!(formik.dirty && formik.isValid)} />
