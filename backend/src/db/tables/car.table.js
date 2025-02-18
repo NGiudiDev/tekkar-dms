@@ -26,6 +26,10 @@ export const carTable = (sequelize, type) => {
 				len: [8, 8]
 			},
 		},
+		owner_email: {
+			allowNull: false,
+			type: type.STRING,
+		},
 		owner_name: {
 			allowNull: false,
 			type: type.STRING,

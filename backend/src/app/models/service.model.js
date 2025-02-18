@@ -1,4 +1,8 @@
+import { Sequelize, Op } from "sequelize";
+
 import { cars, services } from "../../db/database.js";
+
+import { formatDate } from "../utils/forms.js";
 
 import { ENDPOINTS_ATRS } from "../constants/tables.js";
 import { SETTINGS } from "../constants/settings.js";
@@ -7,6 +11,26 @@ const create = async (data) => {
 	const service  = await services.create(data);
 	return service;
 };
+
+const getExpiredServices = async () => {
+	const today = new Date();
+
+	let queryObj = {
+		include: [{
+			attributes: ["owner_email"],
+			model: cars,
+		}],
+		where: Sequelize.where(
+			Sequelize.fn('DATE', Sequelize.literal('DATE_ADD(performed_at, INTERVAL service_duration MONTH)')),
+			Op.eq,
+			formatDate(today),
+		)
+	};
+
+	const expiredServices = await services.findAll(queryObj);
+	
+	return expiredServices;
+}
 
 const getOne = async (whereObj) => {
 	const service = await services.findOne({
@@ -47,6 +71,7 @@ const update = async (service_id, data) => {
 
 export const serviceModel = {
 	create,
+	getExpiredServices,
 	getOne,
 	getPage,
 	update,

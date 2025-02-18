@@ -8,6 +8,8 @@ import serviceRouter from "./app/routers/service.router.js";
 import serviceReportRouter from "./app/routers/service_report.router.js";
 import userRouter from "./app/routers/user.router.js";
 
+import { scheduleCronJobs } from "./jobs/jobs.js";
+
 import { SETTINGS } from "./app/constants/settings.js";
 
 dotenv.config();
@@ -30,6 +32,8 @@ app.use("/users", userRouter);
 
 //? server initialization.
 app.listen(port, () => {
+  scheduleCronJobs();
+
 	console.log(`Server runing in port ${port}...`);
 });
 

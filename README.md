@@ -20,6 +20,8 @@ Currently, the application is targeted at the Argentine market, but future plans
 
 ## Pending Features
 
+- **Manejo de fechas**: Ver como sincronizar las fechas del frontend con el de backend.
+
 - **Integration with ELM327 device**: Communication with the ELM327 device connected to the vehicle’s OBD2 port to retrieve information such as mileage and determine if service is due based on mileage.
 
 - **Email notifications**: Automatic email notifications when a scheduled service is approaching.
