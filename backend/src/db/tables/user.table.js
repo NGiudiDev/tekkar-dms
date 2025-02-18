@@ -1,4 +1,4 @@
-import { TABLES } from "../../constants/tables.js";
+import { TABLES } from "../../app/constants/tables.js";
 
 export const userTable = (sequelize, type) => {
 	return sequelize.define(TABLES.USER_TABLE, {

@@ -1,4 +1,4 @@
-import { cars } from "../database/database.js";
+import { cars } from "../../db/database.js";
 
 import { ENDPOINTS_ATRS } from "../constants/tables.js";
 import { SETTINGS } from "../constants/settings.js";

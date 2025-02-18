@@ -2,13 +2,13 @@ import express from "express";
 import dotenv from "dotenv";
 import cors  from "cors";
 
-import carRouter from "./routers/car.router.js";
-import imageRouter from "./routers/images.router.js";
-import serviceRouter from "./routers/service.router.js";
-import serviceReportRouter from "./routers/service_report.router.js";
-import userRouter from "./routers/user.router.js";
+import carRouter from "./app/routers/car.router.js";
+import imageRouter from "./app/routers/images.router.js";
+import serviceRouter from "./app/routers/service.router.js";
+import serviceReportRouter from "./app/routers/service_report.router.js";
+import userRouter from "./app/routers/user.router.js";
 
-import { SETTINGS } from "./constants/settings.js";
+import { SETTINGS } from "./app/constants/settings.js";
 
 dotenv.config();
 

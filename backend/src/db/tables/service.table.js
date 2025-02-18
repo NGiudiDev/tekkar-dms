@@ -1,5 +1,5 @@
-import { SETTINGS } from "../../constants/settings.js";
-import { TABLES } from "../../constants/tables.js";
+import { SETTINGS } from "../../app/constants/settings.js";
+import { TABLES } from "../../app/constants/tables.js";
 
 export const serviceTable = (sequelize, type) => {
 	return sequelize.define(TABLES.SERVICE_TABLE, {

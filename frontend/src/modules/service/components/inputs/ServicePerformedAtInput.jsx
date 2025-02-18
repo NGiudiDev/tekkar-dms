@@ -17,6 +17,7 @@ export const ServicePerformedAtInput = (props) => {
 			label="Realizado el"
 			margin={attrs.margin}
 			name="performed_at"
+			type="date"
 		/>
 	);
 };

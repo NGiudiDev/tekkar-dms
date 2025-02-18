@@ -1,4 +1,4 @@
-import { users } from "../database/database.js";
+import { users } from "../../db/database.js";
 
 import { ENDPOINTS_ATRS } from "../constants/tables.js";
 import { SETTINGS } from "../constants/settings.js";
