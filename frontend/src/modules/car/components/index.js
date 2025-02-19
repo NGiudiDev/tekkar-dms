@@ -10,6 +10,7 @@ export { CarBrandInput } from "./inputs/CarBrandInput";
 export { CarLicensePlateInput } from "./inputs/CarLicensePlateInput";
 export { CarModelInput } from "./inputs/CarModelInput";
 export { CarOwnerDocNumberInput } from "./inputs/CarOwnerDocNumberInput";
+export { CarOwnerEmailInput } from "./inputs/CarOwnerEmailInput";
 export { CarOwnerNameInput } from "./inputs/CarOwnerNameInput";
 export { CarOwnerPhoneInput } from "./inputs/CarOwnerPhoneInput"; 
 export { CarProductionYearInput } from "./inputs/CarProductionYearInput";

@@ -55,6 +55,7 @@ export const CarCreateProvider = (props) => {
 			license_plate: "",
 			model: "",
 			owner_doc_number: "",
+			owner_email: "",
 			owner_name: "",
 			owner_phone: "",
 			production_year: "",

@@ -1,5 +1,6 @@
 import {
 	CarOwnerDocNumberInput,
+	CarOwnerEmailInput,
 	CarOwnerNameInput,
 	CarOwnerPhoneInput,
 } from "../..";
@@ -16,6 +17,7 @@ export const CarOwnerForm = () => {
 
 			<Styles.Row>
 				<CarOwnerDocNumberInput margin="b-8" />
+				<CarOwnerEmailInput margin="b-8" />
 			</Styles.Row>
 		</Styles.Grid>	
 	);

@@ -29,6 +29,12 @@ export const CarOwnerSection = (props) => {
           text={car.owner_doc_number}
           title="Documento"
         />
+
+        <DataText 
+          margin="b-42"
+          text={car.owner_email}
+          title="Email del propietario"
+        />
       </Styles.Row>
     </Styles.Grid>
   );

@@ -18,6 +18,7 @@ describe("car flow", () => {
     cy.get("input[name='license_plate']").type("KZH614");
     cy.get("input[name='production_year']").type("2012");
     cy.get("input[name='owner_name']").type("Nicolás Giudice");
+    cy.get("input[name='owner_email']").type("nicolas.m.giudice@gmail.com");
     cy.get("input[name='owner_doc_number']").type("12345678");
     cy.get("input[name='owner_phone']").type("+5491112345678");
 

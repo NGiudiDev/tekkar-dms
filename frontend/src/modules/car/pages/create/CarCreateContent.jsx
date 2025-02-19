@@ -9,6 +9,7 @@ import {
 	CarLicensePlateInput,
 	CarModelInput,
 	CarOwnerDocNumberInput,
+	CarOwnerEmailInput,
 	CarOwnerNameInput,
 	CarOwnerPhoneInput,
 	CarProductionYearInput
@@ -44,6 +45,8 @@ export const CarCreateContent = () => {
 							<CarOwnerNameInput />
 
 							<CarOwnerDocNumberInput />
+
+							<CarOwnerEmailInput />
 
 							<CarOwnerPhoneInput />
 

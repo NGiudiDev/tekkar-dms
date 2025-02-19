@@ -107,6 +107,7 @@ export const CarDetailProvider = (props) => {
 			license_plate: car.license_plate || "",
 			model: car.model || "",
 			owner_doc_number: car.owner_doc_number || "",
+			owner_email: car.owner_email || "",
 			owner_name: car.owner_name || "",
 			owner_phone: car.owner_phone || "",
 			production_year: car.production_year || "",

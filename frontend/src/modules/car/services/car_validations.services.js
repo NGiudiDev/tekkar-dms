@@ -9,6 +9,7 @@ export const carValidation = yup.object().shape({
 	license_plate: CAR_VALIDATIONS.LICENSE_PLATE.required("Campo requerido"),
 	model: CAR_VALIDATIONS.MODEL.required("Campo requerido"),
 	owner_doc_number: USER_VALIDATIONS.DOC_NUMBER.required("Campo requerido"),
+	owner_email: USER_VALIDATIONS.EMAIL.required("Campo requerido"),
 	owner_name: USER_VALIDATIONS.NAME.required("Campo requerido"),
 	owner_phone: USER_VALIDATIONS.PHONE.required("Campo requerido"),
 	production_year: CAR_VALIDATIONS.PRODUCTION_YEAR.required("Campo requerido"),
