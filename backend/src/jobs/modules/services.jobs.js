@@ -1,6 +1,6 @@
 import { serviceModel } from "../../app/models/service.model.js";
 
-export const searchExpiredServices = async () => {
+export const serviceExpirationReminderJob = async () => {
   try {
     const expiredServices = await serviceModel.getExpiredServices();
     

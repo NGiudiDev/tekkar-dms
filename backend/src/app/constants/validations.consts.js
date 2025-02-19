@@ -1,6 +1,7 @@
 import joi from "joi";
 
-import { getYear, isArLicensePlate } from "../utils/forms.js";
+import { isArLicensePlate } from "../utils/models/cars.utils.js";
+import { getYear } from "../utils/dates.js";
 
 import { REGEXS } from "./regex.js";
 
