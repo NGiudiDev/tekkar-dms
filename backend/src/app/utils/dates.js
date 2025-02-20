@@ -3,7 +3,18 @@ export const formatDate = (date) => {
 	return date.toISOString().split("T")[0];
 };
 
+//TODO: usar alguna librería de fecha y manejar ahi el huso horario.
+export const getDate = () => {
+	const date = new Date();
+
+	//? Argentina is in UTC-3 with no daylight saving time changes.
+	//? 3 hours in milliseconds.
+	const argentinaOffset = -3 * 60 * 60 * 1000;
+	
+	return new Date(date.getTime() + argentinaOffset);
+}
+
 export const getYear = () => {
-	const now = new Date();
+	const now = getDate();
 	return now.getFullYear();
 };

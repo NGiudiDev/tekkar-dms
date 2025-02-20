@@ -2,7 +2,7 @@ import { Sequelize, Op } from "sequelize";
 
 import { cars, services } from "../../db/database.js";
 
-import { formatDate } from "../utils/dates.js";
+import { formatDate, getDate } from "../utils/dates.js";
 
 import { ENDPOINTS_ATRS } from "../constants/tables.js";
 import { SETTINGS } from "../constants/settings.js";
@@ -13,7 +13,8 @@ const create = async (data) => {
 };
 
 const getExpiredServices = async () => {
-	const today = new Date();
+	//? retrieves a list of services that will expire in 1 month. 
+	const today = getDate();
 
 	let queryObj = {
 		include: [{
@@ -21,7 +22,7 @@ const getExpiredServices = async () => {
 			model: cars,
 		}],
 		where: Sequelize.where(
-			Sequelize.fn("DATE", Sequelize.literal("DATE_ADD(performed_at, INTERVAL service_duration MONTH)")),
+			Sequelize.fn("DATE", Sequelize.literal("DATE_ADD(performed_at, INTERVAL (service_duration - 1) MONTH)")),
 			Op.eq,
 			formatDate(today),
 		)
