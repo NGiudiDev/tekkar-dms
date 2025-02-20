@@ -17,11 +17,11 @@ const getExpiredServices = async () => {
 
 	let queryObj = {
 		include: [{
-			attributes: ["owner_email"],
+			attributes: ENDPOINTS_ATRS.SERVICE.EXPIRED_MAIL,
 			model: cars,
 		}],
 		where: Sequelize.where(
-			Sequelize.fn('DATE', Sequelize.literal('DATE_ADD(performed_at, INTERVAL service_duration MONTH)')),
+			Sequelize.fn("DATE", Sequelize.literal("DATE_ADD(performed_at, INTERVAL service_duration MONTH)")),
 			Op.eq,
 			formatDate(today),
 		)
