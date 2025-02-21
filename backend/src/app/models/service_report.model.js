@@ -1,4 +1,4 @@
-import { cars, services } from "../../db/database.js";
+import { cars, persons, services } from "../../db/database.js";
 
 import { ENDPOINTS_ATRS } from "../constants/tables.js";
 import { SETTINGS } from "../constants/settings.js";
@@ -6,6 +6,10 @@ import { SETTINGS } from "../constants/settings.js";
 const getCar = async (whereObj) => {
   const car = await cars.findOne({
     attributes: ENDPOINTS_ATRS.SERVICE_REPORT.CAR_DETAIL,
+    include: [{
+      attributes: ENDPOINTS_ATRS.PERSON.DETAIL,
+      model: persons,
+    }],
     where: whereObj,
   });
 

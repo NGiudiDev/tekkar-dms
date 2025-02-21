@@ -1,3 +1,4 @@
+import { personModel } from "../models/person.model.js";
 import { userModel } from "../models/user.model.js";
 
 import { compareEncrypt, createToken, hashEncrypt, verifyToken } from "../utils/hashes.js";
@@ -18,10 +19,18 @@ const authentication = async (user_id, token) => {
 };
 
 const create = async (data) => {
-	//? add user in database.
-	data.password = hashEncrypt(data.password);
+	//? create person in database.
+	const personData = data.omit(["password"]);
 
-	let user = await userModel.create(data);
+	let person = await personModel.create(personData);
+
+	//? create user in database.
+	const userData = {
+		password: hashEncrypt(data.password),
+		person_id: person.id,
+	};
+	
+	let user = await userModel.create(userData);
 	
 	//? create token.
 	const USER_TOKEN_OBJ = {
@@ -39,7 +48,13 @@ const create = async (data) => {
 };
 
 const existEmail = async (email) => {
-	const user = await getOne({ email });
+	const person = await personModel.getOne({ email });
+	let user = null;
+
+	if (person !== null) {
+		user = await getOne({ person_id: person.id });
+	}
+	
 	return !!user;
 };
 
@@ -59,25 +74,31 @@ const getPage = async (page) => {
 };
 
 const login = async (email, password) => {
-	const user = await getOne({ email }, ["password"]);
+	const person = await personModel.getOne({ email });
 
-	//? check if the password is valid.
-	if (!user || !compareEncrypt(password, user.password)) {
-		return null;
+	if (person !== null) {
+		const user = await getOne({ person_id: person.id }, ["password"]);
+
+		//? check if the password is valid.
+		if (!user || !compareEncrypt(password, user.password)) {
+			return null;
+		}
+
+		//? generate and save a token.
+		const LOGIN_USER_TOKEN_OBJ = {
+			user_id: user.id,
+			type: "login",
+		};
+
+		user.token = createToken(LOGIN_USER_TOKEN_OBJ);
+		await user.save();
+
+		delete user.dataValues.password;
+
+		return user;
 	}
 
-	//? generate and save a token.
-	const LOGIN_USER_TOKEN_OBJ = {
-		user_id: user.id,
-		type: "login",
-	};
-
-	user.token = createToken(LOGIN_USER_TOKEN_OBJ);
-	await user.save();
-
-	delete user.dataValues.password;
-
-	return user;
+	return null;
 };
 
 const logout = async (user_id) => {

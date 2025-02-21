@@ -1,6 +1,6 @@
 import { Sequelize, Op } from "sequelize";
 
-import { cars, services } from "../../db/database.js";
+import { cars, persons, services } from "../../db/database.js";
 
 import { formatDate, getDate } from "../utils/dates.js";
 
@@ -19,6 +19,10 @@ const getExpiredServices = async () => {
 	let queryObj = {
 		include: [{
 			attributes: ENDPOINTS_ATRS.SERVICE.EXPIRED_MAIL,
+			include: [{
+				attributes: ENDPOINTS_ATRS.PERSON.DETAIL,
+				model: persons,
+			}],
 			model: cars,
 		}],
 		where: Sequelize.where(
@@ -36,6 +40,16 @@ const getExpiredServices = async () => {
 const getOne = async (whereObj) => {
 	const service = await services.findOne({
 		attributes: ENDPOINTS_ATRS.SERVICE.DETAIL,
+		include: [
+			{
+				attributes: ENDPOINTS_ATRS.SERVICE.LIST_CAR,
+				include: [{
+					attributes: ENDPOINTS_ATRS.PERSON.DETAIL,
+					model: persons,
+				}],
+				model: cars,
+			}
+		],
 		where: whereObj,
 	});
 
@@ -48,6 +62,10 @@ const getPage = async (page, whereObj) => {
 		include: [
 			{
 				attributes: ENDPOINTS_ATRS.SERVICE.LIST_CAR,
+				include: [{
+					attributes: ENDPOINTS_ATRS.PERSON.DETAIL,
+					model: persons,
+				}],
 				model: cars,
 			}
 		],
