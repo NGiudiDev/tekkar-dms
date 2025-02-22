@@ -14,12 +14,12 @@ import {
 	CarActionsDropdown,
 	CarInformationForm,
 	CarInformationSection,
-	CarOwnerForm,
-	CarOwnerSection
 } from "../../components";
 
 import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
+import { PersonInformationSection } from "../../../person/components";
 
+//TODO: permitir modificar el propietario.
 export const CarDetailContent = () => {
 	const ctx = useContext(CarDetailContext);
 
@@ -67,9 +67,9 @@ export const CarDetailContent = () => {
 								<Text margin="b-24" type="title">
 									Propietario
 								</Text>
-
-								<CarOwnerForm />
 								
+								<PersonInformationSection person={ctx.car.person} />	
+
 								<Flex margin="b-32 t-8" hAlign="end">
 									<UpdateButton disabled={!(formik.dirty && formik.isValid)} />
 								</Flex>
@@ -84,7 +84,7 @@ export const CarDetailContent = () => {
 							Propietario
 						</Text>
 				
-						<CarOwnerSection car={ctx.car} />					
+						<PersonInformationSection person={ctx.car.person} />					
 					</>
 				)}
 

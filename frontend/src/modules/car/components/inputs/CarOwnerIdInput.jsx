@@ -6,7 +6,8 @@ const DEFAULT_PROPS = {
 	margin: "a-0",
 };
 
-export const CarOwnerDocNumberInput = (props) => {
+//TODO: reemplazar por un select.
+export const CarOwnerIdInput = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -14,13 +15,13 @@ export const CarOwnerDocNumberInput = (props) => {
 
 	return (
 		<Input
-			label="Documento del propietario"
+			label="Id del propietario"
 			margin={attrs.margin}
-			name="owner_doc_number"
+			name="owner_id"
 		/>
 	);
 };
 
-CarOwnerDocNumberInput.propTypes = {
+CarOwnerIdInput.propTypes = {
 	margin: PropTypes.string,
 };

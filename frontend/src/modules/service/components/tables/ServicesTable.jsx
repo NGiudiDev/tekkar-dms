@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { useRouter } from "../../../common/hooks/useRouter";
 
 import { ServiceMileageTC, ServicePerformedAtTC, ServiceTitleTC } from "../";
-import { CarDescriptionTC, CarOwnerTC } from "../../../car/components";
+import { CarDescriptionCol } from "../../../car/components";
+import { PersonNameCol } from "../../../person/components";
 
 import { Table } from "ds-loud-ng";
 
@@ -33,7 +34,7 @@ export const ServicesTable = (props) => {
 			width: "15%",
 		},
 		{
-			content: (service) => <CarDescriptionTC margin="y-10" car={service.car}/>,
+			content: (service) => <CarDescriptionCol margin="y-10" car={service.car}/>,
 			label: "Vehículo",
 			width: "20%",
 		},
@@ -43,7 +44,7 @@ export const ServicesTable = (props) => {
 			width: "15%",
 		},
 		{
-			content: (service) => <CarOwnerTC margin="y-10" car={service.car} />,
+			content: (service) => <PersonNameCol margin="y-10" car={service.car.person} />,
 			label: "Propietario",
 			width: "20%",
 		},

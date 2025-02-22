@@ -2,11 +2,8 @@ import PropTypes from "prop-types";
 
 import { useRouter } from "../../../common/hooks/useRouter";
 
-import { 
-	CarDescriptionTC,
-	CarLicensePlateTC,
-	CarOwnerTC
-} from "../../components";
+import { CarDescriptionCol, CarLicensePlateCol } from "../../components";
+import { PersonNameCol } from "../../../person/components";
 
 import { Table } from "ds-loud-ng";
 
@@ -26,17 +23,17 @@ export const CarsTable = (props) => {
 
 	const columns = [
 		{
-			content: (car) => <CarDescriptionTC margin="y-10" car={car} />,
+			content: (car) => <CarDescriptionCol margin="y-10" car={car} />,
 			label: "Marca",
 			width: "33%",
 		},
 		{
-			content: (car) => <CarLicensePlateTC margin="y-10" car={car} />,
+			content: (car) => <CarLicensePlateCol margin="y-10" car={car} />,
 			label: "Modelo",
 			width: "33%",
 		},
 		{
-			content: (car) => <CarOwnerTC margin="y-10" car={car} />,
+			content: (car) => <PersonNameCol margin="y-10" person={car.person} />,
 			label: "Propietario",
 			width: "33%",
 		},

@@ -8,10 +8,7 @@ import {
 	CarBrandInput,
 	CarLicensePlateInput,
 	CarModelInput,
-	CarOwnerDocNumberInput,
-	CarOwnerEmailInput,
-	CarOwnerNameInput,
-	CarOwnerPhoneInput,
+	CarOwnerIdInput,
 	CarProductionYearInput
 } from "../../components";
 
@@ -42,13 +39,7 @@ export const CarCreateContent = () => {
 							
 							<CarProductionYearInput />
 
-							<CarOwnerNameInput />
-
-							<CarOwnerDocNumberInput />
-
-							<CarOwnerEmailInput />
-
-							<CarOwnerPhoneInput />
+							<CarOwnerIdInput />
 
 							<Flex margin="t-24" hAlign="end">
 								<Button disabled={!formik.isValid} type="submit">

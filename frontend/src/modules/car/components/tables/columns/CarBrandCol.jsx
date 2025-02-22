@@ -7,20 +7,20 @@ const DEFAULT_PROPS = {
 	margin: "a-0",
 };
 
-export const CarDescriptionTC = (props) => {
+export const CarBrandCol = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
 	};
 
 	return (
-		<Text margin={attrs.margin} type="captionRegular">
-			{`${attrs.car.brand} ${attrs.car.model}`}
+		<Text margin={attrs.margin}>
+			{attrs.car.brand}
 		</Text>
 	);
 };
 
-CarDescriptionTC.propTypes = {
+CarBrandCol.propTypes = {
 	car: PropTypes.object,
 	margin: PropTypes.string,
 }; 
