@@ -67,6 +67,18 @@ export const updateCarValidation = (qParams) => {
 };
 
 /******************************************************************************
+												👥 CLIENT VALIDATIONS 👥
+     ********************************************************************/
+
+export const getClientPageValidation = (qParams) => {
+	const clientSchema = joi.object({
+		page: VALIDATIONS.COMMON.PAGE,
+	});
+
+	return validate(clientSchema, qParams);
+};
+
+/******************************************************************************
 												🛠️ SERVICE VALIDATIONS 🛠️
      ********************************************************************/ 
 

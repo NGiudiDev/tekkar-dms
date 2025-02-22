@@ -11,17 +11,13 @@ export const ENDPOINTS_ATRS = {
     LIST: ["id", "brand", "license_plate", "model"],
   },
   PERSON: {
-    DETAIL: ["id", "doc_number", "email", "name", "phone", "image_url"],
+    LIST: ["id", "doc_number", "email", "image_url", "name"],
+    DETAIL: ["id", "doc_number", "email", "image_url", "name", "phone", "roles"],
   },
   SERVICE: {
     DETAIL: ["id", "description", "next_service_mileage", "performed_at", "price", "service_mileage", "service_duration", "title"],
     LIST: ["id", "performed_at", "service_mileage", "title"],
-    LIST_CAR: ["id", "brand", "model"],
-    EXPIRED_MAIL: ["id", "brand", "license_plate", "model"],
-  },
-  SERVICE_REPORT: {
-    CAR_DETAIL: ["id", "brand", "license_plate", "model", "production_year"],
-    SERVICE_LIST: ["id", "description", "next_service_mileage", "performed_at", "service_mileage", "service_duration", "title"],
+    EXPIRED_SERVICE_MAIL: ["id", "brand", "license_plate", "model"],
   },
   USER: {
     DETAIL: ["id"], 

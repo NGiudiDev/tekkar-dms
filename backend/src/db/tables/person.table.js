@@ -30,6 +30,10 @@ export const personTable = (sequelize, type) => {
       allowNull: false,
       type: type.STRING,
     },
+    roles: {
+      allowNull: false,
+      type: type.STRING,
+    }
   },
   {
     createdAt: "created_at",

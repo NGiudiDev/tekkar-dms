@@ -18,7 +18,7 @@ const getExpiredServices = async () => {
 
 	let queryObj = {
 		include: [{
-			attributes: ENDPOINTS_ATRS.SERVICE.EXPIRED_MAIL,
+			attributes: ENDPOINTS_ATRS.SERVICE.EXPIRED_SERVICE_MAIL,
 			include: [{
 				attributes: ENDPOINTS_ATRS.PERSON.DETAIL,
 				model: persons,
@@ -42,7 +42,7 @@ const getOne = async (whereObj) => {
 		attributes: ENDPOINTS_ATRS.SERVICE.DETAIL,
 		include: [
 			{
-				attributes: ENDPOINTS_ATRS.SERVICE.LIST_CAR,
+				attributes: ENDPOINTS_ATRS.CAR.DETAIL,
 				include: [{
 					attributes: ENDPOINTS_ATRS.PERSON.DETAIL,
 					model: persons,
@@ -61,7 +61,7 @@ const getPage = async (page, whereObj) => {
 		attributes: ENDPOINTS_ATRS.SERVICE.LIST,
 		include: [
 			{
-				attributes: ENDPOINTS_ATRS.SERVICE.LIST_CAR,
+				attributes: ENDPOINTS_ATRS.CAR.LIST,
 				include: [{
 					attributes: ENDPOINTS_ATRS.PERSON.DETAIL,
 					model: persons,
