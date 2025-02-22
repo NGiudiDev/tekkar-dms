@@ -8,7 +8,7 @@ import { userCreateValidation } from "../../services/user.validations";
 import { createUser } from "../../services/user.requests";
 import toast from "react-hot-toast";
 
-import { PATH } from "../../../common/constants/routes.consts";
+import { PATH } from "../../../../router/constants/routes.consts";
 
 export const UserCreateContext = createContext();
 

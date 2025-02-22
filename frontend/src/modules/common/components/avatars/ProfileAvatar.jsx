@@ -6,7 +6,7 @@ import { Button, Divider, Flex, Image, Text } from "ds-loud-ng";
 import { userLogout } from "../../../session/services/session.requests";
 import { logout } from "../../../session/store/store";
 
-import { PATH } from "../../constants/routes.consts";
+import { PATH } from "../../../../router/constants/routes.consts";
 
 export const ProfileAvatar = () => {
 	const user = useSelector(state => state.user);

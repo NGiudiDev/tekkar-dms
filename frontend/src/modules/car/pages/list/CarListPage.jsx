@@ -6,7 +6,7 @@ import { CarsTable } from "../../components";
 
 import { getCarPage } from "../../services/car.services";
 
-import { PATH } from "../../../common/constants/routes.consts";
+import { PATH } from "../../../../router/constants/routes.consts";
 
 const CarListPage = () => {
 	const router = useRouter();

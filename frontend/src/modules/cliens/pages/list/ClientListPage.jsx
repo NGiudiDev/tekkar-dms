@@ -6,7 +6,7 @@ import { ClientsTable } from "../../components";
 
 import { getClientPage } from "../../services/client.requests";
 
-import { PATH } from "../../../common/constants/routes.consts";
+import { PATH } from "../../../../router/constants/routes.consts";
 
 const ClientListPage = () => {
 	const router = useRouter();

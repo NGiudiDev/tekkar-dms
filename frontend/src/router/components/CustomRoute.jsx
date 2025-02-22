@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 
-import { useSidebarButtons } from "../../../../hooks";
+import { useSidebarButtons } from "../../hooks/useSidebarButtons";
 import { useSelector } from "react-redux";
 
 import { Navigate } from "react-router-dom";
-import { ProfileAvatar } from "../";
+import { ProfileAvatar } from "../../modules/common/components";
 
 import { AppLayout } from "ds-loud-ng";
 
-import { PATH } from "../../constants/routes.consts";
+import { PATH } from "../constants/routes.consts";
 
 const DEFAULT_PROPS = {
 	children: null,
@@ -16,7 +16,7 @@ const DEFAULT_PROPS = {
 	useAppLayout: false,
 };
 
-export const CustomRouteLayout = (props) => {
+export const CustomRoute = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -47,7 +47,7 @@ export const CustomRouteLayout = (props) => {
 	return attrs.children;
 };
 
-CustomRouteLayout.propTypes = {
+CustomRoute.propTypes = {
 	children: PropTypes.node,
 	isPrivated: PropTypes.bool,
 	useAppLayout: PropTypes.bool,

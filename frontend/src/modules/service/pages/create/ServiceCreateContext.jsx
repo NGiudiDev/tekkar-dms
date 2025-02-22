@@ -8,7 +8,7 @@ import { serviceValidation } from "../../services/service.validations";
 import { createService } from "../../services/service.requests";
 import toast from "react-hot-toast";
 
-import { PATH } from "../../../common/constants/routes.consts";
+import { PATH } from "../../../../router/constants/routes.consts";
 
 export const ServiceCreateContext = createContext();
 

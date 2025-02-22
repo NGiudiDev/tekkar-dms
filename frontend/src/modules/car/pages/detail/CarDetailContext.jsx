@@ -10,7 +10,7 @@ import { getServicePage } from "../../../service/services/service.requests";
 import { carValidation } from "../../services/car_validations.services";
 import toast from "react-hot-toast";
 
-import { PATH } from "../../../common/constants/routes.consts";
+import { PATH } from "../../../../router/constants/routes.consts";
 
 export const CarDetailContext = createContext();
 

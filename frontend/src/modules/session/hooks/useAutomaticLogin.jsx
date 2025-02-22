@@ -9,7 +9,7 @@ import { userAuthentication } from "../services/session.requests";
 import { login } from "../store/store";
 import toast from "react-hot-toast";
 
-import { PATH } from "../../common/constants/routes.consts";
+import { PATH } from "../../../router/constants/routes.consts";
 
 export const useAutomaticLogin = () => {
 	const dispatch = useDispatch();

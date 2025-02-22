@@ -8,7 +8,7 @@ import { PersonNameCol } from "../../../person/components";
 
 import { Table } from "ds-loud-ng";
 
-import { PATH } from "../../../common/constants/routes.consts";
+import { PATH } from "../../../../router/constants/routes.consts";
 
 const DEFAULT_PROPS = {
 	list: [],

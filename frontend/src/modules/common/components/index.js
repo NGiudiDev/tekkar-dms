@@ -11,7 +11,6 @@ export { UpdateButton } from "./buttons/UpdateButton";
 export { FormContainer } from "./forms/FormContainer";
 
 //? layouts
-export { CustomRouteLayout } from "./layouts/CustomRouteLayout";
 export { NotFoundMessageLayout } from "./layouts/NotFoundMessageLayout/NotFoundMessageLayout";
 export { PageLoadingLayout } from "./layouts/PageLoadingLayout/PageLoadingLayout";
 export { PageMessageLayout } from "./layouts/PageMessageLayout/PageMessageLayout";
