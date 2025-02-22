@@ -17,7 +17,7 @@ export const ServiceDescriptionInput = (props) => {
 			label="Descripción"
 			margin={attrs.margin}
 			name="description"
-			rows={15}
+			rows={10}
 		/>
 	);
 };

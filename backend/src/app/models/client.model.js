@@ -1,5 +1,7 @@
 import { personModel } from "./person.model.js";
 
+import { Op } from "sequelize";
+
 const create = async (data) => {
   data.roles = "client";
 

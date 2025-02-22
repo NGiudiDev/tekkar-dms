@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { ServiceDetailContext } from "./ServiceDetailContext";
 
 import { ServiceInformationForm, ServiceInformationSection } from "../../components";
+import { PersonInformationSection } from "../../../person/components";
+import { CarInformationSection } from "../../../car/components";
 import { Form, Formik } from "formik";
 import {
 	PageLoadingLayout,
@@ -10,7 +12,7 @@ import {
 	UpdateButton
 } from "../../../common/components";
 
-import { Box, Flex, IconButton, Text } from "ds-loud-ng";
+import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 
 export const ServiceDetailContent = () => {
 	const ctx = useContext(ServiceDetailContext);
@@ -55,11 +57,45 @@ export const ServiceDetailContent = () => {
 								<Flex margin="b-32 t-8" hAlign="end">
 									<UpdateButton disabled={!(formik.dirty && formik.isValid)} />
 								</Flex>
+
+								<Divider margin="b-32 t-16" />
+
+								<Text margin="b-24" type="title">
+									Vehículo
+								</Text>
+
+								<CarInformationSection car={ctx.service.car} />
+
+								<Divider margin="b-32 t-16" />
+
+								<Text margin="b-24" type="title">
+									Propietario
+								</Text>
+
+								<PersonInformationSection person={ctx.service.car.person} />
 							</Form>
 						)}
 					</Formik>	
 				) :(
-					<ServiceInformationSection service={ctx.service} />
+					<>
+						<ServiceInformationSection service={ctx.service} />
+						
+						<Divider margin="b-32 t-16" />
+
+						<Text margin="b-24" type="title">
+							Vehículo
+						</Text>
+
+						<CarInformationSection car={ctx.service.car} />
+
+						<Divider margin="b-32 t-16" />
+
+						<Text margin="b-24" type="title">
+							Propietario
+						</Text>
+
+						<PersonInformationSection person={ctx.service.car.person} />
+					</>
 				)}
 			</Box>
 		</>

@@ -9,10 +9,9 @@ import {
 	PersonNameCol,
 } from "../../../person/components";
 
-import { Table } from "ds-loud-ng";
+import { Flex, Table } from "ds-loud-ng";
 
 import { PATH } from "../../../common/constants/routes.consts";
-import { Flex } from "ds-loud-ng/dist/components/layout";
 
 const DEFAULT_PROPS = {
 	list: [],

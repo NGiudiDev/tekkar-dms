@@ -1,6 +1,10 @@
 //? car pages
 import { CarCreatePage, CarDetailPage, CarListPage } from "../../car/pages";
 
+//? client pages
+import { ClientListPage } from "../../cliens/pages";
+
+
 //? session pages
 import { LoginPage } from "../../session/pages";
 
@@ -70,6 +74,16 @@ export const useAppRoutes = () => {
         useAppLayout: false,
       },
       path: PATH.login,
+    },
+    {
+      element: <ClientListPage />,
+      name: "clients",
+      options: {
+        isFreeAccess: false,
+        isPrivated:true,
+        useAppLayout: true,
+      },
+      path: PATH.clients,
     },
     {
       element: <ServiceCreatePage />,

@@ -31,6 +31,7 @@ export const CustomRouteLayout = (props) => {
 	}
 
 	//? success
+	//TODO: agregar la foto del avatar en el DS.
 	if (attrs.useAppLayout) {
 		const topbar = {
 			avatarPanel: <ProfileAvatar />,

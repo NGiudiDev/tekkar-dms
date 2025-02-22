@@ -26,11 +26,12 @@ export const ProfileAvatar = () => {
 				<Image
 					alt="avatar_dropdown_profile"
 					size="sm"
+					img={user.person.image_url}
 					type="round"
 				/>
 
 				<Text margin="b-4 l-10" type="bodySemibold">
-					{user.name}
+					{user.person.name}
 				</Text>
 			</Flex>
 

@@ -49,3 +49,7 @@ Currently, the application is targeted at the Argentine market, but future plans
 - **Customer management**: Manage customer data for those who have vehicles registered in the system.
 
 - **Guardar datos del motor**: Holguras del motor u otros datos mecánicos.
+
+## Pending UX
+
+- Ajustar los detalles a pixel para que no cambie de posición las cosas cuando se edita.

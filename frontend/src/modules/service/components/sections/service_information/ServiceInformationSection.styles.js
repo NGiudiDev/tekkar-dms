@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+//? container to match the size of the ServiceDescriptionInput.
+const DescriptionWrapper = styled("div")({
+  height: "236px",
+  overflow: "auto",
+});
+
 const Grid = styled("div")({
   display: "grid",
   gridGap: "24px",
@@ -12,6 +18,7 @@ const Row = styled("div")((props) => ({
 }));
 
 export const Styles = {
+  DescriptionWrapper,
 	Grid,
 	Row,
 };

@@ -62,11 +62,13 @@ export const ServiceInformationSection = (props) => {
 				</Styles.Row>
 			</Styles.Grid>
 
-			<DataText
-				margin="b-42"
-				text={props.service.description || "-"}
-				title="Descripción"
-			/>
+			<Styles.DescriptionWrapper>
+				<DataText
+					margin="b-42"
+					text={props.service.description || "-"}
+					title="Descripción"
+				/>
+			</Styles.DescriptionWrapper>
 		</>
 	);
 };

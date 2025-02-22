@@ -44,7 +44,7 @@ export const ServicesTable = (props) => {
 			width: "15%",
 		},
 		{
-			content: (service) => <PersonNameCol margin="y-10" car={service.car.person} />,
+			content: (service) => <PersonNameCol margin="y-10" person={service.car.person} />,
 			label: "Propietario",
 			width: "20%",
 		},
