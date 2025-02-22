@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import { useRouter } from "../../../common/hooks/useRouter";
 
-import { ServiceMileageTC, ServicePerformedAtTC, ServiceTitleTC } from "../";
+import { ServiceMileageCol, ServicePerformedAtCol, ServiceTitleCol } from "../";
 import { CarDescriptionCol } from "../../../car/components";
 import { PersonNameCol } from "../../../person/components";
 
@@ -24,12 +24,12 @@ export const ServicesTable = (props) => {
 
 	const columns = [
 		{
-			content: (service) => <ServiceTitleTC margin="y-10" service={service} />,
+			content: (service) => <ServiceTitleCol margin="y-10" service={service} />,
 			label: "Nombre",
 			width: "30%",
 		},
 		{
-			content: (service) => <ServicePerformedAtTC margin="y-10" service={service}/>,
+			content: (service) => <ServicePerformedAtCol margin="y-10" service={service}/>,
 			label: "Realizado el",
 			width: "15%",
 		},
@@ -39,7 +39,7 @@ export const ServicesTable = (props) => {
 			width: "20%",
 		},
 		{
-			content: (service) => <ServiceMileageTC margin="y-10" service={service} />,
+			content: (service) => <ServiceMileageCol margin="y-10" service={service} />,
 			label: "Kilometraje",
 			width: "15%",
 		},

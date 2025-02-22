@@ -11,9 +11,9 @@ export { ServicePriceInput } from "./inputs/ServicePriceInput";
 export { ServiceTitleInput } from "./inputs/ServiceTitleInput";
 
 //? table columns
-export { ServiceMileageTC } from "./tables/columns/ServiceMileageTC";
-export { ServicePerformedAtTC } from "./tables/columns/ServicePerformedAtTC";
-export { ServiceTitleTC } from "./tables/columns/ServiceTitleTC";
+export { ServiceMileageCol } from "./tables/columns/ServiceMileageCol";
+export { ServicePerformedAtCol } from "./tables/columns/ServicePerformedAtCol";
+export { ServiceTitleCol } from "./tables/columns/ServiceTitleCol";
 
 //? tables
 export { ServicesTable } from "./tables/ServicesTable";

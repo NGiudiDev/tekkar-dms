@@ -2,14 +2,12 @@ import PropTypes from "prop-types";
 
 import { Text } from "ds-loud-ng";
 
-import { formatDate } from "../../../../common/utils/forms.utils";
-
 const DEFAULT_PROPS = {
 	margin: "a-0",
 	service: {},
 };
 
-export const ServicePerformedAtTC = (props) => {
+export const ServiceMileageCol = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -17,12 +15,12 @@ export const ServicePerformedAtTC = (props) => {
 
 	return (
 		<Text margin={attrs.margin}>
-			{formatDate(attrs.service.performed_at)}
+			{attrs.service.service_mileage} km
 		</Text>
 	);
 };
 
-ServicePerformedAtTC.propTypes = {
+ServiceMileageCol.propTypes = {
 	margin: PropTypes.string,
 	service: PropTypes.object,
 }; 

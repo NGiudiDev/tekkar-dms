@@ -7,7 +7,7 @@ const DEFAULT_PROPS = {
 	service: {},
 };
 
-export const ServiceMileageTC = (props) => {
+export const ServiceTitleCol = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -15,12 +15,12 @@ export const ServiceMileageTC = (props) => {
 
 	return (
 		<Text margin={attrs.margin}>
-			{attrs.service.service_mileage} km
+			{attrs.service.title}
 		</Text>
 	);
 };
 
-ServiceMileageTC.propTypes = {
+ServiceTitleCol.propTypes = {
 	margin: PropTypes.string,
 	service: PropTypes.object,
 }; 
