@@ -1,11 +1,11 @@
 import { CarCreateProvider } from "./CarCreateContext";
 
-import { CarCreateContent } from "./CarCreateContent";
+import { Text } from "ds-loud-ng";
 
 const CarCreatePage = () => {
 	return (
 		<CarCreateProvider>
-			<CarCreateContent />
+			<Text>Falta hacerlo</Text>
 		</CarCreateProvider>
 	);
 };

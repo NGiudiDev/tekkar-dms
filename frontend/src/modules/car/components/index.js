@@ -1,6 +1,3 @@
-//? buttons
-export { CarActionsDropdown } from "./buttons/CarActionsDropdown";
-
 //? forms
 export { CarInformationForm } from "./forms/CarInformationForm";
 
@@ -12,7 +9,7 @@ export { CarOwnerIdInput } from "./inputs/CarOwnerIdInput";
 export { CarProductionYearInput } from "./inputs/CarProductionYearInput";
 
 //? sections
-export { CarInformationSection } from "./sections/CarInformationSection/CarInformationSection";
+export { CarInformationSection } from "./sections/CarInformationSection";
 
 //? table columns
 export { CarBrandCol } from "./tables/columns/CarBrandCol";

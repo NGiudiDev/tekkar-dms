@@ -6,7 +6,7 @@ import { getYear } from "../utils/dates.js";
 import { REGEXS } from "./regex.js";
 
 const DOC_NUMBER_LENGTH = 8;
-const MIN_YEAR_PRODUCTION = 1950;
+const MIN_YEAR_PRODUCTION = 1886;
 
 const year = getYear();
 

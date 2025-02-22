@@ -3,24 +3,25 @@ import PropTypes from "prop-types";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "../../../../../hooks";
+
+import { Formik, Form } from "formik";
 
 import { Button, Dropzone, Flex, Icon, Image, Modal, Text } from "ds-loud-ng";
-import { Formik, Form } from "formik";
 
 import { Styles } from "./EditablePersonImage.styles";
 
-import { uploadImage } from "../../../../common/services/images.services"; 
-import { updatePersonDetail } from "../../../services/person.requests";
-import { updateUser } from "../../../../session/store/store";
+import { updatePersonDetail } from "../../../../person/services/person.requests";
+import { uploadImage } from "../../../../common/services/images.services";
+import { updatePerson } from "../../../../session/store/store";
+
 import toast from "react-hot-toast";
 
 const DEFAULT_PROPS = {
-  onSubmit: () => {},
   person: {},
 };
 
-export const UserProfileImageInput = (props) => {
+//TODO: agregar el schemaValidation.
+export const EditablePersonImage = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
     ...props
@@ -30,19 +31,16 @@ export const UserProfileImageInput = (props) => {
 
   const loggedUser = useSelector(state => state.user);
   const dispatch = useDispatch();
-  const router = useRouter();
 
   const personImageMutation =  useMutation({
 		mutationFn: async (modifiedObj) => {
-			const id = parseInt(router.query.id);
-
       const headers = {
 				"Content-Type": "multipart/form-data",
 			};
 
 			const img = await uploadImage(modifiedObj, headers); 
 
-			return updatePersonDetail(id, { image_url: img.url });
+			return updatePersonDetail(attrs.person.id, { image_url: img.url });
 		},
 		onError: (err) => {
 			const { status } = err.response;
@@ -59,8 +57,8 @@ export const UserProfileImageInput = (props) => {
 		onSuccess: (data) => {
 			toast.success("Se ha actualizado la imagen.");
 
-			if (data.user.id === loggedUser.id) {
-				dispatch(updateUser(data.user));
+			if (data.id === loggedUser.person.id) {
+				dispatch(updatePerson(data));
 			}
 
 			handleShowModal();
@@ -72,7 +70,7 @@ export const UserProfileImageInput = (props) => {
   };
 
   const handleSubmit = (values) => {
-    const file = values.profile_image[0].file;
+    const file = values.image_url[0].file;
 		const formData = new FormData();
 
     formData.append("image", file);
@@ -83,7 +81,7 @@ export const UserProfileImageInput = (props) => {
   return (
     <>
       <Styles.Wrapper>
-        <Image img={attrs.user.profile_image_url} size="lg" type="round" />
+        <Image img={attrs.person.image_url} size="lg" type="round" />
         
         <Styles.IconWrapper onClick={handleShowModal}>
           <Icon color="black_100" icon="camera" size="avatar" />
@@ -97,20 +95,20 @@ export const UserProfileImageInput = (props) => {
         show={showModal}
         width="600px"
       >
-        <Text margin="b-20" type="title" weight="bold">
+        <Text margin="b-20" type="title">
           Cambiar foto de perfil
         </Text>
 
         <Formik
-          initialValues={{ profile_image: null }}
+          initialValues={{ image_url: [] }}
           onSubmit={handleSubmit}
         >
           <Form>
             <Dropzone
               accept={["image"]}
-              margin="t-16 b-32"
+              margin="b-32 l-28 t-16"
               maxCount={1}
-              name="profile_image"
+              name="image_url"
             />
 
             <Flex hAlign="end">
@@ -128,7 +126,6 @@ export const UserProfileImageInput = (props) => {
   );
 }
 
-UserProfileImageInput.propsTypes = {
-  onSubmit: PropTypes.func,
-  user: PropTypes.object,
+EditablePersonImage.propsTypes = {
+  person: PropTypes.object,
 };

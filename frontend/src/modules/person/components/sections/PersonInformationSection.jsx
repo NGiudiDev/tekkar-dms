@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 
 import { DataText, ThreeColumnsGrid } from "../../../common/components";
-import { PersonImage } from "../";
+import { EditablePersonImage, PersonImage } from "../";
 
 const DEFAULT_PROPS = {
+	isImageEditable: false,
 	person: {},
 };
 
@@ -44,12 +45,17 @@ export const PersonInformationSection = (props) => {
 			</ThreeColumnsGrid.Row>
 
 			<ThreeColumnsGrid.Row>
-				<PersonImage person={attrs.person} />
+				{attrs.isImageEditable ? (
+					<EditablePersonImage person={attrs.person} />
+				) : (
+					<PersonImage person={attrs.person} />
+				)}
 			</ThreeColumnsGrid.Row>
 		</ThreeColumnsGrid.Grid>
 	);
 };
 
 PersonInformationSection.propTypes = {
+	isImageEditable: PropTypes.bool,
 	person: PropTypes.object,
 };

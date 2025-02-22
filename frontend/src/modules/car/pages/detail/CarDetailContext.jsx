@@ -7,7 +7,6 @@ import { useRouter } from "../../../../hooks";
 import { getChangedFields, isEmptyObject } from "../../../common/utils/forms.utils";
 import { getCarDetailById, updateCarDetail } from "../../services/car.services";
 import { getServicePage } from "../../../service/services/service.requests";
-import { carValidation } from "../../services/car_validations.services";
 import toast from "react-hot-toast";
 
 import { PATH } from "../../../../router/constants/routes.consts";
@@ -113,7 +112,6 @@ export const CarDetailProvider = (props) => {
 
 	const valueObj = {
 		car,
-		carValidation,
 		error: query.error,
 		formCar,
 		handleCarEdit,

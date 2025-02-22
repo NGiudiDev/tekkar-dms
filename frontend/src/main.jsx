@@ -1,3 +1,19 @@
+//TODO: verificar orden de la carpeta /modules/common
+//TODO: verificar orden de la carpeta /modules/service
+//TODO: verificar orden de la carpeta /modules/service_report
+//TODO: verificar orden de la carpeta /modules/session
+//TODO: verificar orden de la carpeta /modules/user
+
+//? a nivel funcional.
+//TODO: permitir cambiar el propietario de un auto.
+//TODO: probar que funcione el EditablePersonImage.
+//TODO: crear el endpoint de update person para modificar la foto.
+
+//? a nivel código
+//TODO: ver una forma de importar los contextos por medio de un hook.
+//TODO: corregir los espaciados de las pantallas para que no se mueva el contenido cuando se edita.
+//TODO: agregar el linter para mantener un estandar.
+
 import React from "react";
 import { createRoot } from "react-dom/client";
 

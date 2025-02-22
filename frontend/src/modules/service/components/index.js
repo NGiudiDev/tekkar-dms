@@ -10,6 +10,10 @@ export { ServicePerformedAtInput } from "./inputs/ServicePerformedAtInput";
 export { ServicePriceInput } from "./inputs/ServicePriceInput";
 export { ServiceTitleInput } from "./inputs/ServiceTitleInput";
 
+//? sections
+export { ServiceInformationSection } from "./sections/service_information/ServiceInformationSection";
+export { ServiceReportInformationSection } from "./sections/ServiceReportInformationSection";
+
 //? table columns
 export { ServiceMileageCol } from "./tables/columns/ServiceMileageCol";
 export { ServicePerformedAtCol } from "./tables/columns/ServicePerformedAtCol";
@@ -17,7 +21,3 @@ export { ServiceTitleCol } from "./tables/columns/ServiceTitleCol";
 
 //? tables
 export { ServicesTable } from "./tables/ServicesTable";
-
-//? sections
-export { ServiceInformationSection } from "./sections/service_information/ServiceInformationSection";
-export { ServiceReportInformationSection } from "./sections/ServiceReportInformationSection";

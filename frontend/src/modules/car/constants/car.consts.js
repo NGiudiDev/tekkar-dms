@@ -1,6 +1,4 @@
-export const DOC_NUMBER_LENGTH = 8;
-
-export const MIN_YEAR_PRODUCTION = 1950;
+export const MIN_YEAR_PRODUCTION = 1886;
 
 export const CAR_REGEXS = {
 	AR_LICENSE_PLATE_V1: /[a-zA-Z]{3}[0-9]{3}/,	

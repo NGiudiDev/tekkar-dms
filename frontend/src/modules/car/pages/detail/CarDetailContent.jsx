@@ -2,24 +2,21 @@ import { useContext } from "react";
 
 import { CarDetailContext } from "./CarDetailContext";
 
-import { Form, Formik } from "formik";
-
+import { CarInformationForm, CarInformationSection } from "../../components";
+import { PersonInformationSection } from "../../../person/components";
 import { ServicesTable } from "../../../service/components";
+import { CarActionsDropdown } from "./components";
+import { Form, Formik } from "formik";
 import {
 	PageLoadingLayout,
 	PageMessageLayout,
 	UpdateButton
 } from "../../../common/components";
-import {
-	CarActionsDropdown,
-	CarInformationForm,
-	CarInformationSection,
-} from "../../components";
 
 import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
-import { PersonInformationSection } from "../../../person/components";
 
-//TODO: permitir cambiar el propietario.
+import { carYupSchema } from "../../services/car_validations.services";
+
 export const CarDetailContent = () => {
 	const ctx = useContext(CarDetailContext);
 
@@ -58,21 +55,23 @@ export const CarDetailContent = () => {
 					<Formik
 						initialValues={ctx.formCar}
 						onSubmit={ctx.handleSubmitCar}
-						validationSchema={ctx.carValidation}
+						validationSchema={carYupSchema}
 					>
 						{formik => (
 							<Form>
 								<CarInformationForm />
+
+								<Flex margin="b-32 t-8" hAlign="end">
+									<UpdateButton disabled={!(formik.dirty && formik.isValid)} />
+								</Flex>
+
+								<Divider margin="b-24" />
 
 								<Text margin="b-24" type="title">
 									Propietario
 								</Text>
 								
 								<PersonInformationSection person={ctx.car.person} />	
-
-								<Flex margin="b-32 t-8" hAlign="end">
-									<UpdateButton disabled={!(formik.dirty && formik.isValid)} />
-								</Flex>
 							</Form>
 						)}
 					</Formik>
@@ -80,6 +79,8 @@ export const CarDetailContent = () => {
 					<>
 						<CarInformationSection car={ctx.car} />
 						
+						<Divider margin="b-24" />
+
 						<Text margin="b-24" type="title">
 							Propietario
 						</Text>

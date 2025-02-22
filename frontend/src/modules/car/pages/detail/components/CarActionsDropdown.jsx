@@ -1,8 +1,8 @@
 import { useContext } from "react";
 
-import { CarDetailContext } from "../../pages/detail/CarDetailContext";
+import { CarDetailContext } from "../CarDetailContext";
 
-import { ActionsButton } from "../../../common/components";
+import { ActionsButton } from "../../../../common/components";
 
 import { Button } from "ds-loud-ng";
 

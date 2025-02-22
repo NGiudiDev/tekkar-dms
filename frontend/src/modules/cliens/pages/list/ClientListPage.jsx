@@ -17,6 +17,14 @@ const ClientListPage = () => {
 
 	return (
 		<ListPage
+			emptyMessage={{
+				button: {
+					children: "Nuevo",
+					onClick: handleNewClient,
+				},
+				description: "Parece que aún no has agregado ningún cliente. Haz clic en el botón de abajo para agregar tu primer cliente.",
+				title: "Listado de clientes vacío",
+			}}
 			errorMessage={{
 				description: "Hubo un error al obtener la información, por favor recargue la página o intentelo más tarde.",
 				title: "Error al obtener la información",

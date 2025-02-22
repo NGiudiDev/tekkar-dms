@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-import { DOC_NUMBER_LENGTH } from "../../car/constants/car.consts";
+import { DOC_NUMBER_LENGTH } from "../../person/constants/person.consts";
 import { USER_REGEXS } from "./user.consts";
 
 export const USER_VALIDATIONS = {
