@@ -8,4 +8,4 @@ export { PersonImageCol } from "./tables/columns/PersonImageCol";
 export { PersonNameCol } from "./tables/columns/PersonNameCol";
 
 //? sections
-export { PersonInformationSection } from "./sections/person_information/PersonInformationSection";
+export { PersonInformationSection } from "./sections/PersonInformationSection";

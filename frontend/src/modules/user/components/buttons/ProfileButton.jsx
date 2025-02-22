@@ -20,7 +20,7 @@ export const ProfileButton = () => {
 			kind="text"
 			onClick={handleClick}
 		>
-			Perfil
+			Datos personales
 		</Button>
 	);
 };

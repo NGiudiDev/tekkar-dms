@@ -2,7 +2,7 @@
 export { CarActionsDropdown } from "./buttons/CarActionsDropdown";
 
 //? forms
-export { CarInformationForm } from "./forms/CarInformationForm/CarInformationForm";
+export { CarInformationForm } from "./forms/CarInformationForm";
 
 //? inputs
 export { CarBrandInput } from "./inputs/CarBrandInput";

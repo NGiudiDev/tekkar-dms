@@ -14,6 +14,7 @@ export { FormContainer } from "./forms/FormContainer";
 export { NotFoundMessageLayout } from "./layouts/NotFoundMessageLayout/NotFoundMessageLayout";
 export { PageLoadingLayout } from "./layouts/PageLoadingLayout/PageLoadingLayout";
 export { PageMessageLayout } from "./layouts/PageMessageLayout/PageMessageLayout";
+export { ThreeColumnsGrid } from "./layouts/ThreeColumnsGrid/ThreeColumsGrid";
 
 //? texts
 export { DataText } from "./texts/DataText";

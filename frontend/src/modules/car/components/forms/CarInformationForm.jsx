@@ -1,24 +1,23 @@
+import { ThreeColumnsGrid } from "../../../common/components";
 import {
 	CarBrandInput,
 	CarLicensePlateInput,
   CarModelInput,
 	CarProductionYearInput
-} from "../..";
-
-import { Styles } from "./CarInformationForm.styles";
+} from "..";
 
 export const CarInformationForm = () => {
 	return (
-		<Styles.Grid>			
-			<Styles.Row>
+		<ThreeColumnsGrid.Grid>			
+			<ThreeColumnsGrid.Row>
 				<CarBrandInput margin="b-8" />
 				<CarLicensePlateInput margin="b-8" />
-			</Styles.Row>
+			</ThreeColumnsGrid.Row>
 
-			<Styles.Row>
+			<ThreeColumnsGrid.Row>
 				<CarModelInput margin="b-8" />
 				<CarProductionYearInput margin="b-8" />
-			</Styles.Row>
-		</Styles.Grid>	
+			</ThreeColumnsGrid.Row>
+		</ThreeColumnsGrid.Grid>	
 	);
 };

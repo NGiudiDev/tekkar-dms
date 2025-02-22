@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { DataText } from "../../../../common/components";
+import { DataText, ThreeColumnsGrid } from "../../../../common/components";
 
 import { formatDate } from "../../../../common/utils/forms.utils";
 
@@ -18,8 +18,8 @@ export const ServiceInformationSection = (props) => {
 
 	return (
 		<>
-			<Styles.Grid>
-				<Styles.Row>
+			<ThreeColumnsGrid.Grid>
+				<ThreeColumnsGrid.Row>
 					<DataText
 						margin="b-42"
 						text={attrs.service.title}
@@ -31,9 +31,9 @@ export const ServiceInformationSection = (props) => {
 						text={props.service.service_mileage}
 						title="Kilometraje"
 					/>
-				</Styles.Row>
+				</ThreeColumnsGrid.Row>
 
-				<Styles.Row>
+				<ThreeColumnsGrid.Row>
 					<DataText
 						margin="b-42"
 						text={formatDate(props.service.performed_at)}
@@ -45,9 +45,9 @@ export const ServiceInformationSection = (props) => {
 						text={props.service.next_service_mileage}
 						title="Próximo servicio"
 					/>
-				</Styles.Row>
+				</ThreeColumnsGrid.Row>
 
-				<Styles.Row>
+				<ThreeColumnsGrid.Row>
 					<DataText
 						margin="b-42"
 						text={props.service.price || "-"}
@@ -59,8 +59,8 @@ export const ServiceInformationSection = (props) => {
 						text={`${props.service.service_duration} meses`}
 						title="Duración del servicio"
 					/>
-				</Styles.Row>
-			</Styles.Grid>
+				</ThreeColumnsGrid.Row>
+			</ThreeColumnsGrid.Grid>
 
 			<Styles.DescriptionWrapper>
 				<DataText

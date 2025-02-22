@@ -2,14 +2,11 @@ import { useContext } from "react";
 
 import { UserCreateContext } from "./UserCreateContext";
 
+import { CreateButton, ThreeColumnsGrid } from "../../../common/components";
+import { UserInformationForm, UserPasswordInput } from "../../components";
 import { Formik, Form } from "formik";
 
-import { UserInformationForm, UserPasswordInput } from "../../components";
-import { CreateButton } from "../../../common/components";
-
 import { Box, Flex, Text } from "ds-loud-ng";
-
-import { Styles } from "./UserCreateContent.styles";
 
 export const UserCreateContent = () => {
 	const ctx = useContext(UserCreateContext);
@@ -30,11 +27,11 @@ export const UserCreateContent = () => {
 						<Form>
 							<UserInformationForm />
 
-							<Styles.Grid>
-								<Styles.Row>
+							<ThreeColumnsGrid.Grid>
+								<ThreeColumnsGrid.Row>
 									<UserPasswordInput />
-								</Styles.Row>
-							</Styles.Grid>
+								</ThreeColumnsGrid.Row>
+							</ThreeColumnsGrid.Grid>
 							
 							<Flex margin="b-32 t-8" hAlign="end">
 								<CreateButton disabled={!(formik.dirty && formik.isValid)} />

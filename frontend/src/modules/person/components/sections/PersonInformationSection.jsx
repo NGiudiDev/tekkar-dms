@@ -1,9 +1,7 @@
 import PropTypes from "prop-types";
 
-import { DataText } from "../../../../common/components";
-import { PersonImage } from "../../";
-
-import { Styles } from "./PersonInformationSection.styles";
+import { DataText, ThreeColumnsGrid } from "../../../common/components";
+import { PersonImage } from "../";
 
 const DEFAULT_PROPS = {
 	person: {},
@@ -16,8 +14,8 @@ export const PersonInformationSection = (props) => {
 	};
 
 	return (
-		<Styles.Grid>
-			<Styles.Row>
+		<ThreeColumnsGrid.Grid>
+			<ThreeColumnsGrid.Row>
 				<DataText
 					margin="b-42"
 					text={attrs.person.name}
@@ -29,9 +27,9 @@ export const PersonInformationSection = (props) => {
 					text={attrs.person.doc_number}
 					title="Documento"
 				/>
-			</Styles.Row>
+			</ThreeColumnsGrid.Row>
 
-			<Styles.Row>
+			<ThreeColumnsGrid.Row>
 				<DataText
 					margin="b-42"
 					text={attrs.person.email}
@@ -43,12 +41,12 @@ export const PersonInformationSection = (props) => {
 					text={attrs.person.phone}
 					title="Teléfono"
 				/>
-			</Styles.Row>
+			</ThreeColumnsGrid.Row>
 
-			<Styles.Row>
+			<ThreeColumnsGrid.Row>
 				<PersonImage person={attrs.person} />
-			</Styles.Row>
-		</Styles.Grid>
+			</ThreeColumnsGrid.Row>
+		</ThreeColumnsGrid.Grid>
 	);
 };
 
