@@ -1,3 +1,7 @@
+//? buttons
+export { LogoutButton } from "./buttons/LogoutButton";
+export { ProfileButton } from "./buttons/ProfileButton";
+
 //? forms
 export { UserInformationForm } from "./forms/UserInformationForm";
 

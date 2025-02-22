@@ -1,25 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useRouter } from "../../../../hooks";
+import { useSelector } from "react-redux";
 
-import { Button, Divider, Flex, Image, Text } from "ds-loud-ng";
+import { LogoutButton, ProfileButton } from "../../../user/components";
 
-import { userLogout } from "../../../session/services/session.requests";
-import { logout } from "../../../session/store/store";
-
-import { PATH } from "../../../../router/constants/routes.consts";
+import { Divider, Flex, Image, Text } from "ds-loud-ng";
 
 export const ProfileAvatar = () => {
 	const user = useSelector(state => state.user);
-	const dispatch = useDispatch();
-	const router = useRouter();
-
-	const handleLogoutClick = () => {
-		userLogout().then(() => {
-			dispatch(logout());
-			router.push(PATH.login);
-		});
-	};
-
+	
 	return (
 		<>
 			<Flex margin="l-20 y-10">
@@ -37,14 +24,11 @@ export const ProfileAvatar = () => {
 
 			<Divider />
 			
-			<Button 
-				border={{ radius: "0px" }}
-				fullWidth
-				kind="text"
-				onClick={handleLogoutClick}
-			>
-				Cerrar sesión
-			</Button>
+			<ProfileButton />
+
+			<Divider />
+
+			<LogoutButton />
 		</>
 	);
 };
