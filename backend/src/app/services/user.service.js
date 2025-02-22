@@ -20,7 +20,12 @@ const authentication = async (user_id, token) => {
 
 const create = async (data) => {
 	//? create person in database.
-	const personData = data.omit(["password"]);
+	const personData = {
+		doc_number: data.doc_number,
+		email: data.email,
+		name: data.name,
+		phone: data.phone,
+	};
 
 	let person = await personModel.create(personData);
 

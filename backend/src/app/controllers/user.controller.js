@@ -48,6 +48,7 @@ const create = async (req, res) => {
 
 		return res.status(200).json({ user });
 	} catch(err) {
+		console.log(err);
 		return res.status(500).json({ err });
 	}
 };

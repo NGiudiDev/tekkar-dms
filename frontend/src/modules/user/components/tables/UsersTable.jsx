@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import { useRouter } from "../../../common/hooks/useRouter";
 
 import { 
-	PersonDocNumber,
-	PersonEmail,
-	PersonImage,
-	PersonName,
+	PersonDocNumberCol,
+	PersonEmailCol,
+	PersonImageCol,
+	PersonNameCol,
 } from "../../../person/components";
 
 import { Table } from "ds-loud-ng";
@@ -30,20 +30,20 @@ export const UsersTable = (props) => {
 		{
 			content: (user) => (
 				<Flex>
-					<PersonImage person={user.person} />
-					<PersonName margin="l-8 y-10" person={user.person} />
+					<PersonImageCol person={user.person} />
+					<PersonNameCol margin="l-8 y-10" person={user.person} />
 				</Flex>	
 			),
 			label: "Nombre",
 			width: "35%",
 		},
 		{
-			content: (user) => <PersonEmail margin="y-10" person={user.person} />,
+			content: (user) => <PersonEmailCol margin="y-10" person={user.person} />,
 			label: "Email",
 			width: "40%",
 		},
 		{
-			content: (user) => <PersonDocNumber margin="y-10" person={user.person} />,
+			content: (user) => <PersonDocNumberCol margin="y-10" person={user.person} />,
 			label: "Documento",
 			width: "25%",
 		},
