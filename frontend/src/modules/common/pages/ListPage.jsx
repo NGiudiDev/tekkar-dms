@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { useQuery } from "@tanstack/react-query";
 
-import { PageLoadingLayout, PageMessageLayout } from "..";
+import { PageLoadingLayout, PageMessageLayout } from "../components";
 
 import { Flex, Pagination, Text } from "ds-loud-ng";
 
@@ -24,7 +24,7 @@ const DEFAULT_PROPS = {
 	renderTable: null,
 };
 
-export const ListPageLayout = (props) => {
+export const ListPage = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -92,7 +92,7 @@ export const ListPageLayout = (props) => {
 	);
 };
 
-ListPageLayout.propTypes = {
+ListPage.propTypes = {
 	emptyMessage: PropTypes.shape({
 		button: PropTypes.object,
 		description: PropTypes.string,

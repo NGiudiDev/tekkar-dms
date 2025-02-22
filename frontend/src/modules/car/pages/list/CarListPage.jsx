@@ -1,6 +1,7 @@
 import { useRouter } from "../../../common/hooks/useRouter";
 
-import { ListPageLayout, NewButton } from "../../../common/components";
+import { NewButton } from "../../../common/components";
+import { ListPage } from "../../../common/pages";
 import { CarsTable } from "../../components";
 
 import { getCarPage } from "../../services/car.services";
@@ -15,7 +16,7 @@ const CarListPage = () => {
 	};
 
 	return (
-		<ListPageLayout
+		<ListPage
 			emptyMessage={{
 				button: {
 					children: "Nuevo",

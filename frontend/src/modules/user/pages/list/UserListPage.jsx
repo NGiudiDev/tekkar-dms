@@ -1,6 +1,7 @@
 import { useRouter } from "../../../common/hooks/useRouter";
 
-import { ListPageLayout, NewButton } from "../../../common/components";
+import { NewButton } from "../../../common/components";
+import { ListPage } from "../../../common/pages";
 import { UsersTable } from "../../components";
 
 import { getUserPage } from "../../services/user.requests";
@@ -15,7 +16,7 @@ const UserListPage = () => {
 	};
 
 	return (
-		<ListPageLayout
+		<ListPage
 			errorMessage={{
 				description: "Hubo un error al obtener la información, por favor recargue la página o intentelo más tarde.",
 				title: "Error al obtener la información",

@@ -12,7 +12,6 @@ export { FormContainer } from "./forms/FormContainer";
 
 //? layouts
 export { CustomRouteLayout } from "./layouts/CustomRouteLayout";
-export { ListPageLayout } from "./layouts/ListPageLayout";
 export { NotFoundMessageLayout } from "./layouts/NotFoundMessageLayout/NotFoundMessageLayout";
 export { PageLoadingLayout } from "./layouts/PageLoadingLayout/PageLoadingLayout";
 export { PageMessageLayout } from "./layouts/PageMessageLayout/PageMessageLayout";
