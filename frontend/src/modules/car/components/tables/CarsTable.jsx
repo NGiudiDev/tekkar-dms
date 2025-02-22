@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { useRouter } from "../../../common/hooks/useRouter";
+import { useRouter } from "../../../../hooks";
 
 import { CarDescriptionCol, CarLicensePlateCol } from "../../components";
 import { PersonNameCol } from "../../../person/components";

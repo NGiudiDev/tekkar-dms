@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { useRouter } from "../../../common/hooks/useRouter";
 import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "../../../../hooks";
 import { useDispatch } from "react-redux";
 
 import { UserEmailInput, UserPasswordInput } from "../../../user/components";

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "../../common/hooks";
+import { useRouter } from "../../../hooks";
 import { useDispatch } from "react-redux";
 
 import { getLoginOfLocalStorage, removeLoginOfLocalStorage } from "../services/session.local_storage";

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-import { useRouter } from "../../../../common/hooks/useRouter";
 import { useDispatch, useSelector } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "../../../../../hooks";
 
 import { Button, Dropzone, Flex, Icon, Image, Modal, Text } from "ds-loud-ng";
 import { Formik, Form } from "formik";

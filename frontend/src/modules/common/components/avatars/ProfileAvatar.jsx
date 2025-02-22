@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useRouter } from "../../hooks/useRouter";
+import { useRouter } from "../../../../hooks";
 
 import { Button, Divider, Flex, Image, Text } from "ds-loud-ng";
 

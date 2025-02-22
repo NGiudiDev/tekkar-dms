@@ -1,4 +1,4 @@
-import { useRouter } from "../../../common/hooks/useRouter";
+import { useRouter } from "../../../../hooks";
 
 import { NewButton } from "../../../common/components";
 import { ListPage } from "../../../common/pages";

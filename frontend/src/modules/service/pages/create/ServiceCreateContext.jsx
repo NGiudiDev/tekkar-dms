@@ -1,8 +1,8 @@
 import { createContext } from "react";
 import PropTypes from "prop-types";
 
-import { useRouter } from "../../../common/hooks/useRouter";
 import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "../../../../hooks";
 
 import { serviceValidation } from "../../services/service.validations";
 import { createService } from "../../services/service.requests";

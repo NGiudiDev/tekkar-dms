@@ -17,7 +17,7 @@ export const CarActionsDropdown = () => {
 				kind="text"
 				onClick={ctx.handleCreateService}
 			>
-				Crear servicio
+				Agregar servicio
 			</Button>
 		</ActionsButton>
 	);

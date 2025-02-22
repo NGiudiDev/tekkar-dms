@@ -1,27 +1,27 @@
 //? car pages
-import { CarCreatePage, CarDetailPage, CarListPage } from "../../car/pages";
+import { CarCreatePage, CarDetailPage, CarListPage } from "../modules/car/pages";
 
 //? client pages
-import { ClientListPage } from "../../cliens/pages";
+import { ClientListPage } from "../modules/cliens/pages";
 
 
 //? session pages
-import { LoginPage } from "../../session/pages";
+import { LoginPage } from "../modules/session/pages";
 
 //? service pages
 import {
   ServiceCreatePage,
   ServiceDetailPage,
   ServiceListPage
-} from "../../service/pages";
+} from "../modules/service/pages";
 
 //? service report pages
-import { ServiceReportPage } from "../../service_report/pages";
+import { ServiceReportPage } from "../modules/service_report/pages";
 
 //? user pages
-import { UserCreatePage, UserDetailPage, UserListPage } from "../../user/pages";
+import { UserCreatePage, UserDetailPage, UserListPage } from "../modules/user/pages";
 
-import { PATH } from "../constants/routes.consts";
+import { PATH } from "../modules/common/constants/routes.consts";
 
 export const useAppRoutes = () => {
   return [

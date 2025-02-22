@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { useAutomaticLogin } from "./modules/session/hooks/useAutomaticLogin";
-import { useAppRoutes } from "./modules/common/hooks";
+import { useAppRoutes } from "./hooks";
 
 import { CustomRouteLayout, NotFoundMessageLayout, PageLoadingLayout } from "./modules/common/components";
 

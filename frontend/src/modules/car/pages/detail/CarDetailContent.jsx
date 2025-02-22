@@ -19,7 +19,7 @@ import {
 import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 import { PersonInformationSection } from "../../../person/components";
 
-//TODO: permitir modificar el propietario.
+//TODO: permitir cambiar el propietario.
 export const CarDetailContent = () => {
 	const ctx = useContext(CarDetailContext);
 

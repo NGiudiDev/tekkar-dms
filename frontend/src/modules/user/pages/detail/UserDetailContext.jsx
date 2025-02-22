@@ -1,9 +1,9 @@
 import { createContext } from "react";
 import PropTypes from "prop-types";
 
-import { useRouter } from "../../../common/hooks/useRouter";
-import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
+import { useRouter } from "../../../../hooks";
+import { useSelector } from "react-redux";
 
 import { getUserDetail } from "../../services/user.requests";
 
