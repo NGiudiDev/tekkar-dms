@@ -4,10 +4,10 @@ import { Text } from "ds-loud-ng";
 
 const DEFAULT_PROPS = {
   margin: "a-0",
-  user: {},
+  person: {},
 };
 
-export const UserEmail = (props) => {
+export const PersonDocNumberCol = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
     ...props,
@@ -15,12 +15,12 @@ export const UserEmail = (props) => {
 
   return (
     <Text margin={attrs.margin}>
-      {attrs.user.email}
+      {attrs.person.doc_number}
     </Text>
   );
 };
 
-UserEmail.propTypes = {
+PersonDocNumberCol.propTypes = {
   margin: PropTypes.string,
-  user: PropTypes.object,
+  person: PropTypes.object,
 }; 

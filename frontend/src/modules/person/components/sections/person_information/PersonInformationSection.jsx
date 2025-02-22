@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 
 import { DataText } from "../../../../common/components";
-import { UserProfileImageInput } from "../../";
+import { PersonImage } from "../../";
 
-import { Styles } from "./UserInformationSection.styles";
+import { Styles } from "./PersonInformationSection.styles";
 
 const DEFAULT_PROPS = {
-	user: {},
+	person: {},
 };
 
-export const UserInformationSection = (props) => {
+export const PersonInformationSection = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -20,13 +20,13 @@ export const UserInformationSection = (props) => {
 			<Styles.Row>
 				<DataText
 					margin="b-42"
-					text={attrs.user.name}
+					text={attrs.person.name}
 					title="Nombre"
 				/>
 
 				<DataText
 					margin="b-42"
-					text={attrs.user.doc_number}
+					text={attrs.person.doc_number}
 					title="Documento"
 				/>
 			</Styles.Row>
@@ -34,24 +34,24 @@ export const UserInformationSection = (props) => {
 			<Styles.Row>
 				<DataText
 					margin="b-42"
-					text={attrs.user.email}
+					text={attrs.person.email}
 					title="Email"
 				/>
 
 				<DataText
 					margin="b-42"
-					text={attrs.user.phone}
+					text={attrs.person.phone}
 					title="Teléfono"
 				/>
 			</Styles.Row>
 
 			<Styles.Row>
-				<UserProfileImageInput user={attrs.user} />
+				<PersonImage person={attrs.person} />
 			</Styles.Row>
 		</Styles.Grid>
 	);
 };
 
-UserInformationSection.propTypes = {
-	user: PropTypes.object,
+PersonInformationSection.propTypes = {
+	person: PropTypes.object,
 };

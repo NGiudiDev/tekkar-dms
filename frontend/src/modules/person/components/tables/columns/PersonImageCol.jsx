@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import { Image } from "ds-loud-ng";
 
 const DEFAULT_PROPS = {
-	user: {},
+	person: {},
 };
 
-export const UserProfileImage = (props) => {
+export const PersonImageCol = (props) => {
   const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -14,13 +14,13 @@ export const UserProfileImage = (props) => {
 
   return (
     <Image
-      img={attrs.user.profile_image_url}
+      img={attrs.person.image_url}
       size="avatar"
       type="round"
     />
   );
 };
 
-UserProfileImage.propTypes = {
-  user: PropTypes.object,
+PersonImageCol.propTypes = {
+  person: PropTypes.object,
 };
