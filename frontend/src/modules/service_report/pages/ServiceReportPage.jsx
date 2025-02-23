@@ -47,7 +47,7 @@ const ServiceReportPage = () => {
 	const handleMoreServices = () => {
 		const params = {
 			license_plate: car.license_plate,
-			owner_doc_number: car.owner_doc_number,
+			owner_doc_number: car.person.doc_number,
 			page: pagination.page + 1,
 		};
 

@@ -5,7 +5,6 @@
 //TODO: probar que funcione el EditablePersonImage.
 //TODO: crear el endpoint de update person para modificar la foto.
 //TODO: agregar los mensajes de error en yup.
-//TODO: Fix request de service_report.
 
 //? a nivel código
 //TODO: ver una forma de importar los contextos por medio de un hook.

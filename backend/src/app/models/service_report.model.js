@@ -5,7 +5,7 @@ import { SETTINGS } from "../constants/settings.js";
 
 const getCar = async (whereObj) => {
   const car = await cars.findOne({
-    attributes: ENDPOINTS_ATRS.SERVICE_REPORT.CAR_DETAIL,
+    attributes: ENDPOINTS_ATRS.CAR.DETAIL,
     include: [{
       attributes: ENDPOINTS_ATRS.PERSON.DETAIL,
       model: persons,
@@ -18,7 +18,7 @@ const getCar = async (whereObj) => {
 
 const getServicesPage = async (page, whereObj) => {
   let queryObj = {
-    attributes: ENDPOINTS_ATRS.SERVICE_REPORT.SERVICE_LIST,
+    attributes: ENDPOINTS_ATRS.SERVICE.LIST,
     limit: SETTINGS.PAGE_LIMIT,
     offset: (page - 1) * SETTINGS.PAGE_LIMIT,
     order: [["performed_at", "DESC"]],
