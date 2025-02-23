@@ -1,18 +1,12 @@
-import { useContext } from "react";
+import { useUserDetailContext } from "./hooks/useUserDetailContext.jsx";
 
-import { UserDetailContext } from "./UserDetailContext";
-
+import { PageLoadingLayout, PageMessageLayout } from "../../../common/components";
 import { PersonInformationSection } from "../../../person/components"; 
-
-import {
-	PageLoadingLayout,
-	PageMessageLayout,
-} from "../../../common/components";
 
 import { Box, Flex, Text } from "ds-loud-ng";
 
 export const UserDetailContent = () => {
-	const ctx = useContext(UserDetailContext);
+	const ctx = useUserDetailContext();
 
 	if (ctx.isLoading) return <PageLoadingLayout />;
 

@@ -4,7 +4,6 @@
 
 //? a nivel código
 //TODO: ver todas las pages y crear hooks que faciliten la creación de las mismas.
-//TODO: ver una forma de importar los contextos por medio de un hook.
 //TODO: corregir los espaciados de las pantallas para que no se mueva el contenido cuando se edita.
 //TODO: agregar el linter para mantener un estandar.
 

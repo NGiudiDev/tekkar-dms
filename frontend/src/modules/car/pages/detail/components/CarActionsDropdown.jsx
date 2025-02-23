@@ -1,13 +1,11 @@
-import { useContext } from "react";
-
-import { CarDetailContext } from "../CarDetailContext";
+import { useCarDetailContext } from "../hooks/useCarDetailContext";
 
 import { ActionsButton } from "../../../../common/components";
 
 import { Button } from "ds-loud-ng";
 
 export const CarActionsDropdown = () => {
-	const ctx = useContext(CarDetailContext);
+	const ctx = useCarDetailContext();
 
 	return (
 		<ActionsButton>

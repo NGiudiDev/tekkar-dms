@@ -1,6 +1,4 @@
-import { useContext } from "react";
-
-import { CarDetailContext } from "./CarDetailContext";
+import { useCarDetailContext } from "./hooks/useCarDetailContext";
 
 import { CarInformationForm, CarInformationSection } from "../../components";
 import { PersonInformationSection } from "../../../person/components";
@@ -18,7 +16,7 @@ import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 import { carYupSchema } from "../../services/car_validations.services";
 
 export const CarDetailContent = () => {
-	const ctx = useContext(CarDetailContext);
+	const ctx = useCarDetailContext();
 
 	if (ctx.isLoading) return <PageLoadingLayout />;
 

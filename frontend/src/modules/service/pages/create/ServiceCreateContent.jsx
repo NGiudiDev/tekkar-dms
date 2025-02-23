@@ -1,6 +1,4 @@
-import { useContext } from "react";
-
-import { ServiceCreateContext } from "./ServiceCreateContext";
+import { useServiceCreateContext } from "./hooks/useServiceCreateContext";
 
 import { useRouter } from "../../../../hooks";
 
@@ -21,7 +19,7 @@ import { Button, Columns, Flex, Text } from "ds-loud-ng";
 import { serviceYupSchema } from "../../services/service.validations";
 
 export const ServiceCreateContent = () => {
-	const ctx = useContext(ServiceCreateContext);
+	const ctx = useServiceCreateContext();
 	const router = useRouter();
 
 	if (!router.query.car_id) {

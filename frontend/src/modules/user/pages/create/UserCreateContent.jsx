@@ -1,6 +1,4 @@
-import { useContext } from "react";
-
-import { UserCreateContext } from "./UserCreateContext";
+import { useUserCreateContext } from "./hooks/useUserCreateContext.jsx";
 
 import { CreateButton, ThreeColumnsGrid } from "../../../common/components";
 import { UserInformationForm, UserPasswordInput } from "../../components";
@@ -11,7 +9,7 @@ import { Box, Flex, Text } from "ds-loud-ng";
 import { userYupSchema } from "../../services/user.validations";
 
 export const UserCreateContent = () => {
-	const ctx = useContext(UserCreateContext);
+	const ctx = useUserCreateContext();
 
 	return (
 		<>

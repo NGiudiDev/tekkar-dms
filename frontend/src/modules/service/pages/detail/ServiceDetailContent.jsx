@@ -1,6 +1,4 @@
-import { useContext } from "react";
-
-import { ServiceDetailContext } from "./ServiceDetailContext";
+import { useServiceDetailContext } from "./hooks/useServiceDetailContext.jsx";
 
 import { ServiceInformationForm, ServiceInformationSection } from "../../components";
 import { PersonInformationSection } from "../../../person/components";
@@ -17,7 +15,7 @@ import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 import { serviceYupSchema } from "../../services/service.validations";
 
 export const ServiceDetailContent = () => {
-	const ctx = useContext(ServiceDetailContext);
+	const ctx = useServiceDetailContext();
 
 	if (ctx.isLoading) return <PageLoadingLayout />;
 
