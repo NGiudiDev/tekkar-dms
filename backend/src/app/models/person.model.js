@@ -31,8 +31,17 @@ const getPage = async (page, whereObj) => {
   return personsObj;
 };
 
+const update = async (person_id, data) => {
+  const person = await persons.update(data, { 
+    where: { id: person_id },
+  });
+
+  return person;
+};
+
 export const personModel = {
   create,
   getOne,
   getPage,
+  update,
 }

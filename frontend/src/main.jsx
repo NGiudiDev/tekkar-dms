@@ -1,12 +1,9 @@
-//TODO: verificar orden de la carpeta /modules/common
-
 //? a nivel funcional.
 //TODO: permitir cambiar el propietario de un auto.
-//TODO: probar que funcione el EditablePersonImage.
-//TODO: crear el endpoint de update person para modificar la foto.
 //TODO: agregar los mensajes de error en yup.
 
 //? a nivel código
+//TODO: ver todas las pages y crear hooks que faciliten la creación de las mismas.
 //TODO: ver una forma de importar los contextos por medio de un hook.
 //TODO: corregir los espaciados de las pantallas para que no se mueva el contenido cuando se edita.
 //TODO: agregar el linter para mantener un estandar.

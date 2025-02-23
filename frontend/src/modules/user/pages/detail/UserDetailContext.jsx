@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import PropTypes from "prop-types";
 
-import { useQuery } from "@tanstack/react-query";
+import { useQueryClient, useQuery } from "@tanstack/react-query";
 import { useRouter } from "../../../../hooks";
 import { useSelector } from "react-redux";
 
@@ -20,6 +20,7 @@ export const UserDetailProvider = (props) => {
 	};
 	
 	const loggedUser = useSelector(state => state.user);
+	const queryClient = useQueryClient();
 	const router = useRouter();
 
 	const id = parseInt(router.query.id);
@@ -29,8 +30,14 @@ export const UserDetailProvider = (props) => {
 		queryFn: async () =>  getUserDetail(id),
 	});
 
+	const handleImageChange = () => {
+		//? The GET request is invalidated to trigger a refetch and retrieve the updated data.
+		queryClient.invalidateQueries({ queryKey: ["user-detail"] });
+	};
+
 	const valueObj = {
 		error: query.error,
+		handleImageChange,
 		isLoading: query.isLoading,
 		isLoggedUser: id === loggedUser.id,
 		user: query.data,

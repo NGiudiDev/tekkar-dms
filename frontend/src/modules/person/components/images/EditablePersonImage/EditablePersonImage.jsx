@@ -17,6 +17,7 @@ import { updatePerson } from "../../../../../store/store";
 import toast from "react-hot-toast";
 
 const DEFAULT_PROPS = {
+  onImageChange: () => {},
   person: {},
 };
 
@@ -54,13 +55,14 @@ export const EditablePersonImage = (props) => {
 				break;
 			}
 		},
-		onSuccess: (data) => {
+		onSuccess: (person) => {
 			toast.success("Se ha actualizado la imagen.");
 
-			if (data.id === loggedUser.person.id) {
-				dispatch(updatePerson(data));
+			if (person.id === loggedUser.person.id) {
+				dispatch(updatePerson(person));
 			}
-
+      
+      attrs.onImageChange && attrs.onImageChange(person);
 			handleShowModal();
 		},
 	});
@@ -127,5 +129,6 @@ export const EditablePersonImage = (props) => {
 }
 
 EditablePersonImage.propsTypes = {
+  onImageChange: PropTypes.func,
   person: PropTypes.object,
 };

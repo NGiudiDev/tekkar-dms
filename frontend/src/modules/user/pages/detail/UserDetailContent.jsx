@@ -35,7 +35,7 @@ export const UserDetailContent = () => {
 			</Flex>
 
 			<Box margin="x-10">
-				<PersonInformationSection person={ctx.user.person} />
+				<PersonInformationSection onImageChange={ctx.handleImageChange} person={ctx.user.person} />
 			</Box>
 		</>
 	);

@@ -4,7 +4,7 @@ import { DataText, ThreeColumnsGrid } from "../../../common/components";
 import { EditablePersonImage, PersonImage } from "../";
 
 const DEFAULT_PROPS = {
-	isImageEditable: false,
+	onImageChange: null,
 	person: {},
 };
 
@@ -45,8 +45,11 @@ export const PersonInformationSection = (props) => {
 			</ThreeColumnsGrid.Row>
 
 			<ThreeColumnsGrid.Row>
-				{attrs.isImageEditable ? (
-					<EditablePersonImage person={attrs.person} />
+				{attrs.onImageChange !== null ? (
+					<EditablePersonImage
+						onImageChange={attrs.onImageChange}
+						person={attrs.person}
+					/>
 				) : (
 					<PersonImage person={attrs.person} />
 				)}
@@ -56,6 +59,6 @@ export const PersonInformationSection = (props) => {
 };
 
 PersonInformationSection.propTypes = {
-	isImageEditable: PropTypes.bool,
+	onImageChange: PropTypes.func,
 	person: PropTypes.object,
 };

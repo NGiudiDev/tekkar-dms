@@ -79,6 +79,22 @@ export const getClientPageValidation = (qParams) => {
 };
 
 /******************************************************************************
+												👥 PERSON VALIDATIONS 👥
+     ********************************************************************/
+
+export const updatePersonValidation = (qParams) => {
+	const carSchema = joi.object({
+		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
+		email: VALIDATIONS.PERSON.EMAIL,
+		name: VALIDATIONS.PERSON.NAME,
+		phone: VALIDATIONS.PERSON.PHONE,
+		image_url: VALIDATIONS.COMMON.TEXT,
+	});
+
+	return validate(carSchema, qParams);
+};
+
+/******************************************************************************
 												🛠️ SERVICE VALIDATIONS 🛠️
      ********************************************************************/ 
 
@@ -207,7 +223,6 @@ export const updateUserValidation = user => {
 		email: VALIDATIONS.PERSON.EMAIL,
 		name: VALIDATIONS.PERSON.NAME,
 		phone: VALIDATIONS.PERSON.PHONE,
-		profile_image_url: VALIDATIONS.COMMON.TEXT,
 	});
 
 	return validate(userSchema, user);

@@ -14,7 +14,7 @@ const getOne = async (req, res) => {
     const car = await serviceReportService.getOne(req.query);
     
     if (!car)
-      return res.status(404).json({ errros: [{ message: MESSAGES.CAR_NOT_FOUND }]});
+      return res.status(404).json({ errros: [{ message: MESSAGES.SERVICE_REPORT_NOT_FOUND }]});
     
     return res.status(200).json(car);
   } catch(err) {
