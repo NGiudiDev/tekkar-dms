@@ -12,7 +12,7 @@ import { Styles } from "./EditablePersonImage.styles";
 
 import { updatePersonDetail } from "../../../../person/services/person.requests";
 import { uploadImage } from "../../../../common/services/images.services";
-import { updatePerson } from "../../../../session/store/store";
+import { updatePerson } from "../../../../../store/store";
 
 import toast from "react-hot-toast";
 

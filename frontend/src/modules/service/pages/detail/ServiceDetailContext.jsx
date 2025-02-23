@@ -6,7 +6,7 @@ import { useRouter } from "../../../../hooks";
 
 import { getServiceDetail, updateServiceDetail } from "../../services/service.requests";
 import { getChangedFields, isEmptyObject } from "../../../common/utils/forms.utils";
-import { serviceValidation } from "../../services/service.validations";
+
 import toast from "react-hot-toast";
 
 export const ServiceDetailContext = createContext();
@@ -98,7 +98,6 @@ export const ServiceDetailProvider = (props) => {
 		isLoading: query.isLoading || !service,
 		isServiceEditing,
 		service,
-		serviceValidation,
 	};
 
 	return (

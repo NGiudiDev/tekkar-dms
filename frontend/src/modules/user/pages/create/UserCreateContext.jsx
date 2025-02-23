@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "../../../../hooks";
 
-import { userCreateValidation } from "../../services/user.validations";
 import { createUser } from "../../services/user.requests";
 import toast from "react-hot-toast";
 
@@ -61,7 +60,6 @@ export const UserCreateProvider = (props) => {
 	const valueObj = {
 		initialUser,
 		handleSubmitUser,
-		userValidation: userCreateValidation,
 	};
 
 	return (

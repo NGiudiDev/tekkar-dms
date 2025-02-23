@@ -4,7 +4,7 @@ import { useRouter } from "../../../../hooks";
 import { useDispatch } from "react-redux";
 
 import { userLogout } from "../../../session/services/session.requests";
-import { logout } from "../../../session/store/store";
+import { logout } from "../../../../store/store";
 
 import { PATH } from "../../../../router/constants/routes.consts";
 

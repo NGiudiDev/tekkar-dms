@@ -1,17 +1,19 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { useMutation } from "@tanstack/react-query";
 
-import { ServiceReportInformationSection } from "../../service/components";
-import { ServiceReportForm, ServiceReportLayout } from "../components";
 import { CarInformationSection } from "../../car/components";
+import { 
+	ServiceReportForm,
+	ServiceReportInformationSection,
+	ServiceReportLayout,
+} from "../components";
 
 import { Button, Divider, Flex, Text } from "ds-loud-ng";
 
 import { getServiceReportPage } from "../services/service_report.services";
 
 const ServiceReportPage = () => {
-
   const [car, setCar] = useState(null);
   const [services, setServices] = useState([]);
 	const [pagination, setPagination] = useState(null);
@@ -79,11 +81,11 @@ const ServiceReportPage = () => {
 							const isLastItem = idx === services.length - 1;
 
 							return (
-								<ServiceReportInformationSection
-									isLastItem={isLastItem}
-									key={`service_${idx}`}
-									service={service}
-								/>
+								<React.Fragment key={`service_${idx}`}>
+									<ServiceReportInformationSection service={service} />
+
+									{!isLastItem && <Divider margin="y-16" />}
+								</React.Fragment>
 							);
 						})}
 					</div>

@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "../../../../hooks";
 
-import { serviceValidation } from "../../services/service.validations";
 import { createService } from "../../services/service.requests";
 import toast from "react-hot-toast";
 
@@ -60,7 +59,6 @@ export const ServiceCreateProvider = (props) => {
 			service_duration: "",
 			title: "",
 		},
-		serviceValidation,
 	};
 
 	return (

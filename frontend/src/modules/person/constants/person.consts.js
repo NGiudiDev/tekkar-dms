@@ -1,1 +1,3 @@
-export const DOC_NUMBER_LENGTH = 8;
+export const PERSON_REGEXS = {
+  DOC_NUMBER_STRING: /^\d+$/,
+};

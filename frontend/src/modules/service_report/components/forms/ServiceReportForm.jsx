@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 
-import { Button, Columns, Input } from "ds-loud-ng";
 import { Form, Formik } from "formik";
 
-import { servviceReportValidation } from "../services/service_report.validations";
+import { Button, Columns, Input } from "ds-loud-ng";
+
+import { serviceReportYupSchema } from "../../services/service_report.validations";
 
 export const ServiceReportForm = (props) => {
   const { onSubmit } = props;
@@ -15,7 +16,7 @@ export const ServiceReportForm = (props) => {
         owner_doc_number: "",
       }}
       onSubmit={onSubmit}
-      validationSchema={servviceReportValidation}
+      validationSchema={serviceReportYupSchema}
     >
       <Form>
         <Columns>

@@ -12,7 +12,6 @@ export { ServiceTitleInput } from "./inputs/ServiceTitleInput";
 
 //? sections
 export { ServiceInformationSection } from "./sections/service_information/ServiceInformationSection";
-export { ServiceReportInformationSection } from "./sections/ServiceReportInformationSection";
 
 //? table columns
 export { ServiceMileageCol } from "./tables/columns/ServiceMileageCol";

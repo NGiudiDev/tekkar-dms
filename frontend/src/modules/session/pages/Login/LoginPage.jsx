@@ -5,18 +5,18 @@ import { useRouter } from "../../../../hooks";
 import { useDispatch } from "react-redux";
 
 import { UserEmailInput, UserPasswordInput } from "../../../user/components";
-
-import { Button, Text } from "ds-loud-ng";
 import { Form, Formik } from "formik";
 
-import { loginValidation } from "../../services/session.validations";
+import { Button, Text } from "ds-loud-ng";
+
+import { Styles } from "./LoginPage.styles";
+
+import { loginYupSchema } from "../../services/session.validations";
 import { userLogin } from "../../services/session.requests";
-import { login } from "../../store/store";
+import { login } from "../../../../store/store";
 import toast from "react-hot-toast";
 
 import { PATH } from "../../../../router/constants/routes.consts";
-
-import { Styles } from "./LoginPage.styles";
 
 const LoginPage = () => {
 	const [error, setError] = useState(false);
@@ -64,7 +64,7 @@ const LoginPage = () => {
 					password: "",
 				}}
 				onSubmit={handleSubmit}
-				validationSchema={loginValidation}
+				validationSchema={loginYupSchema}
 			>
 				<Form>
 					<UserEmailInput margin="b-8" />

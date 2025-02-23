@@ -6,7 +6,8 @@ import { useDispatch } from "react-redux";
 
 import { getLoginOfLocalStorage, removeLoginOfLocalStorage } from "../services/session.local_storage";
 import { userAuthentication } from "../services/session.requests";
-import { login } from "../store/store";
+import { login } from "../../../store/store";
+
 import toast from "react-hot-toast";
 
 import { PATH } from "../../../router/constants/routes.consts";
