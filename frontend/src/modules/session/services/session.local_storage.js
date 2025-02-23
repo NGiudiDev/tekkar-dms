@@ -4,7 +4,7 @@ import {
   getItemLocalStorage,
   removeItemLocalStorage,
   setItemLocalStorage,
-} from "../../common/services/localStorage.services";
+} from "../../common/utils/local_storage.utils";
 
 //? login cookies.
 export const getLoginOfLocalStorage = () => {

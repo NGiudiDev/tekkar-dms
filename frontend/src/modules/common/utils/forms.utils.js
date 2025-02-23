@@ -1,7 +1,3 @@
-import dayjs from "dayjs";
-
-import { DATE_FORMAT } from "../constants/settings.conts";
-
 export const getChangedFields = (modifiedObj, initialObj) => {
 	const newObj = {};
 
@@ -15,8 +11,4 @@ export const getChangedFields = (modifiedObj, initialObj) => {
 
 export const isEmptyObject = (obj) => {
 	return Object.keys(obj).length === 0;
-};
-
-export const formatDate = (date) => {
-	return dayjs(date).format(DATE_FORMAT);
 };

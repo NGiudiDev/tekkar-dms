@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import { DataText, ThreeColumnsGrid } from "../../../../common/components";
 
-import { formatDate } from "../../../../common/utils/forms.utils";
+import { formatDate } from "../../../../common/utils/date.utils";
 
 import { Styles } from "./ServiceInformationSection.styles";
 
