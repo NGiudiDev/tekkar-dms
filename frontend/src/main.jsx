@@ -6,6 +6,7 @@
 //TODO: ver todas las pages y crear hooks que faciliten la creación de las mismas.
 //TODO: corregir los espaciados de las pantallas para que no se mueva el contenido cuando se edita.
 //TODO: agregar el linter para mantener un estandar.
+//TODO: manejar mejor las key de react-query.
 
 import React from "react";
 import { createRoot } from "react-dom/client";

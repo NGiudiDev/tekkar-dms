@@ -11,6 +11,7 @@ import { Button, Dropzone, Flex, Icon, Image, Modal, Text } from "ds-loud-ng";
 import { Styles } from "./EditablePersonImage.styles";
 
 import { updatePersonDetail } from "../../../../person/services/person.requests";
+import { imageYupSchema } from "../../../../common/services/images.validations";
 import { uploadImage } from "../../../../common/services/images.services";
 import { updatePerson } from "../../../../../store/store";
 
@@ -21,7 +22,6 @@ const DEFAULT_PROPS = {
   person: {},
 };
 
-//TODO: agregar el schemaValidation.
 export const EditablePersonImage = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
@@ -72,7 +72,7 @@ export const EditablePersonImage = (props) => {
   };
 
   const handleSubmit = (values) => {
-    const file = values.image_url[0].file;
+    const file = values.images[0].file;
 		const formData = new FormData();
 
     formData.append("image", file);
@@ -102,26 +102,30 @@ export const EditablePersonImage = (props) => {
         </Text>
 
         <Formik
-          initialValues={{ image_url: [] }}
+          initialValues={{ images: [] }}
           onSubmit={handleSubmit}
+          validationSchema={imageYupSchema}
         >
-          <Form>
-            <Dropzone
-              accept={["image"]}
-              margin="b-32 l-28 t-16"
-              maxCount={1}
-              name="image_url"
-            />
+          {formik => (
+            <Form>
+              <Dropzone
+                accept={["image"]}
+                margin="b-32 l-28 t-16"
+                maxCount={1}
+                name="images"
+              />
 
-            <Flex hAlign="end">
-              <Button
-                loading={personImageMutation.isLoading}
-                type="submit"
-              >
-                Actualizar
-              </Button>
-            </Flex>
-          </Form>
+              <Flex hAlign="end">
+                <Button
+                  disabled={!formik.isValid}
+                  loading={personImageMutation.isLoading}
+                  type="submit"
+                >
+                  Actualizar
+                </Button>
+              </Flex>
+            </Form>
+          )}
         </Formik>
       </Modal>
     </>

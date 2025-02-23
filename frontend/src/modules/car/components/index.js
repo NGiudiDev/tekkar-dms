@@ -5,7 +5,6 @@ export { CarInformationForm } from "./forms/CarInformationForm";
 export { CarBrandInput } from "./inputs/CarBrandInput";
 export { CarLicensePlateInput } from "./inputs/CarLicensePlateInput";
 export { CarModelInput } from "./inputs/CarModelInput";
-export { CarOwnerIdInput } from "./inputs/CarOwnerIdInput";
 export { CarProductionYearInput } from "./inputs/CarProductionYearInput";
 
 //? sections
