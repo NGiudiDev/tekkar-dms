@@ -1,5 +1,6 @@
-import { createContext } from "react";
 import PropTypes from "prop-types";
+
+import { ServiceCreateContext } from "./hooks/useServiceCreateContext";
 
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "../../../../hooks";
@@ -9,7 +10,6 @@ import toast from "react-hot-toast";
 
 import { PATH } from "../../../../router/constants/routes.consts";
 
-export const ServiceCreateContext = createContext();
 
 const DEFAULT_PROPS = {
 	children: null,

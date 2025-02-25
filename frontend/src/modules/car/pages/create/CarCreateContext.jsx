@@ -1,7 +1,6 @@
-import { createContext } from "react";
 import PropTypes from "prop-types";
 
-export const CarCreateContext = createContext();
+import { CarCreateContext } from "./hoooks/useCarCreateContext"; 
 
 const DEFAULT_PROPS = {
 	children: null,

@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { createContext, useContext } from "react";
 
-import { CarDetailContext } from "../CarDetailContext";
+export const CarDetailContext = createContext();
 
 export const useCarDetailContext = () => {
   return useContext(CarDetailContext);

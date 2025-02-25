@@ -1,13 +1,12 @@
-import { createContext } from "react";
 import PropTypes from "prop-types";
+
+import { UserDetailContext } from "./hooks/useUserDetailContext";
 
 import { useQueryClient, useQuery } from "@tanstack/react-query";
 import { useRouter } from "../../../../hooks";
 import { useSelector } from "react-redux";
 
 import { getUserDetail } from "../../services/user.requests";
-
-export const UserDetailContext = createContext();
 
 const DEFAULT_PROPS = {
 	children: null,

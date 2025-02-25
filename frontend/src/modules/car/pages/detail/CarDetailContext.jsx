@@ -1,5 +1,7 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
+
+import { CarDetailContext } from "./hooks/useCarDetailContext";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter } from "../../../../hooks";
@@ -10,8 +12,6 @@ import { getServicePage } from "../../../service/services/service.requests";
 import toast from "react-hot-toast";
 
 import { PATH } from "../../../../router/constants/routes.consts";
-
-export const CarDetailContext = createContext();
 
 const DEFAULT_PROPS = {
 	children: null,

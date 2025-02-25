@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { createContext, useContext } from "react";
 
-import { ServiceCreateContext } from "../ServiceCreateContext";
+export const ServiceCreateContext = createContext();
 
 export const useServiceCreateContext = () => {
   return useContext(ServiceCreateContext);
