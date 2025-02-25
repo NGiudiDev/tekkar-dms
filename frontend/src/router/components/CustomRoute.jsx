@@ -23,6 +23,7 @@ export const CustomRoute = (props) => {
 	};
 	
 	const isLogged = useSelector(state => state.isLogged);
+	const user = useSelector(state => state.user);
 	const sbButtons = useSidebarButtons();
 
 	//? user not logged in
@@ -31,10 +32,15 @@ export const CustomRoute = (props) => {
 	}
 
 	//? success
-	//TODO: agregar la foto del avatar en el DS.
 	if (attrs.useAppLayout) {
 		const topbar = {
-			avatarPanel: <ProfileAvatar />,
+			avatarProps: {
+				children: <ProfileAvatar />,
+				imageProps: {
+					src: user.person.image_url,
+					alt: "user-profile-topbar"
+				}
+			},
 		};
 
 		return (

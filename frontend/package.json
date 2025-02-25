@@ -19,7 +19,7 @@
     "@tanstack/react-query": "5.66.9",
     "axios": "1.7.9",
     "dayjs": "1.11.13",
-    "ds-loud-ng": "0.0.35",
+    "ds-loud-ng": "0.0.36",
     "formik": "2.4.6",
     "react": "19.0.0",
     "react-dom": "19.0.0",

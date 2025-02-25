@@ -11,6 +11,6 @@ export const PersonImage = (props) => {
   };
 
   return (
-    <Image img={attrs.person.image_url} size="lg" type="round" />
+    <Image src={attrs.person.image_url} size="lg" type="round" />
   )
 }

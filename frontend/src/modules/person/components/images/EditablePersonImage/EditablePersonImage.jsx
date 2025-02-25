@@ -83,7 +83,7 @@ export const EditablePersonImage = (props) => {
   return (
     <>
       <Styles.Wrapper>
-        <Image img={attrs.person.image_url} size="lg" type="round" />
+        <Image src={attrs.person.image_url} size="lg" type="round" />
         
         <Styles.IconWrapper onClick={handleShowModal}>
           <Icon color="black_100" icon="camera" size="avatar" />

@@ -13,7 +13,7 @@ export const ProfileAvatar = () => {
 				<Image
 					alt="avatar_dropdown_profile"
 					size="sm"
-					img={user.person.image_url}
+					src={user.person.image_url}
 					type="round"
 				/>
 
