@@ -1,3 +1,3 @@
 import React from "react";
 
-export const ServiceReportPage = React.lazy(() => import("./ServiceReportPage"));
+export const ServiceReportDetailPage = React.lazy(() => import("./detail/ServiceReportDetailPage"));

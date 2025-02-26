@@ -16,7 +16,7 @@ import {
 } from "../../modules/service/pages";
 
 //? service report pages
-import { ServiceReportPage } from "../../modules/service_report/pages";
+import { ServiceReportDetailPage } from "../../modules/service_report/pages";
 
 //? user pages
 import { UserCreatePage, UserDetailPage, UserListPage } from "../../modules/user/pages";
@@ -116,8 +116,8 @@ export const useAppRoutes = () => {
       path: PATH.services,
     },
     {
-      element: <ServiceReportPage />,
-      name: "service_report",
+      element: <ServiceReportDetailPage />,
+      name: "service_report_detail",
       options: {
         isFreeAccess: true,
         isPrivated: false,
