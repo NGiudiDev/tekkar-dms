@@ -48,7 +48,7 @@ export const useAutomaticLogin = () => {
 		if (userData.user_id && userData.token) {
 			userMutation.mutate(userData);
 		}
-	}, []); // eslint-disable-line
+	}, []);  
 
 	return {
 		isLoading: userMutation.isLoading,

@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Image } from "ds-loud-ng";
 
 const DEFAULT_PROPS = {
@@ -12,5 +14,5 @@ export const PersonImage = (props) => {
 
   return (
     <Image src={attrs.person.image_url} size="lg" type="round" />
-  )
-}
+  );
+};

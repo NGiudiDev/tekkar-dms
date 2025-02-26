@@ -1,3 +1,5 @@
+import React from "react";
+
 import { ServiceDetailProvider } from "./ServiceDetailContext";
 
 import { ServiceDetailContent } from "./ServiceDetailContent";

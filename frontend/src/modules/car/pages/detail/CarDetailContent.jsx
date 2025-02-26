@@ -1,3 +1,5 @@
+import React from "react";
+
 import { useCarDetailContext } from "./hooks/useCarDetailContext";
 
 import { CarInformationForm, CarInformationSection } from "../../components";

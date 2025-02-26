@@ -1,3 +1,4 @@
+import React from "react";
 import { PageMessageLayout } from "../..";
 
 import { Styles } from "./NotFoundMessageLayout.styles";

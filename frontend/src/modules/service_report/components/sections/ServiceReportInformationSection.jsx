@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 
 import { Columns, Text } from "ds-loud-ng";
@@ -32,7 +33,7 @@ export const ServiceReportInformationSection = (props) => {
       </Columns>
     </>
   );
-}
+};
 
 ServiceReportInformationSection.propTypes = {
   service: PropTypes.object,

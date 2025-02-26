@@ -1,3 +1,5 @@
+import React from "react";
+
 import { ListPage } from "../../../common/pages";
 import { ServicesTable } from "../../components";
 

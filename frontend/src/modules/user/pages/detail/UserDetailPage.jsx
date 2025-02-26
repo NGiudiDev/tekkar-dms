@@ -1,3 +1,5 @@
+import React from "react";
+
 import { UserDetailProvider } from "./UserDetailContext";
 
 import { UserDetailContent } from "./UserDetailContent";

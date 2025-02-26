@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "../../../../hooks";
@@ -88,6 +88,6 @@ const LoginPage = () => {
 			</Button>
 		</Styles.Wrapper>
 	);
-}
+};
 
 export default LoginPage;

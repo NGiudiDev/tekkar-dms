@@ -1,3 +1,5 @@
+import React from "react";
+
 import { CarDetailProvider } from "./CarDetailContext";
 
 import { CarDetailContent } from "./CarDetailContent";

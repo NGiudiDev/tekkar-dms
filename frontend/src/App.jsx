@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { useAutomaticLogin } from "./modules/session/hooks/useAutomaticLogin";

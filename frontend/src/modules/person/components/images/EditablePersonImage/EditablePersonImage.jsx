@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -62,7 +62,10 @@ export const EditablePersonImage = (props) => {
 				dispatch(updatePerson(person));
 			}
       
-      attrs.onImageChange && attrs.onImageChange(person);
+      if (attrs.onImageChange) {
+        attrs.onImageChange(person);
+      }
+
 			handleShowModal();
 		},
 	});
@@ -78,7 +81,7 @@ export const EditablePersonImage = (props) => {
     formData.append("image", file);
 
 		personImageMutation.mutate(formData);
-  }
+  };
 
   return (
     <>
@@ -130,7 +133,7 @@ export const EditablePersonImage = (props) => {
       </Modal>
     </>
   );
-}
+};
 
 EditablePersonImage.propsTypes = {
   onImageChange: PropTypes.func,

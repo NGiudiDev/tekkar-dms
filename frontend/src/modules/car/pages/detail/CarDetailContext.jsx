@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import { CarDetailContext } from "./hooks/useCarDetailContext";
@@ -86,7 +86,7 @@ export const CarDetailProvider = (props) => {
 
 	const handleCreateService = () => {
 		router.push(`${PATH.serviceCreate}?car_id=${car.id}`);
-	}
+	};
 
 	const handleServicePageChange = (page) => {
 		setServicesPage(page);

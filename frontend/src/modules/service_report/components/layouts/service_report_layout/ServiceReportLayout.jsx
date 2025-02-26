@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 
 import { Styles } from "./ServiceReportLayout.styles";
@@ -24,7 +25,7 @@ export const ServiceReportLayout = (props) => {
       </Styles.ContentWrapper>
     </>
   );
-}
+};
 
 ServiceReportLayout.propTypes = {
   children: PropTypes.node,

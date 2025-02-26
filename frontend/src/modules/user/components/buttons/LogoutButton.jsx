@@ -1,7 +1,9 @@
-import { Button } from "ds-loud-ng";
+import React from "react";
 
 import { useRouter } from "../../../../hooks";
 import { useDispatch } from "react-redux";
+
+import { Button } from "ds-loud-ng";
 
 import { userLogout } from "../../../session/services/session.requests";
 import { logout } from "../../../../store/store";
@@ -28,5 +30,5 @@ export const LogoutButton = () => {
     >
       Cerrar sesión
     </Button>
-  )
-}
+  );
+};
