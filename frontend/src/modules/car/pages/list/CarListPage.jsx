@@ -1,4 +1,6 @@
-import React, { useRouter } from "../../../../hooks";
+import React from "react";
+
+import { useRouter } from "../../../../hooks";
 
 import { NewButton } from "../../../common/components";
 import { ListPage } from "../../../common/pages";
