@@ -3,7 +3,6 @@ export const formatDate = (date) => {
 	return date.toISOString().split("T")[0];
 };
 
-//TODO: usar alguna librería de fecha y manejar ahi el huso horario.
 export const getDate = () => {
 	const date = new Date();
 

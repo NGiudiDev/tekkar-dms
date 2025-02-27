@@ -1,12 +1,3 @@
-//? a nivel funcional.
-//TODO: permitir cambiar el propietario de un auto.
-//TODO: agregar los mensajes de error en yup.
-
-//? a nivel código
-//TODO: ver todas las pages y crear hooks que faciliten la creación de las mismas.
-//TODO: corregir los espaciados de las pantallas para que no se mueva el contenido cuando se edita.
-//TODO: manejar mejor las key de react-query.
-
 import React from "react";
 import { createRoot } from "react-dom/client";
 

@@ -31,7 +31,7 @@ export const VALIDATIONS = {
 		DOC_NUMBER: joi.string().length(DOC_NUMBER_LENGTH).regex(REGEXS.DOC_NUMBER_STRING),
 		EMAIL: joi.string().email(),
 		NAME: joi.string(),
-		PHONE: joi.string(), //TODO: validar con una librería que valida números telefónicos.
+		PHONE: joi.string(),
 	},
 	USER: {
 		PASSWORD: joi.string(),
