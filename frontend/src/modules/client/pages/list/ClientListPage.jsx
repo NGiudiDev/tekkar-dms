@@ -2,13 +2,13 @@ import React from "react";
 
 import { useRouter } from "../../../../hooks";
 
-import { NewButton } from "../../../common/components";
-import { ListPage } from "../../../common/pages";
-import { ClientsTable } from "../../components";
+import { ClientsTable } from "@client/components";
+import { NewButton } from "@common/components";
+import { ListPage } from "@common/pages";
 
-import { getClientPage } from "../../services/client.requests";
+import { getClientPage } from "@client/services/client.requests";
 
-import { PATH } from "../../../../router/constants/routes.consts";
+import { PATH } from "@router/constants/routes.consts";
 
 const ClientListPage = () => {
 	const router = useRouter();

@@ -2,12 +2,12 @@ import React from "react";
 
 import { useServiceReportDetailContext } from"./hooks/useServiceReportDetailContext";
 
-import { CarInformationSection } from "../../../car/components";
+import { CarInformationSection } from "@car/components";
 import { 
 	ServiceReportForm,
 	ServiceReportInformationSection,
 	ServiceReportLayout,
-} from "../../components";
+} from "@service_report/components";
 
 import { Button, Divider, Flex, Text } from "ds-loud-ng";
 

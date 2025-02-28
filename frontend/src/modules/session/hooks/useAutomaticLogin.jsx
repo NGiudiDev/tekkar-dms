@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "../../../hooks";
 import { useDispatch } from "react-redux";
+import { useRouter } from "@hooks";
 
-import { getLoginOfLocalStorage, removeLoginOfLocalStorage } from "../services/session.local_storage";
-import { userAuthentication } from "../services/session.requests";
-import { login } from "../../../store/store";
+import { getLoginOfLocalStorage, removeLoginOfLocalStorage } from "@session/services/session.local_storage";
+import { userAuthentication } from "@session/services/session.requests";
+import { login } from "@store/store";
 
 import toast from "react-hot-toast";
 
-import { PATH } from "../../../router/constants/routes.consts";
+import { PATH } from "@router/constants/routes.consts";
 
 export const useAutomaticLogin = () => {
 	const dispatch = useDispatch();

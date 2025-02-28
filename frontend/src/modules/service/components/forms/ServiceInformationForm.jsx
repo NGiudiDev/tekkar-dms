@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ThreeColumnsGrid } from "../../../common/components";
+import { ThreeColumnsGrid } from "@common/components";
 import {
 	NextServiceMileageInput,
 	ServiceDescriptionInput,
@@ -9,7 +9,7 @@ import {
 	ServicePerformedAtInput,
 	ServicePriceInput,
 	ServiceTitleInput,
-} from "../";
+} from "@service/components";
 
 export const ServiceInformationForm = () => {
 	return (

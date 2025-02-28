@@ -1,18 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useRouter } from "../../../../hooks";
+import { useRouter } from "@hooks";
 
 import { 
 	PersonDocNumberCol,
 	PersonEmailCol,
 	PersonImageCol,
 	PersonNameCol,
-} from "../../../person/components";
+} from "@person/components";
 
 import { Flex, Table } from "ds-loud-ng";
 
-import { PATH } from "../../../../router/constants/routes.consts";
+import { PATH } from "@router/constants/routes.consts";
 
 const DEFAULT_PROPS = {
 	list: [],

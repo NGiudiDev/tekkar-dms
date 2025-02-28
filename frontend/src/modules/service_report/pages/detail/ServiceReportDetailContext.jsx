@@ -5,7 +5,7 @@ import { ServiceReportDetailContext } from "./hooks/useServiceReportDetailContex
 
 import { useMutation } from "@tanstack/react-query";
 
-import { getServiceReportPage } from "../../services/service_report.services";
+import { getServiceReportPage } from "@service_report/services/service_report.services";
 
 const DEFAULT_PROPS = {
 	children: null,

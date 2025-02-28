@@ -1,9 +1,9 @@
 import React from "react";
 
-import { ListPage } from "../../../common/pages";
-import { ServicesTable } from "../../components";
+import { ListPage } from "@common/pages";
+import { ServicesTable } from "@service/components";
 
-import { getServicePage } from "../../services/service.requests";
+import { getServicePage } from "@service/services/service.requests";
 
 const ServiceListPage = () => {
 	return (

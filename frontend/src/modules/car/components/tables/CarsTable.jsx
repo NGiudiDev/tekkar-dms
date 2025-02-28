@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useRouter } from "../../../../hooks";
+import { useRouter } from "@hooks";
 
-import { CarDescriptionCol, CarLicensePlateCol } from "../../components";
-import { PersonNameCol } from "../../../person/components";
+import { CarDescriptionCol, CarLicensePlateCol } from "@car/components";
+import { PersonNameCol } from "@person/components";
 
 import { Table } from "ds-loud-ng";
 
-import { PATH } from "../../../../router/constants/routes.consts";
+import { PATH } from "@router/constants/routes.consts";
 
 const DEFAULT_PROPS = {
 	list: [],

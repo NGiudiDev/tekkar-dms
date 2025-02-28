@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { useAutomaticLogin } from "./modules/session/hooks/useAutomaticLogin";
-import { useAppRoutes } from "./router/hooks/useAppRoutes";
+import { useAutomaticLogin } from "@session/hooks/useAutomaticLogin";
+import { useAppRoutes } from "@router/hooks/useAppRoutes";
 
-import { NotFoundMessageLayout, PageLoadingLayout } from "./modules/common/components";
-import { CustomRoute } from "./router/components/CustomRoute";
+import { NotFoundMessageLayout, PageLoadingLayout } from "@common/components";
+import { CustomRoute } from "@router/components/CustomRoute";
 
 export const App = () => {
 	const automaticLogin = useAutomaticLogin();

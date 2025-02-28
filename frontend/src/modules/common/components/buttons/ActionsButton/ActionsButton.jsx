@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { useOuterClick } from "../../../../../hooks";
+import { useOuterClick } from "@hooks";
 
 import { IconButton, Panel } from "ds-loud-ng";
 

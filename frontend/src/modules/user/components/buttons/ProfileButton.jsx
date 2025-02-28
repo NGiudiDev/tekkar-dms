@@ -1,11 +1,11 @@
 import React from "react";
 
-import { useRouter } from "../../../../hooks";
 import { useSelector } from "react-redux";
+import { useRouter } from "@hooks";
 
 import { Button } from "ds-loud-ng";
 
-import { PATH } from "../../../../router/constants/routes.consts";
+import { PATH } from "@router/constants/routes.consts";
 
 export const ProfileButton = () => {
 	const user = useSelector(state => state.user);

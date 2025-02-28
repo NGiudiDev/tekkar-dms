@@ -1,26 +1,26 @@
 import React from "react";
 
 //? car pages
-import { CarCreatePage, CarDetailPage, CarListPage } from "../../modules/car/pages";
+import { CarCreatePage, CarDetailPage, CarListPage } from "@car/pages";
 
 //? client pages
-import { ClientListPage } from "../../modules/cliens/pages";
+import { ClientListPage } from "@client/pages";
 
 //? session pages
-import { LoginPage } from "../../modules/session/pages";
+import { LoginPage } from "@session/pages";
 
 //? service pages
 import {
   ServiceCreatePage,
   ServiceDetailPage,
   ServiceListPage
-} from "../../modules/service/pages";
+} from "@service/pages";
 
 //? service report pages
-import { ServiceReportDetailPage } from "../../modules/service_report/pages";
+import { ServiceReportDetailPage } from "@service_report/pages";
 
 //? user pages
-import { UserCreatePage, UserDetailPage, UserListPage } from "../../modules/user/pages";
+import { UserCreatePage, UserDetailPage, UserListPage } from "@user/pages";
 
 import { PATH } from "../constants/routes.consts";
 

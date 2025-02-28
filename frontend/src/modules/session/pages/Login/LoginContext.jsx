@@ -4,14 +4,14 @@ import PropTypes from "prop-types";
 import { LoginContext } from "./hoooks/useLoginContext.jsx"; 
 
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "../../../../hooks";
 import { useDispatch } from "react-redux";
+import { useRouter } from "@hooks";
 
-import { userLogin } from "../../services/session.requests";
-import { login } from "../../../../store/store";
+import { userLogin } from "@session/services/session.requests";
+import { login } from "@store/store";
 import toast from "react-hot-toast";
 
-import { PATH } from "../../../../router/constants/routes.consts";
+import { PATH } from "@router/constants/routes.consts";
 
 const DEFAULT_PROPS = {
   children: null,

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { DataText, ThreeColumnsGrid } from "../../../common/components";
+import { DataText, ThreeColumnsGrid } from "@common/components";
 
 export const CarInformationSection = (props) => {
   const { car } = props;

@@ -11,7 +11,8 @@ export default [
   },
   {
     languageOptions: {
-      globals: globals.browser
+      globals: globals.browser,
+      __dirname: "readonly",
     }
   },
   pluginJs.configs.recommended,

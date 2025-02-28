@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useSidebarButtons } from "../../hooks/useSidebarButtons";
+import { useSidebarButtons } from "@hooks/useSidebarButtons";
 import { useSelector } from "react-redux";
 
 import { Navigate } from "react-router-dom";
-import { ProfileAvatar } from "../../modules/common/components";
+import { ProfileAvatar } from "@common/components";
 
 import { AppLayout } from "ds-loud-ng";
 
-import { PATH } from "../constants/routes.consts";
+import { PATH } from "@router/constants/routes.consts";
 
 const DEFAULT_PROPS = {
 	children: null,

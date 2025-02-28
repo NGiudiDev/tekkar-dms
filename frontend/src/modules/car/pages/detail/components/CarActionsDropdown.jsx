@@ -2,7 +2,7 @@ import React from "react";
 
 import { useCarDetailContext } from "../hooks/useCarDetailContext";
 
-import { ActionsButton } from "../../../../common/components";
+import { ActionsButton } from "@common/components";
 
 import { Button } from "ds-loud-ng";
 

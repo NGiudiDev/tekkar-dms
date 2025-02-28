@@ -1,12 +1,12 @@
 import React from "react";
 
-import { ThreeColumnsGrid } from "../../../common/components";
+import { ThreeColumnsGrid } from "@common/components";
 import {
 	UserDocNumberInput,
 	UserEmailInput,
 	UserNameInput,
 	UserPhoneInput,
-} from "..";
+} from "@user/components";
 
 export const UserInformationForm = () => {
 	return (

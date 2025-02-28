@@ -2,19 +2,19 @@ import React from "react";
 
 import { useServiceDetailContext } from "./hooks/useServiceDetailContext.jsx";
 
-import { ServiceInformationForm, ServiceInformationSection } from "../../components";
-import { PersonInformationSection } from "../../../person/components";
-import { CarInformationSection } from "../../../car/components";
+import { ServiceInformationForm, ServiceInformationSection } from "@service/components";
+import { PersonInformationSection } from "@person/components";
+import { CarInformationSection } from "@car/components";
 import { Form, Formik } from "formik";
 import {
 	PageLoadingLayout,
 	PageMessageLayout,
 	UpdateButton
-} from "../../../common/components";
+} from "@common/components";
 
 import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 
-import { serviceYupSchema } from "../../services/service.validations";
+import { serviceYupSchema } from "@service/services/service.validations";
 
 export const ServiceDetailContent = () => {
 	const ctx = useServiceDetailContext();

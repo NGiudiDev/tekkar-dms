@@ -1,4 +1,4 @@
-import { getAxios } from "../../common/services/axios.services";
+import { getAxios } from "@common/services/axios.services";
 
 export const getServiceReportPage = (paramsObj) => {
   const qString = new URLSearchParams(paramsObj);

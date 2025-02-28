@@ -5,7 +5,7 @@ import { Form, Formik } from "formik";
 
 import { Button, Columns, Input } from "ds-loud-ng";
 
-import { serviceReportYupSchema } from "../../services/service_report.validations";
+import { serviceReportYupSchema } from "@service_report/services/service_report.validations";
 
 export const ServiceReportForm = (props) => {
   const { onSubmit } = props;

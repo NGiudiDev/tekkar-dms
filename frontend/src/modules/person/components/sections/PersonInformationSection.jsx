@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { DataText, ThreeColumnsGrid } from "../../../common/components";
+import { DataText, ThreeColumnsGrid } from "@common/components";
 import { EditablePersonImage, PersonImage } from "../";
 
 const DEFAULT_PROPS = {

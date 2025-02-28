@@ -1,9 +1,9 @@
 import React from "react";
 
 import { useServiceCreateContext } from "./hooks/useServiceCreateContext";
-import { useRouter } from "../../../../hooks";
+import { useRouter } from "@hooks";
 
-import { FormContainer, PageMessageLayout } from "../../../common/components";
+import { FormContainer, PageMessageLayout } from "@common/components";
 import { Form, Formik } from "formik";
 import {
 	NextServiceMileageInput,
@@ -13,11 +13,11 @@ import {
 	ServicePerformedAtInput,
 	ServicePriceInput,
 	ServiceTitleInput,
-} from "../../components";
+} from "@service/components";
 
 import { Button, Columns, Flex, Text } from "ds-loud-ng";
 
-import { serviceYupSchema } from "../../services/service.validations";
+import { serviceYupSchema } from "@service/services/service.validations";
 
 export const ServiceCreateContent = () => {
 	const ctx = useServiceCreateContext();

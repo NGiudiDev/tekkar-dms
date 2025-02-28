@@ -1,12 +1,12 @@
 import React from "react";
 
-import { ThreeColumnsGrid } from "../../../common/components";
+import { ThreeColumnsGrid } from "@common/components";
 import {
 	CarBrandInput,
 	CarLicensePlateInput,
   CarModelInput,
 	CarProductionYearInput
-} from "..";
+} from "@car/components";
 
 export const CarInformationForm = () => {
 	return (

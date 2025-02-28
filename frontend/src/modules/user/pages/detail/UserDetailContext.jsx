@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import { UserDetailContext } from "./hooks/useUserDetailContext";
 
 import { useQueryClient, useQuery } from "@tanstack/react-query";
-import { useRouter } from "../../../../hooks";
 import { useSelector } from "react-redux";
+import { useRouter } from "@hooks";
 
-import { getUserDetail } from "../../services/user.requests";
+import { getUserDetail } from "@user/services/user.requests";
 
 const DEFAULT_PROPS = {
 	children: null,

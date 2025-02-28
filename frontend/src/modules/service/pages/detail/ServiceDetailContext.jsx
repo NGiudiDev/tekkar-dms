@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import { ServiceDetailContext } from "./hooks/useServiceDetailContext";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { useRouter } from "../../../../hooks";
+import { useRouter } from "@hooks";
 
-import { getServiceDetail, updateServiceDetail } from "../../services/service.requests";
-import { getChangedFields, isEmptyObject } from "../../../common/utils/forms.utils";
+import { getServiceDetail, updateServiceDetail } from "@service/services/service.requests";
+import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
 
 import toast from "react-hot-toast";
 

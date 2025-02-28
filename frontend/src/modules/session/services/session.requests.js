@@ -1,9 +1,9 @@
-import { postAxios } from "../../common/services/axios.services";
+import { postAxios } from "@common/services/axios.services";
 import {
 	getLoginOfLocalStorage,
 	removeLoginOfLocalStorage,
 	setLoginOfLocalStorage,
-} from "../services/session.local_storage";
+} from "@session/services/session.local_storage";
 
 export const userAuthentication = (data) => {
 	return postAxios("/users/authentication", data);

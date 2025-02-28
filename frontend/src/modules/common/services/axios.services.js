@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { getLoginOfLocalStorage } from "../../session/services/session.local_storage";
+import { getLoginOfLocalStorage } from "@session/services/session.local_storage";
 
 export const axiosClient = axios.create({
 	baseURL: import.meta.env.VITE_API_URL,

@@ -4,14 +4,14 @@ import PropTypes from "prop-types";
 import { CarDetailContext } from "./hooks/useCarDetailContext";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { useRouter } from "../../../../hooks";
+import { useRouter } from "@hooks";
 
-import { getChangedFields, isEmptyObject } from "../../../common/utils/forms.utils";
-import { getCarDetailById, updateCarDetail } from "../../services/car.services";
-import { getServicePage } from "../../../service/services/service.requests";
+import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
+import { getCarDetailById, updateCarDetail } from "@car/services/car.services";
+import { getServicePage } from "@service/services/service.requests";
 import toast from "react-hot-toast";
 
-import { PATH } from "../../../../router/constants/routes.consts";
+import { PATH } from "@router/constants/routes.consts";
 
 const DEFAULT_PROPS = {
 	children: null,

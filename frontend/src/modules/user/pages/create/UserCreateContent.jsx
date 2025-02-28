@@ -2,13 +2,13 @@ import React from "react";
 
 import { useUserCreateContext } from "./hooks/useUserCreateContext.jsx";
 
-import { CreateButton, ThreeColumnsGrid } from "../../../common/components";
-import { UserInformationForm, UserPasswordInput } from "../../components";
+import { CreateButton, ThreeColumnsGrid } from "@common/components";
+import { UserInformationForm, UserPasswordInput } from "@user/components";
 import { Formik, Form } from "formik";
 
 import { Box, Flex, Text } from "ds-loud-ng";
 
-import { userYupSchema } from "../../services/user.validations";
+import { userYupSchema } from "@user/services/user.validations";
 
 export const UserCreateContent = () => {
 	const ctx = useUserCreateContext();

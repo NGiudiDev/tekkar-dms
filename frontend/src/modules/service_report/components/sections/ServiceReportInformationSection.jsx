@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Columns, Text } from "ds-loud-ng";
 
-import { formatDate } from "../../../common/utils/date.utils";
+import { formatDate } from "@common/utils/date.utils";
 
 export const ServiceReportInformationSection = (props) => {
   const { service } = props;

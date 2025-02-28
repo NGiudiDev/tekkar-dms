@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Text } from "ds-loud-ng";
 
-import { formatDate } from "../../../../common/utils/date.utils";
+import { formatDate } from "@common/utils/date.utils";
 
 const DEFAULT_PROPS = {
 	margin: "a-0",

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { useQuery } from "@tanstack/react-query";
 
-import { PageLoadingLayout, PageMessageLayout } from "../components";
+import { PageLoadingLayout, PageMessageLayout } from "@common/components";
 
 import { Flex, Pagination, Text } from "ds-loud-ng";
 

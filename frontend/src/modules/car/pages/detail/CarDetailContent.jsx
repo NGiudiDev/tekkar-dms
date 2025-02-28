@@ -2,20 +2,20 @@ import React from "react";
 
 import { useCarDetailContext } from "./hooks/useCarDetailContext";
 
-import { CarInformationForm, CarInformationSection } from "../../components";
-import { PersonInformationSection } from "../../../person/components";
-import { ServicesTable } from "../../../service/components";
+import { CarInformationForm, CarInformationSection } from "@car/components";
+import { PersonInformationSection } from "@person/components";
+import { ServicesTable } from "@service/components";
 import { CarActionsDropdown } from "./components";
 import { Form, Formik } from "formik";
 import {
 	PageLoadingLayout,
 	PageMessageLayout,
 	UpdateButton
-} from "../../../common/components";
+} from "@common/components";
 
 import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 
-import { carYupSchema } from "../../services/car_validations.services";
+import { carYupSchema } from "@car/services/car_validations.services";
 
 export const CarDetailContent = () => {
 	const ctx = useCarDetailContext();

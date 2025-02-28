@@ -1,14 +1,14 @@
 import React from "react";
 
-import { useRouter } from "../../../../hooks";
+import { useRouter } from "@hooks";
 
-import { NewButton } from "../../../common/components";
-import { ListPage } from "../../../common/pages";
-import { UsersTable } from "../../components";
+import { NewButton } from "@common/components";
+import { ListPage } from "@common/pages";
+import { UsersTable } from "@user/components";
 
-import { getUserPage } from "../../services/user.requests";
+import { getUserPage } from "@user/services/user.requests";
 
-import { PATH } from "../../../../router/constants/routes.consts";
+import { PATH } from "@router/constants/routes.consts";
 
 const UserListPage = () => {
 	const router = useRouter();

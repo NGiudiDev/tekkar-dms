@@ -4,12 +4,12 @@ import PropTypes from "prop-types";
 import { ServiceCreateContext } from "./hooks/useServiceCreateContext";
 
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "../../../../hooks";
+import { useRouter } from "@hooks";
 
-import { createService } from "../../services/service.requests";
+import { createService } from "@service/services/service.requests";
 import toast from "react-hot-toast";
 
-import { PATH } from "../../../../router/constants/routes.consts";
+import { PATH } from "@router/constants/routes.consts";
 
 const DEFAULT_PROPS = {
 	children: null,
