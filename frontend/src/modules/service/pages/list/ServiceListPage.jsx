@@ -5,6 +5,8 @@ import { ServicesTable } from "@service/components";
 
 import { getServicePage } from "@service/services/service.requests";
 
+import { SERVICE_QUERY_KEYS } from "@service/constants/service.consts";
+
 const ServiceListPage = () => {
 	return (
 		<ListPage
@@ -16,7 +18,7 @@ const ServiceListPage = () => {
 				description: "Hubo un error al obtener la información, por favor recargue la página o intentelo más tarde.",
 				title: "Error al obtener la información",
 			}}
-			fetchKey="services-list"
+			fetchKey={SERVICE_QUERY_KEYS.lists()}
 			getRequest={getServicePage}
 			pageTitle="Servicios"
 			renderTable={(list) => <ServicesTable list={list} />}

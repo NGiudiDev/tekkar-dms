@@ -8,6 +8,7 @@ import { ListPage } from "@common/pages";
 
 import { getCarPage } from "@car/services/car.services";
 
+import { CAR_QUERY_KEYS } from "@car/constants/car.consts";
 import { PATH } from "@router/constants/routes.consts";
 
 const CarListPage = () => {
@@ -31,7 +32,7 @@ const CarListPage = () => {
 				description: "Hubo un error al obtener la información, por favor recargue la página o intentelo más tarde.",
 				title: "Error al obtener la información",
 			}}
-			fetchKey="cars-list"
+			fetchKey={CAR_QUERY_KEYS.lists()}
 			getRequest={getCarPage}
 			pageTitle="Vehículos"
 			renderButtonsGroup={() => <NewButton onClick={handleNewCar} />}

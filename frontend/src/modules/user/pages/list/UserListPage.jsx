@@ -8,6 +8,7 @@ import { UsersTable } from "@user/components";
 
 import { getUserPage } from "@user/services/user.requests";
 
+import { USER_QUERY_KEYS } from "@user/constants/user.consts";
 import { PATH } from "@router/constants/routes.consts";
 
 const UserListPage = () => {
@@ -23,7 +24,7 @@ const UserListPage = () => {
 				description: "Hubo un error al obtener la información, por favor recargue la página o intentelo más tarde.",
 				title: "Error al obtener la información",
 			}}
-			fetchKey="users-list"
+			fetchKey={USER_QUERY_KEYS.lists()}
 			getRequest={getUserPage}
 			pageTitle="Usuarios"
 			renderButtonsGroup={() => <NewButton onClick={handleNewUser} />}

@@ -8,6 +8,7 @@ import { ListPage } from "@common/pages";
 
 import { getClientPage } from "@client/services/client.requests";
 
+import { CLIENT_QUERY_KEYS } from "@client/constants/client.consts";
 import { PATH } from "@router/constants/routes.consts";
 
 const ClientListPage = () => {
@@ -31,7 +32,7 @@ const ClientListPage = () => {
 				description: "Hubo un error al obtener la información, por favor recargue la página o intentelo más tarde.",
 				title: "Error al obtener la información",
 			}}
-			fetchKey="clients-list"
+			fetchKey={CLIENT_QUERY_KEYS.lists()}
 			getRequest={getClientPage}
 			pageTitle="Clientes"
 			renderButtonsGroup={() => <NewButton onClick={handleNewClient} />}
