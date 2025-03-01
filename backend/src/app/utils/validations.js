@@ -78,6 +78,15 @@ export const getClientPageValidation = (qParams) => {
 	return validate(clientSchema, qParams);
 };
 
+export const getOneClientValidation = data => {
+	const dataSchema = joi.object({
+		id: VALIDATIONS.COMMON.ID,
+	});
+
+	return validate(dataSchema, data);
+};
+
+
 /******************************************************************************
 												👥 PERSON VALIDATIONS 👥
      ********************************************************************/

@@ -8,5 +8,6 @@ const router = express.Router();
 
 //* CRUD endpoints.
 router.get("/", authTokenMiddleware, clientController.getPage);
+router.get("/:id", authTokenMiddleware, clientController.getOne);
 
 export default router;

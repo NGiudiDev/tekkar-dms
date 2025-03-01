@@ -65,7 +65,7 @@ const getOne = async (req, res) => {
 		const user = await userService.getOne({ id });
 		
 		if (!user)
-			return res.status(404).json({ errros: [{ message: USER_NOT_FOUND }]});
+			return res.status(404).json({ errros: [{ message: MESSAGES.USER_NOT_FOUND }]});
 
 		return res.status(200).json(user);
 	} catch(err) {

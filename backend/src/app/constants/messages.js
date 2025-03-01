@@ -1,5 +1,6 @@
 export const MESSAGES = {
   CAR_NOT_FOUND: "car not found",
+  CLIENT_NOT_FOUND: "client not found",
   IMAGE_NO_UPDATED: "No image was provided",
   INVALID_TOKEN: "invalid token",
   PERSON_NOT_FOUND: "person not found",

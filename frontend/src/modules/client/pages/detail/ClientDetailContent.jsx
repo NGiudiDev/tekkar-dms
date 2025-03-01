@@ -1,14 +1,14 @@
 import React from "react";
 
-import { useUserDetailContext } from "./hooks/useUserDetailContext.jsx";
+import { useClientDetailContext } from "./hooks/useClientDetailContext.jsx";
 
 import { PageLoadingLayout, PageMessageLayout } from "@common/components";
 import { PersonInformationSection } from "@person/components"; 
 
 import { Box, Flex, Text } from "ds-loud-ng";
 
-export const UserDetailContent = () => {
-	const ctx = useUserDetailContext();
+export const ClientDetailContent = () => {
+	const ctx = useClientDetailContext();
 
 	if (ctx.isLoading) return <PageLoadingLayout />;
 
@@ -26,12 +26,12 @@ export const UserDetailContent = () => {
 		<>
 			<Flex hAlign="space-between" margin="b-24">
 				<Text type="title">
-					Usuario
+					Cliente
 				</Text>
 			</Flex>
 
 			<Box margin="x-10">
-				<PersonInformationSection onImageChange={ctx.handleImageChange} person={ctx.user.person} />
+				<PersonInformationSection onImageChange={ctx.handleImageChange} person={ctx.client} />
 			</Box>
 		</>
 	);
