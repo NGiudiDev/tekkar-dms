@@ -46,7 +46,10 @@ export const UserDetailContent = () => {
 					>
 						{formik => (
 							<Form>
-								<PersonInformationForm />
+								<PersonInformationForm
+									onImageChange={ctx.handleImageChange}
+									person={ctx.user.person}
+								/>
 
 								<Flex margin="b-32 t-8" hAlign="end">
 									<UpdateButton disabled={!(formik.dirty && formik.isValid)} />
