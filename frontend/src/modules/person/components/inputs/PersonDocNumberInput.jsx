@@ -7,7 +7,7 @@ const DEFAULT_PROPS = {
 	margin: "a-0",
 };
 
-export const UserPhoneInput = (props) => {
+export const PersonDocNumberInput = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -15,13 +15,13 @@ export const UserPhoneInput = (props) => {
 
 	return (
 		<Input
-			label="Teléfono"
+			label="Documento"
 			margin={attrs.margin}
-			name="phone"
+			name="doc_number"
 		/>
 	);
 };
 
-UserPhoneInput.propTypes = {
+PersonDocNumberInput.propTypes = {
 	margin: PropTypes.string,
 };

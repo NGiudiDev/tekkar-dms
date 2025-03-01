@@ -3,14 +3,10 @@ import React from "react";
 import { useServiceDetailContext } from "./hooks/useServiceDetailContext.jsx";
 
 import { ServiceInformationForm, ServiceInformationSection } from "@service/components";
+import { PageLoadingLayout, PageMessageLayout, UpdateButton } from "@common/components";
 import { PersonInformationSection } from "@person/components";
 import { CarInformationSection } from "@car/components";
 import { Form, Formik } from "formik";
-import {
-	PageLoadingLayout,
-	PageMessageLayout,
-	UpdateButton
-} from "@common/components";
 
 import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 

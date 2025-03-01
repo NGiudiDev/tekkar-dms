@@ -2,8 +2,8 @@ import React from "react";
 
 import { useUserCreateContext } from "./hooks/useUserCreateContext.jsx";
 
-import { CreateButton, ThreeColumnsGrid } from "@common/components";
-import { UserInformationForm, UserPasswordInput } from "@user/components";
+import { UserInformationForm } from "@user/components";
+import { CreateButton } from "@common/components";
 import { Formik, Form } from "formik";
 
 import { Box, Flex, Text } from "ds-loud-ng";
@@ -28,12 +28,6 @@ export const UserCreateContent = () => {
 					{formik => (
 						<Form>
 							<UserInformationForm />
-
-							<ThreeColumnsGrid.Grid>
-								<ThreeColumnsGrid.Row>
-									<UserPasswordInput />
-								</ThreeColumnsGrid.Row>
-							</ThreeColumnsGrid.Grid>
 							
 							<Flex margin="b-32 t-8" hAlign="end">
 								<CreateButton disabled={!(formik.dirty && formik.isValid)} />

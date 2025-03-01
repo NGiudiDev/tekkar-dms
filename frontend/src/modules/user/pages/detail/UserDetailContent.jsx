@@ -2,10 +2,11 @@ import React from "react";
 
 import { useUserDetailContext } from "./hooks/useUserDetailContext.jsx";
 
-import { PageLoadingLayout, PageMessageLayout } from "@common/components";
-import { PersonInformationSection } from "@person/components"; 
+import { PageLoadingLayout, PageMessageLayout, UpdateButton } from "@common/components";
+import { PersonInformationForm, PersonInformationSection } from "@person/components"; 
+import { Form, Formik } from "formik";
 
-import { Box, Flex, Text } from "ds-loud-ng";
+import { Box, Flex, IconButton, Text } from "ds-loud-ng";
 
 export const UserDetailContent = () => {
 	const ctx = useUserDetailContext();
@@ -28,10 +29,38 @@ export const UserDetailContent = () => {
 				<Text type="title">
 					Usuario
 				</Text>
+
+				<IconButton
+					icon={{ icon: ctx.isUserEditing ? "times" : "pencil" }}
+					margin="r-8"
+					onClick={ctx.handleUserEdit}
+				/>
 			</Flex>
 
 			<Box margin="x-10">
-				<PersonInformationSection onImageChange={ctx.handleImageChange} person={ctx.user.person} />
+				{ctx.isUserEditing ? (
+					<Formik
+						initialValues={ctx.formUser}
+						onSubmit={ctx.handleSubmitUser}
+						//validationSchema={serviceYupSchema}
+					>
+						{formik => (
+							<Form>
+								<PersonInformationForm />
+
+								<Flex margin="b-32 t-8" hAlign="end">
+									<UpdateButton disabled={!(formik.dirty && formik.isValid)} />
+								</Flex>
+							</Form>
+						)}
+					</Formik>
+				) : (
+					<PersonInformationSection
+						onImageChange={ctx.handleImageChange}
+						person={ctx.user.person}
+					/>
+				)}
+				
 			</Box>
 		</>
 	);

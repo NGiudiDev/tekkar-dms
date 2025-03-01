@@ -1,24 +1,26 @@
 import React from "react";
 
 import { ThreeColumnsGrid } from "@common/components";
+import { UserPasswordInput } from "@user/components";
 import {
-	UserDocNumberInput,
-	UserEmailInput,
-	UserNameInput,
-	UserPhoneInput,
-} from "@user/components";
+	PersonDocNumberInput,
+	PersonEmailInput,
+	PersonNameInput,
+	PersonPhoneInput,
+} from "@person/components";
 
 export const UserInformationForm = () => {
 	return (
 		<ThreeColumnsGrid.Grid>			
 			<ThreeColumnsGrid.Row>
-				<UserNameInput margin="b-8" />
-				<UserDocNumberInput margin="b-8" />
+				<PersonNameInput margin="b-8" />
+				<PersonDocNumberInput margin="b-8" />
+				<UserPasswordInput margin="b-8" />
 			</ThreeColumnsGrid.Row>
 
 			<ThreeColumnsGrid.Row>
-				<UserEmailInput margin="b-8" />
-				<UserPhoneInput margin="b-8" />
+				<PersonEmailInput margin="b-8" />
+				<PersonPhoneInput margin="b-8" />
 			</ThreeColumnsGrid.Row>
 
 			<ThreeColumnsGrid.Row />
