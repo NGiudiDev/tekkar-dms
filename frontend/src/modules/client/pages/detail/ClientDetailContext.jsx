@@ -14,6 +14,7 @@ import { updatePerson } from "@store/store";
 import toast from "react-hot-toast";
 
 import { CLIENT_QUERY_KEYS } from "@client/constants/client.consts"; 
+import { PATH } from "@router/constants/routes.consts";
 
 const DEFAULT_PROPS = {
 	children: null,
@@ -78,13 +79,12 @@ export const ClientDetailProvider = (props) => {
 		},
 	});
 
-	const setClientValues = (client) => {
-		setFormClient({
-			doc_number: client.doc_number || "",
-			email: client.email || "",
-			name: client.name || "",
-			phone: client.phone || "",
-		});
+	const handleClientEdit = () => {
+		setIsClientEditing((prev) => !prev);
+	};
+
+	const handleCreateCar = () => {
+		router.push(`${PATH.carCreate}?client_id=${client.id}`);
 	};
 
 	const handleImageChange = () => {
@@ -100,16 +100,22 @@ export const ClientDetailProvider = (props) => {
 		}
 	};
 
-	const handleClientEdit = () => {
-		setIsClientEditing((prev) => !prev);
+	const setClientValues = (client) => {
+		setFormClient({
+			doc_number: client.doc_number || "",
+			email: client.email || "",
+			name: client.name || "",
+			phone: client.phone || "",
+		});
 	};
 
 	const valueObj = {
 		error: query.error,
 		formClient,
+		handleClientEdit,
+		handleCreateCar,
 		handleImageChange,
 		handleSubmitClient,
-		handleClientEdit,
 		isLoading: query.isLoading || !client,
 		isLoggedUser: id === loggedUser.id,
 		isClientEditing,

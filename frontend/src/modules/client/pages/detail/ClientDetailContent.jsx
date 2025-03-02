@@ -3,7 +3,8 @@ import React from "react";
 import { useClientDetailContext } from "./hooks/useClientDetailContext.jsx";
 
 import { PageLoadingLayout, PageMessageLayout, UpdateButton } from "@common/components";
-import { PersonInformationForm, PersonInformationSection } from "@person/components"; 
+import { PersonInformationForm, PersonInformationSection } from "@person/components";
+import { ClientActionsDropdown } from "./components"; 
 import { Form, Formik } from "formik";
 
 import { Box, Flex, IconButton, Text } from "ds-loud-ng";
@@ -30,11 +31,15 @@ export const ClientDetailContent = () => {
 					Usuario
 				</Text>
 
-				<IconButton
-					icon={{ icon: ctx.isClientEditing ? "times" : "pencil" }}
-					margin="r-8"
-					onClick={ctx.handleClientEdit}
-				/>
+				<Flex>
+					<IconButton
+						icon={{ icon: ctx.isClientEditing ? "times" : "pencil" }}
+						margin="r-8"
+						onClick={ctx.handleClientEdit}
+					/>
+
+					<ClientActionsDropdown />					
+				</Flex>
 			</Flex>
 
 			<Box margin="x-10">
