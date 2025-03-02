@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import { ClientDetailContext } from "./hooks/useClientDetailContext";
 
-import { useQueryClient, useQuery } from "@tanstack/react-query";
-import { useSelector } from "react-redux";
+import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "@hooks";
 
+import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
+import { updatePersonDetail } from "@person/services/person.requests";
 import { getClientDetail } from "@client/services/client.requests";
+import { updatePerson } from "@store/store";
 
-import { CLIENT_QUERY_KEYS } from "@client/constants/client.consts";
+import toast from "react-hot-toast";
+
+import { CLIENT_QUERY_KEYS } from "@client/constants/client.consts"; 
 
 const DEFAULT_PROPS = {
 	children: null,
@@ -23,26 +28,93 @@ export const ClientDetailProvider = (props) => {
 	
 	const loggedUser = useSelector(state => state.user);
 	const queryClient = useQueryClient();
+	const dispatch = useDispatch();
 	const router = useRouter();
+
+	const [isClientEditing, setIsClientEditing] = useState(false);
+	const [formClient, setFormClient] = useState(null);
+	const [client, setClient] = useState(null);
 
 	const id = parseInt(router.query.id);
 
 	const query = useQuery({
 		queryKey:	CLIENT_QUERY_KEYS.detail(id),
-		queryFn: async () =>  getClientDetail(id),
+		queryFn: async () => {
+			const client = await getClientDetail(id);
+
+			setClientValues(client);
+			setClient(client);
+
+			return client;
+		},
 	});
+
+	const clientMutation =  useMutation({
+		mutationFn: (modifiedObj) => {
+			return updatePersonDetail(id, modifiedObj);
+		},
+		onError: (err) => {
+			const { status } = err.response;
+
+			switch (status) {
+			case 422:
+				toast.error("Se han enviado datos que no son permitidos.");
+				break;
+			case 500:
+				toast.error("Hubo un error en el servidor. Por favor intente más tarde.");
+				break;
+			}
+		},
+		onSuccess: (client) => { 
+			toast.success("Se ha actualizado la información del usuario.");
+			
+			if (client.id === loggedUser.person.id) {
+				dispatch(updatePerson(client));
+			}
+
+			setClientValues(client);
+			setClient(client);
+
+			handleClientEdit();
+		},
+	});
+
+	const setClientValues = (client) => {
+		setFormClient({
+			doc_number: client.doc_number || "",
+			email: client.email || "",
+			name: client.name || "",
+			phone: client.phone || "",
+		});
+	};
 
 	const handleImageChange = () => {
 		//? The GET request is invalidated to trigger a refetch and retrieve the updated data.
 		queryClient.invalidateQueries({ queryKey: CLIENT_QUERY_KEYS.detail(id) });
 	};
 
+	const handleSubmitClient = (values) => {
+		const modifiedObj = getChangedFields(values, formClient);
+
+		if (!isEmptyObject(modifiedObj)) {
+			clientMutation.mutate(modifiedObj);
+		}
+	};
+
+	const handleClientEdit = () => {
+		setIsClientEditing((prev) => !prev);
+	};
+
 	const valueObj = {
-		client: query.data,
 		error: query.error,
+		formClient,
 		handleImageChange,
-		isLoading: query.isLoading,
-		isLoggedUser: query.isSuccess ? query.data.id === loggedUser.person.id : false,
+		handleSubmitClient,
+		handleClientEdit,
+		isLoading: query.isLoading || !client,
+		isLoggedUser: id === loggedUser.id,
+		isClientEditing,
+		client,
 	};
 
 	return (

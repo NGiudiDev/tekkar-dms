@@ -2,10 +2,11 @@ import React from "react";
 
 import { useClientDetailContext } from "./hooks/useClientDetailContext.jsx";
 
-import { PageLoadingLayout, PageMessageLayout } from "@common/components";
-import { PersonInformationSection } from "@person/components"; 
+import { PageLoadingLayout, PageMessageLayout, UpdateButton } from "@common/components";
+import { PersonInformationForm, PersonInformationSection } from "@person/components"; 
+import { Form, Formik } from "formik";
 
-import { Box, Flex, Text } from "ds-loud-ng";
+import { Box, Flex, IconButton, Text } from "ds-loud-ng";
 
 export const ClientDetailContent = () => {
 	const ctx = useClientDetailContext();
@@ -26,12 +27,43 @@ export const ClientDetailContent = () => {
 		<>
 			<Flex hAlign="space-between" margin="b-24">
 				<Text type="title">
-					Cliente
+					Usuario
 				</Text>
+
+				<IconButton
+					icon={{ icon: ctx.isClientEditing ? "times" : "pencil" }}
+					margin="r-8"
+					onClick={ctx.handleClientEdit}
+				/>
 			</Flex>
 
 			<Box margin="x-10">
-				<PersonInformationSection onImageChange={ctx.handleImageChange} person={ctx.client} />
+				{ctx.isClientEditing ? (
+					<Formik
+						initialValues={ctx.formClient}
+						onSubmit={ctx.handleSubmitClient}
+						//validationSchema={serviceYupSchema}
+					>
+						{formik => (
+							<Form>
+								<PersonInformationForm
+									onImageChange={ctx.handleImageChange}
+									person={ctx.client}
+								/>
+
+								<Flex margin="b-32 t-8" hAlign="end">
+									<UpdateButton disabled={!(formik.dirty && formik.isValid)} />
+								</Flex>
+							</Form>
+						)}
+					</Formik>
+				) : (
+					<PersonInformationSection
+						onImageChange={ctx.handleImageChange}
+						person={ctx.client}
+					/>
+				)}
+				
 			</Box>
 		</>
 	);
