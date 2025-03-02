@@ -15,9 +15,17 @@ import { serviceYupSchema } from "@service/services/service.validations";
 export const ServiceDetailContent = () => {
 	const ctx = useServiceDetailContext();
 
-	if (ctx.isLoading) return <PageLoadingLayout />;
-
 	if (ctx.error) {
+		if(ctx.error.status === 404) {
+			return (
+				<PageMessageLayout 
+					description="No se pudo encontrar la información del servicio. Por favor, verifique la URL o intente nuevamente más tarde."
+					isFullScreen
+					title="Servicio no encontrado"
+				/>
+			);
+		}
+
 		return (
 			<PageMessageLayout 
 				description="Hubo un error al obtener la información, por favor recargue la página o intentelo más tarde."
@@ -26,6 +34,8 @@ export const ServiceDetailContent = () => {
 			/>
 		);
 	}
+
+	if (ctx.isLoading) return <PageLoadingLayout />;
 
 	return (
 		<>

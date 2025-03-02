@@ -9,18 +9,23 @@ const create = async (data) => {
 	return client;
 };
 
-const getOne = async (whereObj) => {
+const getOne = async (where) => {
+  const whereObj = {
+    ...where,
+    roles: { [Op.like]: "%client%" },
+  };
+
   const client = await personModel.getOne(whereObj);
   return client;
 };
 
-const getPage = async (page, whereObj) => {
-  const newWhereObj = {
-    ...whereObj,
+const getPage = async (page, where) => {
+  const whereObj = {
+    ...where,
     roles: { [Op.like]: "%client%" },
   };
 
-  const clientsObj = await personModel.getPage(page, newWhereObj);
+  const clientsObj = await personModel.getPage(page, whereObj);
   return clientsObj;
 };
 

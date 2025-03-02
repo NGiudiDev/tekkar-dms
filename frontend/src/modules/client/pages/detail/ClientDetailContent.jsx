@@ -12,9 +12,17 @@ import { Box, Flex, IconButton, Text } from "ds-loud-ng";
 export const ClientDetailContent = () => {
 	const ctx = useClientDetailContext();
 
-	if (ctx.isLoading) return <PageLoadingLayout />;
-
 	if (ctx.error) {
+		if(ctx.error.status === 404) {
+			return (
+				<PageMessageLayout 
+					description="No se pudo encontrar la información del cliente. Por favor, verifique la URL o intente nuevamente más tarde."
+					isFullScreen
+					title="Cliente no encontrado"
+				/>
+			);
+		}
+
 		return (
 			<PageMessageLayout 
 				description="Hubo un error al obtener la información, por favor recargue la página o intentelo más tarde."
@@ -24,11 +32,13 @@ export const ClientDetailContent = () => {
 		);
 	}
 
+	if (ctx.isLoading) return <PageLoadingLayout />;
+
 	return (
 		<>
 			<Flex hAlign="space-between" margin="b-24">
 				<Text type="title">
-					Usuario
+					Cliente
 				</Text>
 
 				<Flex>

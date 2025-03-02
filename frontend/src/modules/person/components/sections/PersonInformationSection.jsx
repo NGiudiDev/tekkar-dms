@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { DataText, ThreeColumnsGrid } from "@common/components";
 import { EditablePersonImage, PersonImage } from "../";
 
+import { Flex } from "ds-loud-ng";
+
 const DEFAULT_PROPS = {
 	onImageChange: null,
 	person: {},
@@ -46,14 +48,16 @@ export const PersonInformationSection = (props) => {
 			</ThreeColumnsGrid.Row>
 
 			<ThreeColumnsGrid.Row>
-				{attrs.onImageChange !== null ? (
-					<EditablePersonImage
-						onImageChange={attrs.onImageChange}
-						person={attrs.person}
-					/>
-				) : (
-					<PersonImage person={attrs.person} />
-				)}
+				<Flex hAlign="center" margin="t-24">
+					{attrs.onImageChange !== null ? (
+						<EditablePersonImage
+							onImageChange={attrs.onImageChange}
+							person={attrs.person}
+						/>
+					) : (
+						<PersonImage person={attrs.person} />
+					)}
+				</Flex>
 			</ThreeColumnsGrid.Row>
 		</ThreeColumnsGrid.Grid>
 	);

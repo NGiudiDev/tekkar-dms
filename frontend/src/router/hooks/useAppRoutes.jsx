@@ -4,7 +4,7 @@ import React from "react";
 import { CarCreatePage, CarDetailPage, CarListPage } from "@car/pages";
 
 //? client pages
-import { ClientListPage, ClientDetailPage } from "@client/pages";
+import { ClientCreatePage, ClientListPage, ClientDetailPage } from "@client/pages";
 
 //? session pages
 import { LoginPage } from "@session/pages";
@@ -67,14 +67,14 @@ export const useAppRoutes = () => {
       path: PATH.cars,
     },
     {
-      element: <ClientListPage />,
-      name: "clients",
+      element: <ClientCreatePage />,
+      name: "client_create",
       options: {
         isFreeAccess: false,
-        isPrivated:true,
+        isPrivated: true,
         useAppLayout: true,
       },
-      path: PATH.clients,
+      path: PATH.clientCreate,
     },
     {
       element: <ClientDetailPage />,
@@ -85,6 +85,16 @@ export const useAppRoutes = () => {
         useAppLayout: true,
       },
       path: PATH.clientDetail,
+    },
+    {
+      element: <ClientListPage />,
+      name: "clients",
+      options: {
+        isFreeAccess: false,
+        isPrivated:true,
+        useAppLayout: true,
+      },
+      path: PATH.clients,
     },
     {
       element: <LoginPage />,

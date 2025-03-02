@@ -70,6 +70,18 @@ export const updateCarValidation = (qParams) => {
 												👥 CLIENT VALIDATIONS 👥
      ********************************************************************/
 
+export const createClientValidation = user => {
+	const userSchema = joi.object({
+		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
+		email: VALIDATIONS.PERSON.EMAIL,
+		name: VALIDATIONS.PERSON.NAME,
+		phone: VALIDATIONS.PERSON.PHONE,
+	});
+
+	return validate(userSchema, user);
+};
+												
+
 export const getClientPageValidation = (qParams) => {
 	const clientSchema = joi.object({
 		page: VALIDATIONS.COMMON.PAGE,

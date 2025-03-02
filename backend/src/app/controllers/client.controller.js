@@ -1,6 +1,8 @@
 import { clientService } from "../services/client.service.js";
+import { personService } from "../services/person.service.js";
 
 import {
+  createClientValidation,
 	getClientPageValidation,
   getOneClientValidation,
   updateClientValidation,
@@ -8,6 +10,25 @@ import {
 
 import { MESSAGES } from "../constants/messages.js";
 
+const create = async (req, res) => {
+  const errors = createClientValidation(req.body);
+
+  if (errors)
+    return res.status(422).json({ errors });
+  
+  try {
+    const invalidEmail = await personService.existEmail(req.body.email);
+
+    if (invalidEmail)
+      return res.status(409).json({ errors: [{ message: MESSAGES.PERSON_EMAIL_DUPLICATED }]});
+
+    const client = await clientService.create(req.body, req.headers);
+
+    return res.status(200).json({ client });
+  } catch(err) {
+    return res.status(500).json({ err });
+  }
+};
 
 const getOne = async (req, res) => {
   const id = parseInt(req.params.id);
@@ -18,12 +39,12 @@ const getOne = async (req, res) => {
     return res.status(422).json({ errors });
   
   try {
-    const user = await clientService.getOne({ id });
+    const client = await clientService.getOne({ id });
     
-    if (!user)
+    if (!client)
       return res.status(404).json({ errros: [{ message: MESSAGES.CLIENT_NOT_FOUND }]});
 
-    return res.status(200).json(user);
+    return res.status(200).json(client);
   } catch(err) {
     return res.status(500).json({ err });
   }
@@ -65,6 +86,7 @@ const update = async (req, res) => {
 };
 
 export const clientController = {
+  create,
 	getOne,
   getPage,
   update,

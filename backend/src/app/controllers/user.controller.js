@@ -1,4 +1,6 @@
+import { personService } from "../services/person.service.js";
 import { userService } from "../services/user.service.js";
+
 import {
 	authenticationValidation,
 	createUserValidation,
@@ -39,16 +41,15 @@ const create = async (req, res) => {
 		return res.status(422).json({ errors });
 	
 	try {
-		const invalidEmail = await userService.existEmail(req.body.email);
+		const invalidEmail = await personService.existEmail(req.body.email);
 
 		if (invalidEmail)
-			return res.status(409).json({ errors: [{ message: MESSAGES.USER_EMAIL_DUPLICATED }]});
+			return res.status(409).json({ errors: [{ message: MESSAGES.PERSON_EMAIL_DUPLICATED }]});
 
 		const user = await userService.create(req.body, req.headers);
 
 		return res.status(200).json({ user });
 	} catch(err) {
-		console.log(err);
 		return res.status(500).json({ err });
 	}
 };

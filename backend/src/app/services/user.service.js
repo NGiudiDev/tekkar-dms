@@ -53,17 +53,6 @@ const create = async (data) => {
 	return user;
 };
 
-const existEmail = async (email) => {
-	const person = await personModel.getOne({ email });
-	let user = null;
-
-	if (person !== null) {
-		user = await getOne({ person_id: person.id });
-	}
-	
-	return !!user;
-};
-
 const getOne = async (whereObj, attributes) => {
 	const user = await userModel.getOne(whereObj, attributes);
 	return user;
@@ -123,7 +112,6 @@ const update = async (user_id, data) => {
 export const userService = {
 	authentication,
 	create,
-	existEmail,
   getOne,
 	getPage,
 	login,

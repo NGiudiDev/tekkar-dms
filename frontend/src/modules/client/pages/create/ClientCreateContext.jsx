@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { UserCreateContext } from "./hooks/useUserCreateContext";
+import { ClientCreateContext } from "./hooks/useClientCreateContext";
 
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "@hooks";
 
-import { createUser } from "@user/services/user.requests";
+import { createClient } from "@client/services/client.requests";
 import toast from "react-hot-toast";
 
 import { PATH } from "@router/constants/routes.consts";
@@ -15,7 +15,7 @@ const DEFAULT_PROPS = {
 	children: null,
 };
 
-export const UserCreateProvider = (props) => {
+export const ClientCreateProvider = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -23,16 +23,15 @@ export const UserCreateProvider = (props) => {
 
 	const router = useRouter();
 	
-	const initialUser = {
+	const initialClient = {
 		doc_number: "",
 		email: "",
 		name: "",
-		password: "",
 		phone: "",
 	};
 
-	const userMutation =  useMutation({
-		mutationFn: (obj) => createUser(obj),
+	const clientMutation =  useMutation({
+		mutationFn: (obj) => createClient(obj),
 		onError: (err) => {
 			const { status } = err.response;
 
@@ -49,27 +48,27 @@ export const UserCreateProvider = (props) => {
 			}
 		},
 		onSuccess: (data) => {
-			toast.success("Usuario creado exitosamente.");
-			router.push(`${PATH.users}/${data.user.id}`);
+			toast.success("Cliente creado exitosamente.");
+			router.push(`${PATH.clients}/${data.client.id}`);
 		},
 	});
 
-	const handleSubmitUser = (values) => {
-		userMutation.mutate(values);
+	const handleSubmitClient = (values) => {
+		clientMutation.mutate(values);
 	};
 
 	const valueObj = {
-		initialUser,
-		handleSubmitUser,
+		initialClient,
+		handleSubmitClient,
 	};
 
 	return (
-		<UserCreateContext.Provider value={valueObj}>
+		<ClientCreateContext.Provider value={valueObj}>
 			{attrs.children}
-		</UserCreateContext.Provider>
+		</ClientCreateContext.Provider>
 	);
 };
 
-UserCreateProvider.propTypes = {
+ClientCreateProvider.propTypes = {
 	children: PropTypes.node,
 };

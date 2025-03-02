@@ -1,5 +1,10 @@
 import { personModel } from "../models/person.model.js";
 
+const existEmail = async (email) => {
+	const person = await personModel.getOne({ email });
+	return person !== null;
+};
+
 const getOne = async (whereObj) => {
   const person = await personModel.getOne(whereObj);
 
@@ -15,6 +20,7 @@ const update = async (person_id, data) => {
 };
 
 export const personService = {
+  existEmail,
   getOne,
   update,
 };

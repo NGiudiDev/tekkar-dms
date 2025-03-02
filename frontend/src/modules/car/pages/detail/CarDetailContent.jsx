@@ -20,9 +20,17 @@ import { carYupSchema } from "@car/services/car_validations.services";
 export const CarDetailContent = () => {
 	const ctx = useCarDetailContext();
 
-	if (ctx.isLoading) return <PageLoadingLayout />;
-
 	if (ctx.error) {
+		if(ctx.error.status === 404) {
+			return (
+				<PageMessageLayout 
+					description="No se pudo encontrar la información del vehículo. Por favor, verifique la URL o intente nuevamente más tarde."
+					isFullScreen
+					title="Vehículo no encontrado"
+				/>
+			);
+		}
+
 		return (
 			<PageMessageLayout 
 				description="Hubo un error al obtener la información, por favor recargue la página o intentelo más tarde."
@@ -31,6 +39,8 @@ export const CarDetailContent = () => {
 			/>
 		);
 	}
+
+	if (ctx.isLoading) return <PageLoadingLayout />;
 
 	return (
 		<>
