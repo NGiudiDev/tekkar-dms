@@ -24,8 +24,15 @@ const getPage = async (page, whereObj) => {
   return clientsObj;
 };
 
+const update = async (client_id, data) => {
+  const client = await personModel.update(client_id, data);
+
+  return client;
+};
+
 export const clientModel = {
   create,
 	getOne,
   getPage,
+  update,
 }

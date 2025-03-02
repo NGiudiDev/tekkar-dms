@@ -25,6 +25,7 @@ const create = async (data) => {
 		email: data.email,
 		name: data.name,
 		phone: data.phone,
+		roles: "user",
 	};
 
 	let person = await personModel.create(personData);

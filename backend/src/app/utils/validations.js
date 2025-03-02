@@ -86,6 +86,16 @@ export const getOneClientValidation = data => {
 	return validate(dataSchema, data);
 };
 
+export const updateClientValidation = (qParams) => {
+	const carSchema = joi.object({
+		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
+		email: VALIDATIONS.PERSON.EMAIL,
+		name: VALIDATIONS.PERSON.NAME,
+		phone: VALIDATIONS.PERSON.PHONE,
+	});
+
+	return validate(carSchema, qParams);
+};
 
 /******************************************************************************
 												👥 PERSON VALIDATIONS 👥

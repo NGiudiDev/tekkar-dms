@@ -2,7 +2,8 @@ import React from "react";
 
 import { useLoginContext } from "./hoooks/useLoginContext";
 
-import { UserEmailInput, UserPasswordInput } from "@user/components";
+import { PersonEmailInput } from "@person/components";
+import { UserPasswordInput } from "@user/components";
 import { Form, Formik } from "formik";
 
 import { Button, Text } from "ds-loud-ng";
@@ -29,7 +30,7 @@ export const LoginContent = () => {
         validationSchema={loginYupSchema}
       >
         <Form>
-          <UserEmailInput margin="b-8" />
+          <PersonEmailInput margin="b-8" />
 
           <UserPasswordInput />
           

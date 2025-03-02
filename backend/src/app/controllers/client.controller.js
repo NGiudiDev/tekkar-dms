@@ -3,6 +3,7 @@ import { clientService } from "../services/client.service.js";
 import {
 	getClientPageValidation,
   getOneClientValidation,
+  updateClientValidation,
 } from "../utils/validations.js";
 
 import { MESSAGES } from "../constants/messages.js";
@@ -45,7 +46,26 @@ const getPage = async (req, res) => {
   }
 };
 
+const update = async (req, res) => {
+  const errors = updateClientValidation(req.body);
+
+  if (errors)
+    return res.status(422).json({ errors });
+  
+  try {
+    const client = await clientService.update(req.params.id, req.body);
+
+    if (!client)
+      return res.status(404).json({ errros: [{ message: MESSAGES.CLIENT_NOT_FOUND }]});
+
+    return res.status(200).json(client);
+  } catch(err) {
+    return res.status(500).json({ err });
+  }
+};
+
 export const clientController = {
 	getOne,
   getPage,
+  update,
 };

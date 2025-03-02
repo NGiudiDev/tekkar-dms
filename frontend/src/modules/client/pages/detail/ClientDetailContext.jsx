@@ -8,8 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "@hooks";
 
 import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
-import { updatePersonDetail } from "@person/services/person.requests";
-import { getClientDetail } from "@client/services/client.requests";
+import { getClientDetail, updateClientDetail } from "@client/services/client.requests";
 import { updatePerson } from "@store/store";
 
 import toast from "react-hot-toast";
@@ -51,7 +50,7 @@ export const ClientDetailProvider = (props) => {
 
 	const clientMutation =  useMutation({
 		mutationFn: (modifiedObj) => {
-			return updatePersonDetail(id, modifiedObj);
+			return updateClientDetail(id, modifiedObj);
 		},
 		onError: (err) => {
 			const { status } = err.response;

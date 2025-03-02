@@ -15,7 +15,16 @@ const getPage = async (page, whereObj) => {
   return { pagination: stats, list: rows};
 };
 
+const update = async (client_id, data) => {
+  await clientModel.update(client_id, data);
+  
+  const client = await getOne({ id: client_id });
+
+  return client;
+};
+
 export const clientService = {
   getOne,
 	getPage,
+  update
 };
