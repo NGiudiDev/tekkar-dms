@@ -4,11 +4,17 @@ import PropTypes from "prop-types";
 import { UserDetailContext } from "./hooks/useUserDetailContext";
 
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "@hooks";
 
-import { getUserDetail, updateUserDetail } from "@user/services/user.requests";
 import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
+import { updatePersonDetail } from "@person/services/person.requests";
+import { getUserDetail } from "@user/services/user.requests";
+import { updatePerson } from "@store/store";
+
+import toast from "react-hot-toast";
+
+import { USER_QUERY_KEYS } from "@user/constants/user.consts"; 
 
 const DEFAULT_PROPS = {
 	children: null,
@@ -22,6 +28,7 @@ export const UserDetailProvider = (props) => {
 	
 	const loggedUser = useSelector(state => state.user);
 	const queryClient = useQueryClient();
+	const dispatch = useDispatch();
 	const router = useRouter();
 
 	const [isUserEditing, setIsUserEditing] = useState(false);
@@ -31,19 +38,20 @@ export const UserDetailProvider = (props) => {
 	const id = parseInt(router.query.id);
 
 	const query = useQuery({
-		queryKey:	["user-detail", id],
+		queryKey:	USER_QUERY_KEYS.detail(id),
 		queryFn: async () => {
 			const user = await getUserDetail(id);
 
 			setUserValues(user);
 			setUser(user);
+
 			return user;
 		},
 	});
 
 	const userMutation =  useMutation({
 		mutationFn: (modifiedObj) => {
-			return updateUserDetail(id, modifiedObj);
+			return updatePersonDetail(id, modifiedObj);
 		},
 		onError: (err) => {
 			const { status } = err.response;
@@ -57,10 +65,16 @@ export const UserDetailProvider = (props) => {
 				break;
 			}
 		},
-		onSuccess: (data) => {
+		onSuccess: (person) => {
 			toast.success("Se ha actualizado la información del usuario.");
+			
+			if (person.id === loggedUser.person.id) {
+				dispatch(updatePerson(person));
+			}
 
-			setUserValues(data);
+			setUserValues({...user, person});
+			setUser((prev) => ({ ...prev, person }));
+
 			handleUserEdit();
 		},
 	});
@@ -76,16 +90,16 @@ export const UserDetailProvider = (props) => {
 
 	const handleImageChange = () => {
 		//? The GET request is invalidated to trigger a refetch and retrieve the updated data.
-		queryClient.invalidateQueries({ queryKey: ["user-detail"] });
+		queryClient.invalidateQueries({ queryKey: USER_QUERY_KEYS.detail(id) });
 	};
 
 	const handleSubmitUser = (values) => {
-			const modifiedObj = getChangedFields(values, formUser);
-	
-			if (!isEmptyObject(modifiedObj)) {
-				userMutation.mutate(modifiedObj);
-			}
-		};
+		const modifiedObj = getChangedFields(values, formUser);
+
+		if (!isEmptyObject(modifiedObj)) {
+			userMutation.mutate(modifiedObj);
+		}
+	};
 
 	const handleUserEdit = () => {
 		setIsUserEditing((prev) => !prev);

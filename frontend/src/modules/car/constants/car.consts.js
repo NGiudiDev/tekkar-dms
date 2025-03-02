@@ -7,6 +7,7 @@ export const CAR_REGEXS = {
 
 export const CAR_QUERY_KEYS = {
   all: ["car"],
+  detail: (id, filters) => [...CAR_QUERY_KEYS.all, "detail", id, { filters }],
   lists: () => [...CAR_QUERY_KEYS.all, "list"],
   list: (filters) => [...CAR_QUERY_KEYS.lists(), { filters }],
 };

@@ -11,6 +11,7 @@ import { getCarDetailById, updateCarDetail } from "@car/services/car.services";
 import { getServicePage } from "@service/services/service.requests";
 import toast from "react-hot-toast";
 
+import { CAR_QUERY_KEYS } from "@car/constants/car.consts";
 import { PATH } from "@router/constants/routes.consts";
 
 const DEFAULT_PROPS = {
@@ -38,7 +39,7 @@ export const CarDetailProvider = (props) => {
 	const id = parseInt(router.query.id);
 
 	const query = useQuery({
-		queryKey: ["car-detail", id, servicesPage],
+		queryKey: CAR_QUERY_KEYS.detail(id, { servicesPage }),
 		queryFn: async () => {
 			const requests = [
 				getCarDetailById(id),

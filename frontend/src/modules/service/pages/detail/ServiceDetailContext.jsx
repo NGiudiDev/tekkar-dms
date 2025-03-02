@@ -8,8 +8,9 @@ import { useRouter } from "@hooks";
 
 import { getServiceDetail, updateServiceDetail } from "@service/services/service.requests";
 import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
-
 import toast from "react-hot-toast";
+
+import { SERVICE_QUERY_KEYS } from "@service/constants/service.consts";
 
 const DEFAULT_PROPS = {
 	children: null,
@@ -30,7 +31,7 @@ export const ServiceDetailProvider = (props) => {
 	const id = parseInt(router.query.id);
 
 	const query = useQuery({
-		queryKey: ["service-detail", id],
+		queryKey: SERVICE_QUERY_KEYS.detail(id),
 		queryFn: async () => {
 			const service = await getServiceDetail(id);
 
@@ -62,6 +63,7 @@ export const ServiceDetailProvider = (props) => {
 
 			setServiceValues(data);
 			setService(data);
+
 			handleServiceEdit();
 		},
 	});
