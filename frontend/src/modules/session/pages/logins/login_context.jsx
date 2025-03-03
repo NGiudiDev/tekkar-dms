@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { LoginContext } from "./hoooks/useLoginContext.jsx"; 
+import { LoginContext } from "./hoooks/use_login_context.jsx"; 
 
 import { useMutation } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
 import { useRouter } from "@hooks";
 
-import { userLogin } from "@session/services/session.requests";
+import { userLogin } from "@session/services/session_requests_services";
 import { login } from "@store/store";
 import toast from "react-hot-toast";
 

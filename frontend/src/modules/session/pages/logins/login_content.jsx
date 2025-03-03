@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useLoginContext } from "./hoooks/useLoginContext";
+import { useLoginContext } from "./hoooks/use_login_context";
 
 import { PersonEmailInput } from "@person/components";
 import { UserPasswordInput } from "@user/components";
@@ -8,9 +8,9 @@ import { Form, Formik } from "formik";
 
 import { Button, Text } from "ds-loud-ng";
 
-import { Styles } from "./LoginPage.styles";
+import { Styles } from "./login_page_styles";
 
-import { loginYupSchema } from "@session/services/session.validations";
+import { loginYupSchema } from "@session/services/session_validations_services";
 
 export const LoginContent = () => {
   const ctx = useLoginContext();

@@ -3,7 +3,7 @@ import {
 	getLoginOfLocalStorage,
 	removeLoginOfLocalStorage,
 	setLoginOfLocalStorage,
-} from "@session/services/session.local_storage";
+} from "@session/services/session_local_storage_services";
 
 export const userAuthentication = (data) => {
 	return postAxios("/users/authentication", data);

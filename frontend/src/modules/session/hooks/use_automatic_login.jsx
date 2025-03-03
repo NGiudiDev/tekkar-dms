@@ -4,8 +4,8 @@ import { useMutation } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
 import { useRouter } from "@hooks";
 
-import { getLoginOfLocalStorage, removeLoginOfLocalStorage } from "@session/services/session.local_storage";
-import { userAuthentication } from "@session/services/session.requests";
+import { getLoginOfLocalStorage, removeLoginOfLocalStorage } from "@session/services/session_local_storage_services";
+import { userAuthentication } from "@session/services/session_requests_services";
 import { login } from "@store/store";
 
 import toast from "react-hot-toast";
