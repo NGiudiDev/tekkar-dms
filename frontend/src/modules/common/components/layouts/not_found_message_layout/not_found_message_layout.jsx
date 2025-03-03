@@ -1,7 +1,7 @@
 import React from "react";
 import { PageMessageLayout } from "../..";
 
-import { Styles } from "./NotFoundMessageLayout.styles";
+import { Styles } from "./not_found_message_layout_styles";
 
 export const NotFoundMessageLayout = () => {  
 	return (

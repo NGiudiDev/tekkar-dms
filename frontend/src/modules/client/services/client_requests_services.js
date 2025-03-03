@@ -1,4 +1,4 @@
-import { getAxios, postAxios, putAxios } from "@common/services/axios.services";
+import { getAxios, postAxios, putAxios } from "@common/services/axios_services";
 
 export const createClient = (data) => {
   return postAxios("/clients", data);

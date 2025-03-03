@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useClientDetailContext } from "../hooksuse_client_detail_contextext";
+import { useClientDetailContext } from "../hooks/use_client_detail_context";
 
 import { ActionsButton } from "@common/components";
 

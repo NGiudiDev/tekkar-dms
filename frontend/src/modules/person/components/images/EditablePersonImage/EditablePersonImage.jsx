@@ -11,8 +11,8 @@ import { Button, Dropzone, Flex, Icon, Image, Modal, Text } from "ds-loud-ng";
 import { Styles } from "./EditablePersonImage.styles";
 
 import { updatePersonDetail } from "@person/services/person.requests";
-import { imageYupSchema } from "@common/services/images.validations";
-import { uploadImage } from "@common/services/images.services";
+import { imageYupSchema } from "@common/services/image_validations_services";
+import { uploadImage } from "@common/services/image_services";
 import { updatePerson } from "@store/store";
 
 import toast from "react-hot-toast";

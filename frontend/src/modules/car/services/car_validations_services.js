@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-import { COMMON_VALIDATIONS } from "@common/constants/common_validations.consts";
+import { COMMON_VALIDATIONS } from "@common/constants/common_validations_consts";
 import { CAR_VALIDATIONS } from "@car/constants/car_validations_consts";
 
 export const carYupSchema = yup.object().shape({

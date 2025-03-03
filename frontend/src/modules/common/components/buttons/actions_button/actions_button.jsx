@@ -5,7 +5,7 @@ import { useOuterClick } from "@hooks";
 
 import { IconButton, Panel } from "ds-loud-ng";
 
-import { Styles } from "./ActionsButton.styles";
+import { Styles } from "./actions_button_styles";
 
 const DEFAULT_PROPS = {
 	children: null,

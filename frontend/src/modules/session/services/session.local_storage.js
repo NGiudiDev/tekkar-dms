@@ -1,10 +1,10 @@
-import { LOCALSTORAGE_USER_ID, LOCALSTORAGE_USER_TOKEN } from "@common/constants/settings.conts";
+import { LOCALSTORAGE_USER_ID, LOCALSTORAGE_USER_TOKEN } from "@common/constants/settings_conts";
 
 import {
   getItemLocalStorage,
   removeItemLocalStorage,
   setItemLocalStorage,
-} from "@common/utils/local_storage.utils";
+} from "@common/utils/local_storage_utils";
 
 //? login cookies.
 export const getLoginOfLocalStorage = () => {

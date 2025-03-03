@@ -1,17 +1,14 @@
 //? buttons
-export { ActionsButton } from "./buttons/ActionsButton/ActionsButton";
-export { CreateButton } from "./buttons/CreateButton";
-export { NewButton } from "./buttons/NewButton";
-export { UpdateButton } from "./buttons/UpdateButton";
-
-//? forms
-export { FormContainer } from "./forms/FormContainer";
+export { ActionsButton } from "./buttons/actions_button/actions_button";
+export { CreateButton } from "./buttons/create_button";
+export { NewButton } from "./buttons/new_button";
+export { UpdateButton } from "./buttons/update_button";
 
 //? layouts
-export { NotFoundMessageLayout } from "./layouts/NotFoundMessageLayout/NotFoundMessageLayout";
-export { PageLoadingLayout } from "./layouts/PageLoadingLayout/PageLoadingLayout";
-export { PageMessageLayout } from "./layouts/PageMessageLayout/PageMessageLayout";
-export { ThreeColumnsGrid } from "./layouts/ThreeColumnsGrid/ThreeColumsGrid";
+export { NotFoundMessageLayout } from "./layouts/not_found_message_layout/not_found_message_layout";
+export { PageLoadingLayout } from "./layouts/page_loading_layout/page_loading_layout";
+export { PageMessageLayout } from "./layouts/page_message_layout/page_message_layout";
+export { ThreeColumnsGrid } from "./layouts/three_columns_grid/three_colums_grid";
 
 //? texts
-export { DataText } from "./texts/DataText";
+export { DataText } from "./texts/data_text";

@@ -1,1 +1,1 @@
-export { ListPage } from "./ListPage";
+export { ListPage } from "./lists/list_page";

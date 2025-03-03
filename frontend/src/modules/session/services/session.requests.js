@@ -1,4 +1,4 @@
-import { postAxios } from "@common/services/axios.services";
+import { postAxios } from "@common/services/axios_services";
 import {
 	getLoginOfLocalStorage,
 	removeLoginOfLocalStorage,

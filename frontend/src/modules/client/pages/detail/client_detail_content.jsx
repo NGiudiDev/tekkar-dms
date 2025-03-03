@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useClientDetailContext } from "./hooksuse_client_detail_context.jsx";
+import { useClientDetailContext } from "./hooks/use_client_detail_context.jsx";
 
 import { PageLoadingLayout, PageMessageLayout, UpdateButton } from "@common/components";
 import { PersonInformationForm, PersonInformationSection } from "@person/components";

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Icon } from "ds-loud-ng";
 
-import { Styles } from "./PageLoadingLayout.styles";
+import { Styles } from "./page_loading_layout_styles";
 
 const DEFAULT_PROPS = {
 	isFullHeight: false,

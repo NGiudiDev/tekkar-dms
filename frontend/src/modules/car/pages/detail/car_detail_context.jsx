@@ -6,7 +6,7 @@ import { CarDetailContext } from "./hooks/use_car_detail_context";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter } from "@hooks";
 
-import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
+import { getChangedFields, isEmptyObject } from "@common/utils/form_utils";
 import { getCarDetailById, updateCarDetail } from "@car/services/car_requests_services";
 import { getServicePage } from "@service/services/service.requests";
 import toast from "react-hot-toast";

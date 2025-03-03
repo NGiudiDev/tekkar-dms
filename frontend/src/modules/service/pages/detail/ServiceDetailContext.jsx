@@ -7,7 +7,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter } from "@hooks";
 
 import { getServiceDetail, updateServiceDetail } from "@service/services/service.requests";
-import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
+import { getChangedFields, isEmptyObject } from "@common/utils/form_utils";
 import toast from "react-hot-toast";
 
 import { SERVICE_QUERY_KEYS } from "@service/constants/service.consts";

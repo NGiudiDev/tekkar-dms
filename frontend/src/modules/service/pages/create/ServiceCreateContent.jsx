@@ -3,8 +3,8 @@ import React from "react";
 import { useServiceCreateContext } from "./hooks/useServiceCreateContext";
 import { useRouter } from "@hooks";
 
-import { FormContainer, PageMessageLayout } from "@common/components";
 import { ServiceInformationForm } from "@service/components";
+import { PageMessageLayout } from "@common/components";
 import { Form, Formik } from "formik";
 
 import { Button, Flex, Text } from "ds-loud-ng";
@@ -31,25 +31,23 @@ export const ServiceCreateContent = () => {
 				Nuevo servicio
 			</Text>
 
-			<FormContainer>
-				<Formik
-					initialValues={ctx.service}
-					onSubmit={ctx.handleSubmitService}
-					validationSchema={serviceYupSchema}
-				>
-					{formik => (
-						<Form>
-							<ServiceInformationForm />
+			<Formik
+				initialValues={ctx.service}
+				onSubmit={ctx.handleSubmitService}
+				validationSchema={serviceYupSchema}
+			>
+				{formik => (
+					<Form>
+						<ServiceInformationForm />
 
-							<Flex margin="t-24" hAlign="end">
-								<Button disabled={!formik.isValid} type="submit">
-									Crear
-								</Button>
-							</Flex>
-						</Form>
-					)}
-				</Formik>
-			</FormContainer>
+						<Flex margin="t-24" hAlign="end">
+							<Button disabled={!formik.isValid} type="submit">
+								Crear
+							</Button>
+						</Flex>
+					</Form>
+				)}
+			</Formik>
 		</>
 	);
 };

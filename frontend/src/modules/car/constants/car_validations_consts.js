@@ -2,7 +2,7 @@ import * as yup from "yup";
 
 import { isArLicensePlate } from "@car/utils/car_utils";
 
-import { CURRENT_YEAR } from "@common/constants/settings.conts";
+import { CURRENT_YEAR } from "@common/constants/settings_conts";
 import { MIN_YEAR_PRODUCTION } from "@car/constants/car_consts";
 
 export const CAR_VALIDATIONS = {

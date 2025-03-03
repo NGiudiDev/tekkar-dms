@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Button, Text } from "ds-loud-ng";
 
-import { Styles } from "./PageMessageLayout.styles";
+import { Styles } from "./page_message_layout_styles";
 
 const DEFAULT_PROPS = {
 	button: null,

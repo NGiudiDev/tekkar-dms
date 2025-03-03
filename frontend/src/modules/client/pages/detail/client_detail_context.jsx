@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { ClientDetailContext } from "./hooksuse_client_detail_context";
+import { ClientDetailContext } from "./hooks/use_client_detail_context";
 
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "@hooks";
 
-import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
+import { getChangedFields, isEmptyObject } from "@common/utils/form_utils";
 import { getClientDetail, updateClientDetail } from "@client/services/client_requests_services";
 import { updatePerson } from "@store/store";
 
