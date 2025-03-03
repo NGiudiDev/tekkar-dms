@@ -9,7 +9,7 @@ import { Form, Formik } from "formik";
 
 import { Button, Flex, Text } from "ds-loud-ng";
 
-import { carYupSchema } from "@car/services/car_validations_services";
+import { carCreationSchema } from "@car/services/car_validations_services";
 
 export const CarCreateContent = () => {
   const ctx = useCarCreateContext();
@@ -34,7 +34,7 @@ export const CarCreateContent = () => {
       <Formik
         initialValues={ctx.car}
         onSubmit={ctx.handleSubmitCar}
-        validationSchema={carYupSchema}
+        validationSchema={carCreationSchema}
       >
         {formik => (
           <Form>

@@ -10,7 +10,7 @@ import { Button, Text } from "ds-loud-ng";
 
 import { Styles } from "./login_page_styles";
 
-import { loginYupSchema } from "@session/services/session_validations_services";
+import { loginSchema } from "@session/services/session_validations_services";
 
 export const LoginContent = () => {
   const ctx = useLoginContext();
@@ -27,7 +27,7 @@ export const LoginContent = () => {
           password: "",
         }}
         onSubmit={ctx.handleSubmit}
-        validationSchema={loginYupSchema}
+        validationSchema={loginSchema}
       >
         <Form>
           <PersonEmailInput margin="b-8" />

@@ -8,6 +8,8 @@ import { Form, Formik } from "formik";
 
 import { Box, Flex, IconButton, Text } from "ds-loud-ng";
 
+import { userUpdateSchema } from "@user/services/user_validations_services";
+
 export const UserDetailContent = () => {
 	const ctx = useUserDetailContext();
 
@@ -52,7 +54,7 @@ export const UserDetailContent = () => {
 					<Formik
 						initialValues={ctx.formUser}
 						onSubmit={ctx.handleSubmitUser}
-						//TODO: validationSchema={serviceYupSchema}
+						validationSchema={userUpdateSchema}
 					>
 						{formik => (
 							<Form>

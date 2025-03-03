@@ -106,7 +106,6 @@ export const CarDetailProvider = (props) => {
 			brand: car.brand || "",
 			license_plate: car.license_plate || "",
 			model: car.model || "",
-			owner_id: car.owner_id || 0,
 			production_year: car.production_year || "",
 		});
 	};

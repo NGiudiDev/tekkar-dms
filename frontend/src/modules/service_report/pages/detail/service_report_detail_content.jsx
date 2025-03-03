@@ -12,7 +12,7 @@ import {
 
 import { Button, Divider, Flex, Text } from "ds-loud-ng";
 
-import { serviceReportYupSchema } from "@service_report/services/service_report_validations_services";
+import { serviceReportSchema } from "@service_report/services/service_report_validations_services";
 
 export const ServiceReportDetailContent = () => {
   const ctx = useServiceReportDetailContext();
@@ -25,7 +25,7 @@ export const ServiceReportDetailContent = () => {
 					owner_doc_number: "",
 				}}
 				onSubmit={ctx.handleFormSubmit}
-				validationSchema={serviceReportYupSchema}
+				validationSchema={serviceReportSchema}
 			>
 				<Form>
 					<ServiceReportForm />

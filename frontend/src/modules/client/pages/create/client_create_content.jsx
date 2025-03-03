@@ -8,7 +8,7 @@ import { Formik, Form } from "formik";
 
 import { Box, Flex, Text } from "ds-loud-ng";
 
-import { clientYupSchema } from "@client/services/client_validations_services";
+import { clientSchema } from "@client/services/client_validations_services";
 
 export const ClientCreateContent = () => {
 	const ctx = useClientCreateContext();
@@ -23,7 +23,7 @@ export const ClientCreateContent = () => {
 				<Formik
 					initialValues={ctx.initialClient}
 					onSubmit={ctx.handleSubmitClient}
-					validationSchema={clientYupSchema}
+					validationSchema={clientSchema}
 				>
 					{formik => (
 						<Form>

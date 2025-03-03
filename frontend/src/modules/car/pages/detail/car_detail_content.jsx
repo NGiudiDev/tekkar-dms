@@ -15,7 +15,7 @@ import {
 
 import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 
-import { carYupSchema } from "@car/services/car_validations_services";
+import { carUpdateSchema } from "@car/services/car_validations_services";
 
 export const CarDetailContent = () => {
 	const ctx = useCarDetailContext();
@@ -65,7 +65,7 @@ export const CarDetailContent = () => {
 					<Formik
 						initialValues={ctx.formCar}
 						onSubmit={ctx.handleSubmitCar}
-						validationSchema={carYupSchema}
+						validationSchema={carUpdateSchema}
 					>
 						{formik => (
 							<Form>

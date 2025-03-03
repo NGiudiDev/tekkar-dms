@@ -10,7 +10,7 @@ import { Form, Formik } from "formik";
 
 import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 
-import { serviceYupSchema } from "@service/services/service_validations_services";
+import { serviceSchema } from "@service/services/service_validations_services";
 
 export const ServiceDetailContent = () => {
 	const ctx = useServiceDetailContext();
@@ -56,7 +56,7 @@ export const ServiceDetailContent = () => {
 					<Formik
 						initialValues={ctx.formService}
 						onSubmit={ctx.handleSubmitService}
-						validationSchema={serviceYupSchema}
+						validationSchema={serviceSchema}
 					>
 						{formik => (
 							<Form>
