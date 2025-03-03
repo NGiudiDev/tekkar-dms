@@ -15,7 +15,7 @@ import {
 
 import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 
-import { carYupSchema } from "@car/services/car.validations";
+import { carYupSchema } from "@car/services/car_validations_services";
 
 export const CarDetailContent = () => {
 	const ctx = useCarDetailContext();

@@ -1,4 +1,4 @@
-import { CAR_REGEXS } from "@car/constants/car.consts";
+import { CAR_REGEXS } from "@car/constants/car_consts";
 
 export const isArLicensePlate = (value) => {
 	return value && (

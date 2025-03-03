@@ -7,11 +7,11 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter } from "@hooks";
 
 import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
-import { getCarDetailById, updateCarDetail } from "@car/services/car.requests";
+import { getCarDetailById, updateCarDetail } from "@car/services/car_requests_services";
 import { getServicePage } from "@service/services/service.requests";
 import toast from "react-hot-toast";
 
-import { CAR_QUERY_KEYS } from "@car/constants/car.consts";
+import { CAR_QUERY_KEYS } from "@car/constants/car_consts";
 import { PATH } from "@router/constants/routes.consts";
 
 const DEFAULT_PROPS = {

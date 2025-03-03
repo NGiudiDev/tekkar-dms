@@ -3,9 +3,9 @@ import React from "react";
 import { CarsTable } from "@car/components";
 import { ListPage } from "@common/pages";
 
-import { getCarPage } from "@car/services/car.requests";
+import { getCarPage } from "@car/services/car_requests_services";
 
-import { CAR_QUERY_KEYS } from "@car/constants/car.consts";
+import { CAR_QUERY_KEYS } from "@car/constants/car_consts";
 
 const CarListPage = () => {
 	return (

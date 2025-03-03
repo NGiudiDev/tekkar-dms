@@ -1,9 +1,9 @@
 import * as yup from "yup";
 
-import { isArLicensePlate } from "@car/utils/car.utils";
+import { isArLicensePlate } from "@car/utils/car_utils";
 
 import { CURRENT_YEAR } from "@common/constants/settings.conts";
-import { MIN_YEAR_PRODUCTION } from "@car/constants/car.consts";
+import { MIN_YEAR_PRODUCTION } from "@car/constants/car_consts";
 
 export const CAR_VALIDATIONS = {
 	LICENSE_PLATE: yup.string()
