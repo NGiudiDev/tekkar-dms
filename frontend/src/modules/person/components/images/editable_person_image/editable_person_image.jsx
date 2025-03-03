@@ -8,9 +8,9 @@ import { Formik, Form } from "formik";
 
 import { Button, Dropzone, Flex, Icon, Image, Modal, Text } from "ds-loud-ng";
 
-import { Styles } from "./EditablePersonImage.styles";
+import { Styles } from "./editable_person_image_styles";
 
-import { updatePersonDetail } from "@person/services/person.requests";
+import { updatePersonDetail } from "@person/services/person_requests_services";
 import { imageYupSchema } from "@common/services/image_validations_services";
 import { uploadImage } from "@common/services/image_services";
 import { updatePerson } from "@store/store";

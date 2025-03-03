@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "@hooks";
 
 import { getChangedFields, isEmptyObject } from "@common/utils/form_utils";
-import { updatePersonDetail } from "@person/services/person.requests";
+import { updatePersonDetail } from "@person/services/person_requests_services";
 import { getUserDetail } from "@user/services/user.requests";
 import { updatePerson } from "@store/store";
 

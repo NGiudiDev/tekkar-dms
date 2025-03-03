@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-import { PERSON_VALIDATIONS } from "@person/constants/person_validations.consts";
+import { PERSON_VALIDATIONS } from "@person/constants/person_validations_consts";
 import { CAR_VALIDATIONS } from "@car/constants/car_validations_consts";
 
 export const serviceReportYupSchema = yup.object().shape({
