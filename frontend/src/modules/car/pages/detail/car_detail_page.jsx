@@ -1,8 +1,8 @@
 import React from "react";
 
-import { CarDetailProvider } from "./CarDetailContext";
+import { CarDetailProvider } from "./car_detail_context";
 
-import { CarDetailContent } from "./CarDetailContent";
+import { CarDetailContent } from "./car_detail_content";
 
 const CarDetailPage = () => {
 	return (

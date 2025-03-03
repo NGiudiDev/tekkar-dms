@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useSidebarButtons } from "@hooks/useSidebarButtons";
+import { useSidebarButtons } from "@hooks";
 import { useSelector } from "react-redux";
 
 import { Navigate } from "react-router-dom";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useCarDetailContext } from "../hooks/useCarDetailContext";
+import { useCarDetailContext } from "../hooks/use_car_detail_context";
 
 import { ActionsButton } from "@common/components";
 

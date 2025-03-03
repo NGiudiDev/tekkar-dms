@@ -1,4 +1,4 @@
-import { useRouter } from "./useRouter";
+import { useRouter } from "./use_router";
 
 import { PATH } from "@router/constants/routes.consts";
 

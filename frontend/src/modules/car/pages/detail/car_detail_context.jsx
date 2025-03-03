@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { CarDetailContext } from "./hooks/useCarDetailContext";
+import { CarDetailContext } from "./hooks/use_car_detail_context";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter } from "@hooks";
