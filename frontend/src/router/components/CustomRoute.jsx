@@ -5,7 +5,7 @@ import { useSidebarButtons } from "@hooks";
 import { useSelector } from "react-redux";
 
 import { Navigate } from "react-router-dom";
-import { ProfileAvatar } from "@common/components";
+import { ProfileAvatarPanel } from "@session/components";
 
 import { AppLayout } from "ds-loud-ng";
 
@@ -36,7 +36,7 @@ export const CustomRoute = (props) => {
 	if (attrs.useAppLayout) {
 		const topbar = {
 			avatarProps: {
-				children: <ProfileAvatar />,
+				children: <ProfileAvatarPanel />,
 				imageProps: {
 					src: user.person.image_url,
 					alt: "user-profile-topbar"

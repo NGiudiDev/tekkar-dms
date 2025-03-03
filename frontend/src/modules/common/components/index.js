@@ -1,6 +1,3 @@
-//? avatars
-export { ProfileAvatar } from "./avatars/ProfileAvatar";
-
 //? buttons
 export { ActionsButton } from "./buttons/ActionsButton/ActionsButton";
 export { CreateButton } from "./buttons/CreateButton";

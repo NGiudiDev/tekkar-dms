@@ -6,7 +6,7 @@ import { LogoutButton, ProfileButton } from "@user/components";
 
 import { Divider, Flex, Image, Text } from "ds-loud-ng";
 
-export const ProfileAvatar = () => {
+export const ProfileAvatarPanel = () => {
 	const user = useSelector(state => state.user);
 	
 	return (
