@@ -9,12 +9,19 @@ Currently, the application is targeted at the Argentine market, but future plans
 ## Entidades
 
 - **Car**
+- **Client**
 - **Person**
 - **Service**
 - **User**
 
 ## Main Features
 
+- **Car listing**: View all cars registered in the system.
+- **Car creation**: Add new cars to the inventory.
+- **Car editing**: Update the information of registered cars.
+- **Client listing**: View all clients registered in the system.
+- **Client creation**: Add new clients to the inventory.
+- **Client editing**: Update the information of registered clients.
 - **Service listing**: View all services performed on the vehicles.
 - **Service creation**: Record new services performed on a vehicle.
 - **Service editing**: Update the details of recorded services.
@@ -49,7 +56,3 @@ Currently, the application is targeted at the Argentine market, but future plans
 - **Customer management**: Manage customer data for those who have vehicles registered in the system.
 
 - **Guardar datos del motor**: Holguras del motor u otros datos mecánicos.
-
-## Pending UX
-
-- Ajustar los detalles a pixel para que no cambie de posición las cosas cuando se edita.
