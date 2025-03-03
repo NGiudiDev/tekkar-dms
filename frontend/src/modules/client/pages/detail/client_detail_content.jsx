@@ -1,10 +1,10 @@
 import React from "react";
 
-import { useClientDetailContext } from "./hooks/useClientDetailContext.jsx";
+import { useClientDetailContext } from "./hooksuse_client_detail_context.jsx";
 
 import { PageLoadingLayout, PageMessageLayout, UpdateButton } from "@common/components";
 import { PersonInformationForm, PersonInformationSection } from "@person/components";
-import { ClientActionsDropdown } from "./components"; 
+import { ClientActionsDropdown } from "./components/index.js"; 
 import { Form, Formik } from "formik";
 
 import { Box, Flex, IconButton, Text } from "ds-loud-ng";

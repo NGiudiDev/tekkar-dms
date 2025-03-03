@@ -18,7 +18,7 @@ const DEFAULT_PROPS = {
   list: [],
 };
 
-export const ClientsTable = (props) => {
+export const ClientTable = (props) => {
   const attrs = {
     ...DEFAULT_PROPS,
     ...props,
@@ -28,22 +28,22 @@ export const ClientsTable = (props) => {
 
   const columns = [
     {
-      content: (person) => (
+      content: (client) => (
         <Flex>
-          <PersonImageCol person={person} />
-          <PersonNameCol margin="l-8 y-10" person={person} />
+          <PersonImageCol person={client} />
+          <PersonNameCol margin="l-8 y-10" person={client} />
         </Flex>	
       ),
       label: "Nombre",
       width: "35%",
     },
     {
-      content: (person) => <PersonEmailCol margin="y-10" person={person} />,
+      content: (client) => <PersonEmailCol margin="y-10" person={client} />,
       label: "Email",
       width: "40%",
     },
     {
-      content: (person) => <PersonDocNumberCol margin="y-10" person={person} />,
+      content: (client) => <PersonDocNumberCol margin="y-10" person={client} />,
       label: "Documento",
       width: "25%",
     },
@@ -62,6 +62,6 @@ export const ClientsTable = (props) => {
   );
 };
 
-ClientsTable.propTypes = {
+ClientTable.propTypes = {
   list: PropTypes.array,
 };

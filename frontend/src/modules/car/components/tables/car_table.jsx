@@ -14,7 +14,7 @@ const DEFAULT_PROPS = {
 	list: [],
 };
 
-export const CarsTable = (props) => {
+export const CarTable = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -53,6 +53,6 @@ export const CarsTable = (props) => {
 	);
 };
 
-CarsTable.propTypes = {
+CarTable.propTypes = {
 	list: PropTypes.array,
 };

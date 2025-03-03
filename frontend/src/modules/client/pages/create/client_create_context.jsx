@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ClientCreateContext } from "./hooks/useClientCreateContext";
+import { ClientCreateContext } from "./hooks/use_client_create_context";
 
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "@hooks";
 
-import { createClient } from "@client/services/client.requests";
+import { createClient } from "@client/services/client_requests_services";
 import toast from "react-hot-toast";
 
 import { PATH } from "@router/constants/routes.consts";

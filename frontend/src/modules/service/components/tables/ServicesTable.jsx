@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useRouter } from "@hooks/useRouter";
+import { useRouter } from "@hooks";
 
 import { ServiceMileageCol, ServicePerformedAtCol, ServiceTitleCol } from "@service/components";
 import { CarDescriptionCol } from "@car/components";

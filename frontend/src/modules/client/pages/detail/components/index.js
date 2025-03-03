@@ -1,1 +1,1 @@
-export { ClientActionsDropdown } from "./ClientActionsDropdown";
+export { ClientActionsDropdown } from "./client_actions_dropdown";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CarsTable } from "@car/components";
+import { CarTable } from "@car/components";
 import { ListPage } from "@common/pages";
 
 import { getCarPage } from "@car/services/car_requests_services";
@@ -24,7 +24,7 @@ const CarListPage = () => {
 			fetchKey={CAR_QUERY_KEYS.lists()}
 			getRequest={getCarPage}
 			pageTitle="Vehículos"
-			renderTable={(list) => <CarsTable list={list} />}
+			renderTable={(list) => <CarTable list={list} />}
 		/>
 	);
 };

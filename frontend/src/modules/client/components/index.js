@@ -1,2 +1,2 @@
 //? tables
-export { ClientsTable } from "./tables/ClientsTable";
+export { ClientTable } from "./tables/client_table";

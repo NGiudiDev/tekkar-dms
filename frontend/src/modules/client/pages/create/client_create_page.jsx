@@ -1,8 +1,8 @@
 import React from "react";
 
-import { ClientCreateProvider } from "./ClientCreateContext";
+import { ClientCreateProvider } from "./client_create_context";
 
-import { ClientCreateContent } from "./ClientCreateContent";
+import { ClientCreateContent } from "./client_create_content";
 
 const ClientCreatePage = () => {
 	return (

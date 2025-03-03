@@ -17,4 +17,4 @@ export { CarLicensePlateCol } from "./tables/columns/car_license_plate_col";
 export { CarModelCol } from "./tables/columns/car_model_col";
 
 //? tables
-export { CarsTable } from "./tables/cars_table";
+export { CarTable } from "./tables/car_table";

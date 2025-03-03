@@ -1,8 +1,8 @@
 import React from "react";
 
-import { ClientDetailProvider } from "./ClientDetailContext";
+import { ClientDetailProvider } from "./client_detail_context";
 
-import { ClientDetailContent } from "./ClientDetailContent";
+import { ClientDetailContent } from "./client_detail_content";
 
 const ClientDetailPage = () => {
 	return (

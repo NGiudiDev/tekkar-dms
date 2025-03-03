@@ -1,12 +1,14 @@
 import React from "react";
 
-import { useClientCreateContext } from "./hooks/useClientCreateContext.jsx";
+import { useClientCreateContext } from "./hooks/use_client_create_context.jsx";
 
 import { PersonInformationForm } from "@person/components";
 import { CreateButton } from "@common/components";
 import { Formik, Form } from "formik";
 
 import { Box, Flex, Text } from "ds-loud-ng";
+
+import { clientYupSchema } from "@client/services/client_validations_services";
 
 export const ClientCreateContent = () => {
 	const ctx = useClientCreateContext();
@@ -21,7 +23,7 @@ export const ClientCreateContent = () => {
 				<Formik
 					initialValues={ctx.initialClient}
 					onSubmit={ctx.handleSubmitClient}
-					//validationSchema={userYupSchema}
+					validationSchema={clientYupSchema}
 				>
 					{formik => (
 						<Form>

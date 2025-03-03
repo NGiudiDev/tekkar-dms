@@ -2,13 +2,13 @@ import React from "react";
 
 import { useRouter } from "../../../../hooks";
 
-import { ClientsTable } from "@client/components";
+import { ClientTable } from "@client/components";
 import { NewButton } from "@common/components";
 import { ListPage } from "@common/pages";
 
-import { getClientPage } from "@client/services/client.requests";
+import { getClientPage } from "@client/services/client_requests_services";
 
-import { CLIENT_QUERY_KEYS } from "@client/constants/client.consts";
+import { CLIENT_QUERY_KEYS } from "@client/constants/client_consts";
 import { PATH } from "@router/constants/routes.consts";
 
 const ClientListPage = () => {
@@ -36,7 +36,7 @@ const ClientListPage = () => {
 			getRequest={getClientPage}
 			pageTitle="Clientes"
 			renderButtonsGroup={() => <NewButton onClick={handleNewClient} />}
-			renderTable={(list) => <ClientsTable list={list} />}
+			renderTable={(list) => <ClientTable list={list} />}
 		/>
 	);
 };

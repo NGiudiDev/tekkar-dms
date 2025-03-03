@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { ClientDetailContext } from "./hooks/useClientDetailContext";
+import { ClientDetailContext } from "./hooksuse_client_detail_context";
 
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "@hooks";
 
 import { getChangedFields, isEmptyObject } from "@common/utils/forms.utils";
-import { getClientDetail, updateClientDetail } from "@client/services/client.requests";
+import { getClientDetail, updateClientDetail } from "@client/services/client_requests_services";
 import { updatePerson } from "@store/store";
 
 import toast from "react-hot-toast";
 
-import { CLIENT_QUERY_KEYS } from "@client/constants/client.consts"; 
+import { CLIENT_QUERY_KEYS } from "@client/constants/client_consts"; 
 import { PATH } from "@router/constants/routes.consts";
 
 const DEFAULT_PROPS = {
