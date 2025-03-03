@@ -2,12 +2,12 @@ import React from "react";
 
 import { CarCreateProvider } from "./CarCreateContext";
 
-import { Text } from "ds-loud-ng";
+import { CarCreateContent } from "./CarCreateContent";
 
 const CarCreatePage = () => {
 	return (
 		<CarCreateProvider>
-			<Text>Falta hacerlo</Text>
+			<CarCreateContent />
 		</CarCreateProvider>
 	);
 };

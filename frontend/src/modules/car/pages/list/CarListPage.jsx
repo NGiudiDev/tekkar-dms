@@ -1,29 +1,18 @@
 import React from "react";
 
-import { useRouter } from "@hooks";
-
-import { NewButton } from "@common/components";
 import { CarsTable } from "@car/components";
 import { ListPage } from "@common/pages";
 
-import { getCarPage } from "@car/services/car.services";
+import { getCarPage } from "@car/services/car.requests";
 
 import { CAR_QUERY_KEYS } from "@car/constants/car.consts";
-import { PATH } from "@router/constants/routes.consts";
 
 const CarListPage = () => {
-	const router = useRouter();
-
-	const handleNewCar = () => {
-		router.push(PATH.carCreate);
-	};
-
 	return (
 		<ListPage
 			emptyMessage={{
 				button: {
 					children: "Nuevo",
-					onClick: handleNewCar,
 				},
 				description: "Parece que aún no has agregado ningún vehículo. Haz clic en el botón de abajo para agregar tu primer vehículo.",
 				title: "Listado de vehículos vacío",
@@ -35,7 +24,6 @@ const CarListPage = () => {
 			fetchKey={CAR_QUERY_KEYS.lists()}
 			getRequest={getCarPage}
 			pageTitle="Vehículos"
-			renderButtonsGroup={() => <NewButton onClick={handleNewCar} />}
 			renderTable={(list) => <CarsTable list={list} />}
 		/>
 	);

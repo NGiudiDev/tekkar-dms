@@ -84,7 +84,7 @@ export const ClientDetailProvider = (props) => {
 	};
 
 	const handleCreateCar = () => {
-		router.push(`${PATH.carCreate}?client_id=${client.id}`);
+		router.push(`${PATH.carCreate}?owner_id=${client.id}`);
 	};
 
 	const handleImageChange = () => {
