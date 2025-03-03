@@ -10,7 +10,7 @@ import { login } from "@store/store";
 
 import toast from "react-hot-toast";
 
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 export const useAutomaticLogin = () => {
 	const dispatch = useDispatch();

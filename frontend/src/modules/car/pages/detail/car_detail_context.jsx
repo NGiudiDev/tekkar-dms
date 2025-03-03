@@ -12,7 +12,7 @@ import { getServicePage } from "@service/services/service_requests_services";
 import toast from "react-hot-toast";
 
 import { CAR_QUERY_KEYS } from "@car/constants/car_consts";
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 const DEFAULT_PROPS = {
 	children: null,

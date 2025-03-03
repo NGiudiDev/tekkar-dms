@@ -9,7 +9,7 @@ import { UserTable } from "@user/components";
 import { getUserPage } from "@user/services/user_requests_services";
 
 import { USER_QUERY_KEYS } from "@user/constants/user_consts";
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 const UserListPage = () => {
 	const router = useRouter();

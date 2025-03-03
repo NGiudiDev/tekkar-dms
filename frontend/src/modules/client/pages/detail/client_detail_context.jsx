@@ -14,7 +14,7 @@ import { updatePerson } from "@store/store";
 import toast from "react-hot-toast";
 
 import { CLIENT_QUERY_KEYS } from "@client/constants/client_consts"; 
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 const DEFAULT_PROPS = {
 	children: null,

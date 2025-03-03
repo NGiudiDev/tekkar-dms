@@ -11,7 +11,7 @@ import { userLogin } from "@session/services/session_requests_services";
 import { login } from "@store/store";
 import toast from "react-hot-toast";
 
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 const DEFAULT_PROPS = {
   children: null,

@@ -8,7 +8,7 @@ import { Button } from "ds-loud-ng";
 import { userLogout } from "@session/services/session_requests_services";
 import { logout } from "@store/store";
 
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 export const LogoutButton = () => {
   const dispatch = useDispatch();

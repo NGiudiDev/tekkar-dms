@@ -2,10 +2,10 @@ import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { useAutomaticLogin } from "@session/hooks/use_automatic_login";
-import { useAppRoutes } from "@router/hooks/useAppRoutes";
+import { useAppRoutes } from "@router/hooks/use_app_routes";
 
 import { NotFoundMessageLayout, PageLoadingLayout } from "@common/components";
-import { CustomRoute } from "@router/components/CustomRoute";
+import { CustomRoute } from "@router/components";
 
 export const App = () => {
 	const automaticLogin = useAutomaticLogin();

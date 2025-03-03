@@ -9,7 +9,7 @@ import { ProfileAvatarPanel } from "@session/components";
 
 import { AppLayout } from "ds-loud-ng";
 
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 const DEFAULT_PROPS = {
 	children: null,

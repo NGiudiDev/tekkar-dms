@@ -9,7 +9,7 @@ import { useRouter } from "@hooks";
 import { createClient } from "@client/services/client_requests_services";
 import toast from "react-hot-toast";
 
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 const DEFAULT_PROPS = {
 	children: null,

@@ -22,7 +22,7 @@ import { ServiceReportDetailPage } from "@service_report/pages";
 //? user pages
 import { UserCreatePage, UserDetailPage, UserListPage } from "@user/pages";
 
-import { PATH } from "../constants/routes.consts";
+import { PATH } from "../constants/routes_consts";
 
 export const useAppRoutes = () => {
   return [

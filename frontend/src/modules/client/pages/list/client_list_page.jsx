@@ -9,7 +9,7 @@ import { ListPage } from "@common/pages";
 import { getClientPage } from "@client/services/client_requests_services";
 
 import { CLIENT_QUERY_KEYS } from "@client/constants/client_consts";
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 const ClientListPage = () => {
 	const router = useRouter();

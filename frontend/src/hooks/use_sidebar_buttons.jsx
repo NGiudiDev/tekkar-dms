@@ -1,6 +1,6 @@
 import { useRouter } from "./use_router";
 
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 export const useSidebarButtons = () => {
 	const router = useRouter();

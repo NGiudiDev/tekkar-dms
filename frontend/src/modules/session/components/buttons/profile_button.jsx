@@ -5,7 +5,7 @@ import { useRouter } from "@hooks";
 
 import { Button } from "ds-loud-ng";
 
-import { PATH } from "@router/constants/routes.consts";
+import { PATH } from "@router/constants/routes_consts";
 
 export const ProfileButton = () => {
 	const user = useSelector(state => state.user);
