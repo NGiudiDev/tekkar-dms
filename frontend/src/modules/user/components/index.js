@@ -1,12 +1,8 @@
-//? buttons
-export { LogoutButton } from "./buttons/LogoutButton";
-export { ProfileButton } from "./buttons/ProfileButton";
-
 //? forms
-export { UserInformationForm } from "./forms/UserInformationForm";
+export { UserInformationForm } from "./forms/user_information_form";
 
 //? inputs
-export { UserPasswordInput } from "./inputs/UserPasswordInput";
+export { UserPasswordInput } from "./inputs/user_password_input";
 
 //? tables
-export { UsersTable } from "./tables/UsersTable";
+export { UserTable } from "./tables/user_table";

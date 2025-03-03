@@ -2,7 +2,7 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 
-import { LogoutButton, ProfileButton } from "@user/components";
+import { LogoutButton, ProfileButton } from "@session/components";
 
 import { Divider, Flex, Image, Text } from "ds-loud-ng";
 

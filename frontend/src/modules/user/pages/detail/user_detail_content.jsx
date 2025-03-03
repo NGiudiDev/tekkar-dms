@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useUserDetailContext } from "./hooks/useUserDetailContext.jsx";
+import { useUserDetailContext } from "./hooks/use_user_detail_context.jsx";
 
 import { PageLoadingLayout, PageMessageLayout, UpdateButton } from "@common/components";
 import { PersonInformationForm, PersonInformationSection } from "@person/components"; 

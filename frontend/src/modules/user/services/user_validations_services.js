@@ -1,7 +1,7 @@
 import * as yup from "yup";
 
 import { PERSON_VALIDATIONS } from "@person/constants/person_validations_consts.js";
-import { USER_VALIDATIONS } from "@user/constants/user_validations.consts.js";
+import { USER_VALIDATIONS } from "@user/constants/user_validations_consts.js";
 
 export const userYupSchema = yup.object().shape({
   doc_number: PERSON_VALIDATIONS.DOC_NUMBER.required("Campo requerido."),

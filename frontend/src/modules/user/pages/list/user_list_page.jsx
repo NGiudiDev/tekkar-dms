@@ -4,11 +4,11 @@ import { useRouter } from "@hooks";
 
 import { NewButton } from "@common/components";
 import { ListPage } from "@common/pages";
-import { UsersTable } from "@user/components";
+import { UserTable } from "@user/components";
 
-import { getUserPage } from "@user/services/user.requests";
+import { getUserPage } from "@user/services/user_requests_services";
 
-import { USER_QUERY_KEYS } from "@user/constants/user.consts";
+import { USER_QUERY_KEYS } from "@user/constants/user_consts";
 import { PATH } from "@router/constants/routes.consts";
 
 const UserListPage = () => {
@@ -28,7 +28,7 @@ const UserListPage = () => {
 			getRequest={getUserPage}
 			pageTitle="Usuarios"
 			renderButtonsGroup={() => <NewButton onClick={handleNewUser} />}
-			renderTable={(list) => <UsersTable list={list} />}
+			renderTable={(list) => <UserTable list={list} />}
 		/>
 	);
 };

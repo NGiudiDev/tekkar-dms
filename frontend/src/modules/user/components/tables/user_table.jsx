@@ -18,7 +18,7 @@ const DEFAULT_PROPS = {
 	list: [],
 };
 
-export const UsersTable = (props) => {
+export const UserTable = (props) => {
 	const attrs = {
 		...DEFAULT_PROPS,
 		...props,
@@ -62,6 +62,6 @@ export const UsersTable = (props) => {
 	);
 };
 
-UsersTable.propTypes = {
+UserTable.propTypes = {
 	list: PropTypes.array,
 };

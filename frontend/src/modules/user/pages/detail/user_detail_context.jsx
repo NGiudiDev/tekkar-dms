@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { UserDetailContext } from "./hooks/useUserDetailContext";
+import { UserDetailContext } from "./hooks/use_user_detail_context";
 
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,12 +9,12 @@ import { useRouter } from "@hooks";
 
 import { getChangedFields, isEmptyObject } from "@common/utils/form_utils";
 import { updatePersonDetail } from "@person/services/person_requests_services";
-import { getUserDetail } from "@user/services/user.requests";
+import { getUserDetail } from "@user/services/user_requests_services";
 import { updatePerson } from "@store/store";
 
 import toast from "react-hot-toast";
 
-import { USER_QUERY_KEYS } from "@user/constants/user.consts"; 
+import { USER_QUERY_KEYS } from "@user/constants/user_consts"; 
 
 const DEFAULT_PROPS = {
 	children: null,

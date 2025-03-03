@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useUserCreateContext } from "./hooks/useUserCreateContext.jsx";
+import { useUserCreateContext } from "./hooks/use_user_create_context.jsx";
 
 import { UserInformationForm } from "@user/components";
 import { CreateButton } from "@common/components";
@@ -8,7 +8,7 @@ import { Formik, Form } from "formik";
 
 import { Box, Flex, Text } from "ds-loud-ng";
 
-import { userYupSchema } from "@user/services/user.validations";
+import { userYupSchema } from "@user/services/user_validations_services";
 
 export const UserCreateContent = () => {
 	const ctx = useUserCreateContext();
