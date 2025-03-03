@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Styles } from "./ServiceReportLayout.styles";
+import { Styles } from "./service_report_layout_styles";
 
 const DEFAULT_PROPS = {
   children: null,

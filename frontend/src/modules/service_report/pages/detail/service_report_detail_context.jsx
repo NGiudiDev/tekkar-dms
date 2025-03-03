@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { ServiceReportDetailContext } from "./hooks/useServiceReportDetailContext";
+import { ServiceReportDetailContext } from "./hooks/use_service_report_detail_context";
 
 import { useMutation } from "@tanstack/react-query";
 
-import { getServiceReportPage } from "@service_report/services/service_report.services";
+import { getServiceReportPage } from "@service_report/services/service_report_requests_services";
 
 const DEFAULT_PROPS = {
 	children: null,

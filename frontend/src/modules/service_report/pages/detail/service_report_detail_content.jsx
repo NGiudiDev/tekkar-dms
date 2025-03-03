@@ -1,8 +1,9 @@
 import React from "react";
 
-import { useServiceReportDetailContext } from"./hooks/useServiceReportDetailContext";
+import { useServiceReportDetailContext } from"./hooks/use_service_report_detail_context";
 
 import { CarInformationSection } from "@car/components";
+import { Form, Formik } from "formik";
 import { 
 	ServiceReportForm,
 	ServiceReportInformationSection,
@@ -11,13 +12,26 @@ import {
 
 import { Button, Divider, Flex, Text } from "ds-loud-ng";
 
+import { serviceReportYupSchema } from "@service_report/services/service_report_validations_services";
+
 export const ServiceReportDetailContent = () => {
   const ctx = useServiceReportDetailContext();
 
   return (
     <ServiceReportLayout>
-      <ServiceReportForm onSubmit={ctx.handleFormSubmit} />
-			
+			<Formik
+				initialValues={{
+					license_plate: "",
+					owner_doc_number: "",
+				}}
+				onSubmit={ctx.handleFormSubmit}
+				validationSchema={serviceReportYupSchema}
+			>
+				<Form>
+					<ServiceReportForm />
+				</Form>
+			</Formik>
+      
 			{ctx.car && (
 				<>
 					<Text margin="y-24" type="title">
