@@ -8,7 +8,7 @@ import { useRouter } from "@hooks";
 
 import { getChangedFields, isEmptyObject } from "@common/utils/form_utils";
 import { getCarDetailById, updateCarDetail } from "@car/services/car_requests_services";
-import { getServicePage } from "@service/services/service.requests";
+import { getServicePage } from "@service/services/service_requests_services";
 import toast from "react-hot-toast";
 
 import { CAR_QUERY_KEYS } from "@car/constants/car_consts";

@@ -4,7 +4,7 @@ import { useCarDetailContext } from "./hooks/use_car_detail_context";
 
 import { CarInformationForm, CarInformationSection } from "@car/components";
 import { PersonInformationSection } from "@person/components";
-import { ServicesTable } from "@service/components";
+import { ServiceTable } from "@service/components";
 import { CarActionsDropdown } from "./components";
 import { Form, Formik } from "formik";
 import {
@@ -107,7 +107,7 @@ export const CarDetailContent = () => {
 							Servicios
 						</Text>
 
-						<ServicesTable
+						<ServiceTable
 							list={ctx.servicesList.list}
 							onChangePage={ctx.handleServicePageChange}
 							pagination={ctx.servicesList.pagination}

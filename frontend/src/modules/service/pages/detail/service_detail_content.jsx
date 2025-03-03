@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useServiceDetailContext } from "./hooks/useServiceDetailContext.jsx";
+import { useServiceDetailContext } from "./hooks/use_service_detail_context.jsx";
 
 import { ServiceInformationForm, ServiceInformationSection } from "@service/components";
 import { PageLoadingLayout, PageMessageLayout, UpdateButton } from "@common/components";
@@ -10,7 +10,7 @@ import { Form, Formik } from "formik";
 
 import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 
-import { serviceYupSchema } from "@service/services/service.validations";
+import { serviceYupSchema } from "@service/services/service_validations_services";
 
 export const ServiceDetailContent = () => {
 	const ctx = useServiceDetailContext();

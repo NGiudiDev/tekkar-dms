@@ -1,11 +1,11 @@
 import React from "react";
 
 import { ListPage } from "@common/pages";
-import { ServicesTable } from "@service/components";
+import { ServiceTable } from "@service/components";
 
-import { getServicePage } from "@service/services/service.requests";
+import { getServicePage } from "@service/services/service_requests_services";
 
-import { SERVICE_QUERY_KEYS } from "@service/constants/service.consts";
+import { SERVICE_QUERY_KEYS } from "@service/constants/service_consts";
 
 const ServiceListPage = () => {
 	return (
@@ -21,7 +21,7 @@ const ServiceListPage = () => {
 			fetchKey={SERVICE_QUERY_KEYS.lists()}
 			getRequest={getServicePage}
 			pageTitle="Servicios"
-			renderTable={(list) => <ServicesTable list={list} />}
+			renderTable={(list) => <ServiceTable list={list} />}
 		/>
 	);
 };

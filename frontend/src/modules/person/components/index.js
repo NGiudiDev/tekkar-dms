@@ -18,4 +18,4 @@ export { PersonInformationSection } from "./sections/person_information_section"
 export { PersonDocNumberCol } from "./tables/columns/person_doc_number_col";
 export { PersonEmailCol } from "./tables/columns/person_email_col";
 export { PersonImageCol } from "./tables/columns/person_image_col";
-export { PersonNameCol } from "./tables/columns/person_names_col";
+export { PersonNameCol } from "./tables/columns/person_name_col";

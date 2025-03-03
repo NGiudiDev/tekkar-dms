@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useServiceCreateContext } from "./hooks/useServiceCreateContext";
+import { useServiceCreateContext } from "./hooks/use_service_create_context";
 import { useRouter } from "@hooks";
 
 import { ServiceInformationForm } from "@service/components";
@@ -9,7 +9,7 @@ import { Form, Formik } from "formik";
 
 import { Button, Flex, Text } from "ds-loud-ng";
 
-import { serviceYupSchema } from "@service/services/service.validations";
+import { serviceYupSchema } from "@service/services/service_validations_services";
 
 export const ServiceCreateContent = () => {
 	const ctx = useServiceCreateContext();

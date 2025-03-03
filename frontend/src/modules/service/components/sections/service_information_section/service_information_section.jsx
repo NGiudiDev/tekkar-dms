@@ -5,7 +5,7 @@ import { DataText, ThreeColumnsGrid } from "@common/components";
 
 import { formatDate } from "@common/utils/date_utils";
 
-import { Styles } from "./ServiceInformationSection.styles";
+import { Styles } from "./service_information_section_styles";
 
 const DEFAULT_PROPS = {
 	service: {},

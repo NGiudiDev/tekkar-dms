@@ -1,8 +1,8 @@
 import React from "react";
 
-import { ServiceDetailProvider } from "./ServiceDetailContext";
+import { ServiceDetailProvider } from "./service_detail_context";
 
-import { ServiceDetailContent } from "./ServiceDetailContent";
+import { ServiceDetailContent } from "./service_detail_content";
 
 const ServiceDetailPage = () => {
 	return (

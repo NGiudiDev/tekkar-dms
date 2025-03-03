@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { ServiceDetailContext } from "./hooks/useServiceDetailContext";
+import { ServiceDetailContext } from "./hooks/use_service_detail_context";
 
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter } from "@hooks";
 
-import { getServiceDetail, updateServiceDetail } from "@service/services/service.requests";
+import { getServiceDetail, updateServiceDetail } from "@service/services/service_requests_services";
 import { getChangedFields, isEmptyObject } from "@common/utils/form_utils";
 import toast from "react-hot-toast";
 
-import { SERVICE_QUERY_KEYS } from "@service/constants/service.consts";
+import { SERVICE_QUERY_KEYS } from "@service/constants/service_consts";
 
 const DEFAULT_PROPS = {
 	children: null,

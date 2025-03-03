@@ -1,8 +1,8 @@
 import React from "react";
 
-import { ServiceCreateProvider } from "./ServiceCreateContext";
+import { ServiceCreateProvider } from "./service_create_context";
 
-import { ServiceCreateContent } from "./ServiceCreateContent";
+import { ServiceCreateContent } from "./service_create_content";
 
 const ServiceCreatePage = () => {
 	return (
