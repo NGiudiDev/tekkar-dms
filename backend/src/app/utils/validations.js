@@ -31,10 +31,7 @@ export const createCarValidation = car => {
 		brand: VALIDATIONS.COMMON.TEXT.required(),
 		license_plate: VALIDATIONS.CAR.LICENSE_PLATE.required(),
 		model: VALIDATIONS.COMMON.TEXT.required(),
-		owner_doc_number: VALIDATIONS.PERSON.DOC_NUMBER.required(),
-		owner_email: VALIDATIONS.PERSON.EMAIL.required(),
-		owner_name: VALIDATIONS.PERSON.NAME.required(),
-		owner_phone: VALIDATIONS.PERSON.PHONE.required(),
+		owner_id: VALIDATIONS.COMMON.ID.required(),
 		production_year: VALIDATIONS.CAR.PRODUCTION_YEAR.required(),
 	});
 
@@ -62,11 +59,67 @@ export const updateCarValidation = (qParams) => {
 		brand: VALIDATIONS.COMMON.TEXT,
 		license_plate: VALIDATIONS.CAR.LICENSE_PLATE,
 		model: VALIDATIONS.COMMON.TEXT,
-		owner_doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
-		owner_email: VALIDATIONS.PERSON.EMAIL,
-		owner_name: VALIDATIONS.PERSON.NAME,
-		owner_phone: VALIDATIONS.PERSON.PHONE,
+		owner_id: VALIDATIONS.COMMON.ID,
 		production_year: VALIDATIONS.CAR.PRODUCTION_YEAR,
+	});
+
+	return validate(carSchema, qParams);
+};
+
+/******************************************************************************
+												👥 CLIENT VALIDATIONS 👥
+     ********************************************************************/
+
+export const createClientValidation = user => {
+	const userSchema = joi.object({
+		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
+		email: VALIDATIONS.PERSON.EMAIL,
+		name: VALIDATIONS.PERSON.NAME,
+		phone: VALIDATIONS.PERSON.PHONE,
+	});
+
+	return validate(userSchema, user);
+};
+												
+
+export const getClientPageValidation = (qParams) => {
+	const clientSchema = joi.object({
+		page: VALIDATIONS.COMMON.PAGE,
+	});
+
+	return validate(clientSchema, qParams);
+};
+
+export const getOneClientValidation = data => {
+	const dataSchema = joi.object({
+		id: VALIDATIONS.COMMON.ID,
+	});
+
+	return validate(dataSchema, data);
+};
+
+export const updateClientValidation = (qParams) => {
+	const carSchema = joi.object({
+		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
+		email: VALIDATIONS.PERSON.EMAIL,
+		name: VALIDATIONS.PERSON.NAME,
+		phone: VALIDATIONS.PERSON.PHONE,
+	});
+
+	return validate(carSchema, qParams);
+};
+
+/******************************************************************************
+												👥 PERSON VALIDATIONS 👥
+     ********************************************************************/
+
+export const updatePersonValidation = (qParams) => {
+	const carSchema = joi.object({
+		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
+		email: VALIDATIONS.PERSON.EMAIL,
+		name: VALIDATIONS.PERSON.NAME,
+		phone: VALIDATIONS.PERSON.PHONE,
+		image_url: VALIDATIONS.COMMON.TEXT,
 	});
 
 	return validate(carSchema, qParams);
@@ -201,7 +254,6 @@ export const updateUserValidation = user => {
 		email: VALIDATIONS.PERSON.EMAIL,
 		name: VALIDATIONS.PERSON.NAME,
 		phone: VALIDATIONS.PERSON.PHONE,
-		profile_image_url: VALIDATIONS.COMMON.TEXT,
 	});
 
 	return validate(userSchema, user);

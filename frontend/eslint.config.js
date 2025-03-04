@@ -1,51 +1,30 @@
-import cypress from "eslint-plugin-cypress";
 import globals from "globals";
-import js from "@eslint/js";
-import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
+import pluginJs from "@eslint/js";
+import tseslint from "typescript-eslint";
+import pluginReact from "eslint-plugin-react";
+import pluginCypress from "eslint-plugin-cypress/flat";
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
-  { ignores: ["dist"] },
   {
-    env: {
-      "cypress/globals": true,
-    },
-    files: ["cypress/**/*.cy.js"],
-    plugins: {
-      cypress: cypress,
-    },
-    rules: {
-      "no-unused-expressions": "off",
-    },
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]
   },
   {
-    files: ["**/*.{js,jsx}"],
     languageOptions: {
-      ecmaVersion: 2020,
       globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: "latest",
-        ecmaFeatures: { jsx: true },
-        sourceType: "module",
-      },
-    },
-    plugins: {
-      react,
-      "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
-    },
-    rules: {
-      ...js.configs.recommended.rules,
-      ...react.configs.recommended.rules,
-      ...react.configs["jsx-runtime"].rules,
-      ...reactHooks.configs.recommended.rules,
-      "react/jsx-no-target-blank": "off",
-      "react-refresh/only-export-components": [
-        "warn",
-        { allowConstantExport: true },
-      ],
-    },
-    settings: { react: { version: "18.3" } },
+      __dirname: "readonly",
+    }
   },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
+  pluginCypress.configs.recommended,
+  {
+    rules: {
+      "eol-last": ["error", "never"],
+      "quotes": ["error", "double"],
+      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+      "semi": ["error", "always"]
+    }
+  }
 ];

@@ -1,30 +1,20 @@
-//? buttons
-export { CarActionsDropdown } from "./buttons/CarActionsDropdown";
-
 //? forms
-export { CarInformationForm } from "./forms/CarInformationForm/CarInformationForm";
-export { CarOwnerForm } from "./forms/CarOwnerForm/CarOwnerForm";
+export { CarInformationForm } from "./forms/car_information_form";
 
 //? inputs
-export { CarBrandInput } from "./inputs/CarBrandInput";
-export { CarLicensePlateInput } from "./inputs/CarLicensePlateInput";
-export { CarModelInput } from "./inputs/CarModelInput";
-export { CarOwnerDocNumberInput } from "./inputs/CarOwnerDocNumberInput";
-export { CarOwnerEmailInput } from "./inputs/CarOwnerEmailInput";
-export { CarOwnerNameInput } from "./inputs/CarOwnerNameInput";
-export { CarOwnerPhoneInput } from "./inputs/CarOwnerPhoneInput"; 
-export { CarProductionYearInput } from "./inputs/CarProductionYearInput";
+export { CarBrandInput } from "./inputs/car_brand_input";
+export { CarLicensePlateInput } from "./inputs/car_license_plate_input";
+export { CarModelInput } from "./inputs/car_model_input";
+export { CarProductionYearInput } from "./inputs/car_production_year_input";
 
 //? sections
-export { CarInformationSection } from "./sections/CarInformationSection/CarInformationSection";
-export { CarOwnerSection } from "./sections/CarOwnerSection/CarOwnerSection";
+export { CarInformationSection } from "./sections/car_information_section";
 
 //? table columns
-export { CarBrandTC } from "./tables/columns/CarBrandTC";
-export { CarDescriptionTC } from "./tables/columns/CarDescriptionTC";
-export { CarLicensePlateTC } from "./tables/columns/CarLicensePlateTC";
-export { CarModelTC } from "./tables/columns/CarModelTC";
-export { CarOwnerTC } from "./tables/columns/CarOwnerTC";
+export { CarBrandCol } from "./tables/columns/car_brand_col";
+export { CarDescriptionCol } from "./tables/columns/car_description_col";
+export { CarLicensePlateCol } from "./tables/columns/car_license_plate_col";
+export { CarModelCol } from "./tables/columns/car_model_col";
 
 //? tables
-export { CarsTable } from "./tables/CarsTable";
+export { CarTable } from "./tables/car_table";

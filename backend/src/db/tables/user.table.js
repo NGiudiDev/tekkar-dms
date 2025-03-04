@@ -7,29 +7,17 @@ export const userTable = (sequelize, type) => {
 			primaryKey: true,
 			type: type.INTEGER,
 		},
-		doc_number: {
-			allowNull: true,
-			type: type.STRING,
-		},
-		email: {
-			allowNull: false,
-			type: type.STRING,
-		},
-		name: {
-			allowNull: false,
-			type: type.STRING,
-		},
 		password: {
 			allowNull: false,
 			type: type.STRING,
 		},
-		phone: {
-			allowNull: true,
-			type: type.STRING,
-		},
-		profile_image_url: {
-			allowNull: true,
-			type: type.STRING,
+		person_id: {
+			allowNull: false,
+			references: {
+				model: TABLES.PERSON_TABLE,
+				key: "id",
+			},
+			type: type.INTEGER,
 		},
 		token: {
 			allowNull: true,

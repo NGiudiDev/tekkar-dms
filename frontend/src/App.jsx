@@ -1,10 +1,11 @@
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { useAutomaticLogin } from "./modules/session/hooks/useAutomaticLogin";
-import { useAppRoutes } from "./modules/common/hooks";
+import { useAutomaticLogin } from "@session/hooks/use_automatic_login";
+import { useAppRoutes } from "@router/hooks/use_app_routes";
 
-import { CustomRouteLayout, NotFoundMessageLayout, PageLoadingLayout } from "./modules/common/components";
+import { NotFoundMessageLayout, PageLoadingLayout } from "@common/components";
+import { CustomRoute } from "@router/components";
 
 export const App = () => {
 	const automaticLogin = useAutomaticLogin();
@@ -18,7 +19,7 @@ export const App = () => {
 			<Routes>
 				{routes.map((route) =>
 					<Route
-						element={<CustomRouteLayout {...route.options}>{route.element}</CustomRouteLayout>}
+						element={<CustomRoute {...route.options}>{route.element}</CustomRoute>}
 						key={route.path}
 						path={route.path}
 					/>

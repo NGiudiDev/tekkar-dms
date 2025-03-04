@@ -14,12 +14,12 @@ export const serviceExpirationReminderJob = async () => {
       //? send service expiration reminder email.
       const mailOptions = {
         subject: "¡Recordatorio de Mantenimiento!",
-        to: expiredServiceObj.car.owner_email,
+        to: expiredServiceObj.car.person.email,
         html: serviceExpirationReminderEmail({
           car_brand: expiredServiceObj.car.brand,
           car_license_plate: expiredServiceObj.car.license_plate,
           car_model: expiredServiceObj.car.model,
-          name: expiredServiceObj.car.owner_name,
+          name: expiredServiceObj.car.person.name,
           service_name: expiredServiceObj.title,
         
         }),

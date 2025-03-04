@@ -1,0 +1,17 @@
+export const PATH = {
+	admin: "/admin",
+	cars: "/cars",
+	carCreate: "/cars/new",
+	carDetail: "/cars/:id",
+	clients: "/clients",
+	clientCreate: "/clients/new",
+	clientDetail: "/clients/:id",
+	login: "/login",
+  services: "/services",
+	serviceCreate: "/services/new",
+	serviceDetail: "/services/:id",
+	serviceReport: "/",
+	users: "/users",
+	userCreate: "/users/new",
+	userDetail: "/users/:id",
+};

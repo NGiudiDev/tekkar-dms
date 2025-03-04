@@ -19,24 +19,13 @@ export const carTable = (sequelize, type) => {
 			allowNull: false,
 			type: type.STRING,
 		},
-		owner_doc_number: {
+		owner_id: {
 			allowNull: false,
-			type: type.STRING(8),
-			validate: {
-				len: [8, 8]
+			references: {
+				model: TABLES.PERSON_TABLE,
+				key: "id",
 			},
-		},
-		owner_email: {
-			allowNull: false,
-			type: type.STRING,
-		},
-		owner_name: {
-			allowNull: false,
-			type: type.STRING,
-		},
-		owner_phone: {
-			allowNull: false,
-			type: type.STRING,
+			type: type.INTEGER,
 		},
 		production_year: {
 			allowNull: false,
