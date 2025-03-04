@@ -6,11 +6,26 @@ As part of our value proposition, we have developed an **MVP (Minimum Viable Pro
 
 Currently, the application is targeted at the Argentine market, but future plans include adapting the web application to multiple languages and countries to expand its reach.
 
+## Entidades
+
+- **Car**
+- **Client**
+- **Person**
+- **Service**
+- **User**
+
 ## Main Features
 
+- **Car listing**: View all cars registered in the system.
+- **Car creation**: Add new cars to the inventory.
+- **Car editing**: Update the information of registered cars.
+- **Client listing**: View all clients registered in the system.
+- **Client creation**: Add new clients to the inventory.
+- **Client editing**: Update the information of registered clients.
 - **Service listing**: View all services performed on the vehicles.
 - **Service creation**: Record new services performed on a vehicle.
 - **Service editing**: Update the details of recorded services.
+- **Service report**: Public view of a car's service history.
 - **User listing**: View all users registered in the system.
 - **User creation**: Add new users to the inventory.
 - **User editing**: Update the information of registered users.

@@ -6,15 +6,15 @@ describe("user flow", () => {
     cy.get("input[name='email']").type("nicolas.m.giudice@gmail.com");
     cy.get("input[name='password']").type("Pass1234");
     cy.get("button[type='submit']").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? navigate to the users list page.
     cy.contains("Usuarios").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? navigate to the user creation page.
     cy.contains("Nuevo").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? fill in the user creation form with required details.
     cy.get("input[name='name']").type("Prueba");
@@ -25,17 +25,17 @@ describe("user flow", () => {
  
     //? submit the service creation form.
     cy.get("button[type='submit']").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? verify that the new user is successfully created and displayed.
     cy.contains("test@gmail.com").should("be.visible");
 
     //? open the newly created user's details by clicking on it.
     cy.contains("test@gmail.com").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? edit the user details by updating the model.
-    cy.get('.fa-pencil').click();
+    cy.get(".fa-pencil").click();
     cy.get("input[name='name']").clear();
     cy.get("input[name='name']").type("Prueba Final");
     cy.get("button[type='submit']").click();

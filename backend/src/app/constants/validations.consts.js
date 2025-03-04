@@ -5,8 +5,8 @@ import { getYear } from "../utils/dates.js";
 
 import { REGEXS } from "./regex.js";
 
-const DOC_NUMBER_LENGTH = 8;
-const MIN_YEAR_PRODUCTION = 1950;
+const PERSON_DOC_NUMBER_LENGTH = 8;
+const MIN_YEAR_PRODUCTION = 1886;
 
 const year = getYear();
 
@@ -28,10 +28,10 @@ export const VALIDATIONS = {
 		SERVICE_DURATION: joi.number().integer().min(0),
 	},
 	PERSON: {
-		DOC_NUMBER: joi.string().length(DOC_NUMBER_LENGTH).regex(REGEXS.DOC_NUMBER_STRING),
+		DOC_NUMBER: joi.string().length(PERSON_DOC_NUMBER_LENGTH).regex(REGEXS.DOC_NUMBER_STRING),
 		EMAIL: joi.string().email(),
 		NAME: joi.string(),
-		PHONE: joi.string(), //TODO: validar con una librería que valida números telefónicos.
+		PHONE: joi.string(),
 	},
 	USER: {
 		PASSWORD: joi.string(),

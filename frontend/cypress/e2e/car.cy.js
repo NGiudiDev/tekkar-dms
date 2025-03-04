@@ -6,11 +6,11 @@ describe("car flow", () => {
     cy.get("input[name='email']").type("nicolas.m.giudice@gmail.com");
     cy.get("input[name='password']").type("Pass1234");
     cy.get("button[type='submit']").click();
-    cy.wait(500);
+    // cy.wait(500);
     
     //? navigate to the car creation page.
-    cy.contains('button', 'Nuevo').click();
-    cy.wait(500);
+    cy.contains("button", "Nuevo").click();
+    // cy.wait(500);
 
     //? fill in the car creation form with required details.
     cy.get("input[name='brand']").type("Volkswagen");
@@ -24,7 +24,7 @@ describe("car flow", () => {
 
     //? submit the car creation form.
     cy.get("button[type='submit']").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? verify that the new car is successfully created and displayed.
     cy.contains("KZH614").should("be.visible");
@@ -35,10 +35,10 @@ describe("car flow", () => {
 
     //? open the newly created car's details by clicking on it.
     cy.contains("KZH614").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? edit the car details by updating the model.
-    cy.get('.fa-pencil').click();
+    cy.get(".fa-pencil").click();
     cy.get("input[name='model']").clear();
     cy.get("input[name='model']").type("Golf");
     cy.get("button[type='submit']").click();

@@ -6,15 +6,15 @@ describe("service flow", () => {
     cy.get("input[name='email']").type("nicolas.m.giudice@gmail.com");
     cy.get("input[name='password']").type("Pass1234");
     cy.get("button[type='submit']").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? open car's details by clicking on it.
     cy.contains("KZH614").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? navigate to the service creation page.
-    cy.get('.fa-ellipsis').click();
-    cy.contains('button', 'Crear servicio').click();
+    cy.get(".fa-ellipsis").click();
+    cy.contains("button", "Crear servicio").click();
 
     //? fill in the service creation form with required details.
     cy.get("input[name='title']").type("Cambio de aceite");
@@ -27,7 +27,7 @@ describe("service flow", () => {
     
     //? submit the service creation form.
     cy.get("button[type='submit']").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? verify that the new service is successfully created and displayed.
     cy.contains("Cambio de aceite").should("be.visible");
@@ -38,10 +38,10 @@ describe("service flow", () => {
 
     //? open the newly created service's details by clicking on it.
     cy.contains("Cambio de aceite").click();
-    cy.wait(500);
+    // cy.wait(500);
 
     //? edit the service details by updating the model.
-    cy.get('.fa-pencil').click();
+    cy.get(".fa-pencil").click();
     cy.get("input[name='price']").clear();
     cy.get("input[name='price']").type("100000");
     cy.get("button[type='submit']").click();

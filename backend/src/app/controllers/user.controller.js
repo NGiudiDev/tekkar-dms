@@ -1,4 +1,6 @@
+import { personService } from "../services/person.service.js";
 import { userService } from "../services/user.service.js";
+
 import {
 	authenticationValidation,
 	createUserValidation,
@@ -39,10 +41,10 @@ const create = async (req, res) => {
 		return res.status(422).json({ errors });
 	
 	try {
-		const invalidEmail = await userService.existEmail(req.body.email);
+		const invalidEmail = await personService.existEmail(req.body.email);
 
 		if (invalidEmail)
-			return res.status(409).json({ errors: [{ message: MESSAGES.USER_EMAIL_DUPLICATED }]});
+			return res.status(409).json({ errors: [{ message: MESSAGES.PERSON_EMAIL_DUPLICATED }]});
 
 		const user = await userService.create(req.body, req.headers);
 
@@ -64,7 +66,7 @@ const getOne = async (req, res) => {
 		const user = await userService.getOne({ id });
 		
 		if (!user)
-			return res.status(404).json({ errros: [{ message: USER_NOT_FOUND }]});
+			return res.status(404).json({ errros: [{ message: MESSAGES.USER_NOT_FOUND }]});
 
 		return res.status(200).json(user);
 	} catch(err) {
@@ -139,7 +141,7 @@ const update = async (req, res) => {
 		const user = await userService.update(req.params.id, req.body);
 
 		if (!user)
-			return res.status(404).json({ errros: [{ message: USER_NOT_FOUND }]});
+			return res.status(404).json({ errros: [{ message: MESSAGES.USER_NOT_FOUND }]});
 
 		return res.status(200).json({ user });
 	} catch(err) {
