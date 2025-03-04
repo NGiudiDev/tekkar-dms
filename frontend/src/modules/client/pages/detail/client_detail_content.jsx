@@ -4,10 +4,11 @@ import { useClientDetailContext } from "./hooks/use_client_detail_context.jsx";
 
 import { PageLoadingLayout, PageMessageLayout, UpdateButton } from "@common/components";
 import { PersonInformationForm, PersonInformationSection } from "@person/components";
-import { ClientActionsDropdown } from "./components/index.js"; 
+import { ClientActionsDropdown } from "./components/index.js";
+import { CarTable } from "@car/components"; 
 import { Form, Formik } from "formik";
 
-import { Box, Flex, IconButton, Text } from "ds-loud-ng";
+import { Box, Divider, Flex, IconButton, Text } from "ds-loud-ng";
 
 import { clientSchema } from "@client/services/client_validations_services";
 
@@ -81,6 +82,21 @@ export const ClientDetailContent = () => {
 					/>
 				)}
 				
+				{ctx.carsList?.pagination.total > 0 && (
+					<>
+						<Divider margin="b-24" />
+						
+						<Text margin="b-16" type="subtitle">
+							Vehículos
+						</Text>
+
+						<CarTable
+							list={ctx.carsList.list}
+							onChangePage={ctx.handleCarPageChange}
+							pagination={ctx.carsList.pagination}
+						/>
+					</>
+				)}
 			</Box>
 		</>
 	);
