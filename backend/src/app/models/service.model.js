@@ -47,7 +47,15 @@ const getPage = async (page, whereObj) => {
 		attributes: ENDPOINTS_ATRS.SERVICE.LIST,
 		include: [
 			{
+<<<<<<< Updated upstream
 				attributes: ENDPOINTS_ATRS.SERVICE.LIST_CAR,
+=======
+				attributes: ENDPOINTS_ATRS.CAR.LIST,
+				include: [{
+					attributes: ENDPOINTS_ATRS.PERSON.LIST,
+					model: persons,
+				}],
+>>>>>>> Stashed changes
 				model: cars,
 			}
 		],

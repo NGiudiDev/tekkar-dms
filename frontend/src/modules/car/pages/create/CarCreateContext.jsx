@@ -60,7 +60,10 @@ export const CarCreateProvider = (props) => {
 			owner_phone: "",
 			production_year: "",
 		},
+<<<<<<< Updated upstream:frontend/src/modules/car/pages/create/CarCreateContext.jsx
 		carValidation,
+=======
+>>>>>>> Stashed changes:frontend/src/modules/car/pages/create/car_create_context.jsx
 		handleSubmitCar,
 	};
 

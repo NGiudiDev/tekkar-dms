@@ -20,6 +20,13 @@ const getOne = async (whereObj) => {
 const getPage = async (page, whereObj) => {
 	let queryObj = {
 		attributes: ENDPOINTS_ATRS.CAR.LIST,
+<<<<<<< Updated upstream
+=======
+		include: [{
+			attributes: ENDPOINTS_ATRS.PERSON.LIST,
+			model: persons,
+		}],
+>>>>>>> Stashed changes
 		limit: SETTINGS.PAGE_LIMIT,
 		offset: (page - 1) * SETTINGS.PAGE_LIMIT,
 		order: [["created_at", "DESC"]],

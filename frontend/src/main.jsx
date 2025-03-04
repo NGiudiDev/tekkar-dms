@@ -1,7 +1,11 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
+<<<<<<< Updated upstream
 import { store } from "./modules/session/store/store";
+=======
+import { store } from "@store/store";
+>>>>>>> Stashed changes
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
