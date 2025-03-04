@@ -9,6 +9,7 @@ import { useRouter } from "@hooks";
 
 import { getChangedFields, isEmptyObject } from "@common/utils/form_utils";
 import { getClientDetail, updateClientDetail } from "@client/services/client_requests_services";
+import { getCarPage } from "@car/services/car_requests_services";
 import { updatePerson } from "@store/store";
 
 import toast from "react-hot-toast";
@@ -33,19 +34,28 @@ export const ClientDetailProvider = (props) => {
 
 	const [isClientEditing, setIsClientEditing] = useState(false);
 	const [formClient, setFormClient] = useState(null);
+	const [carsList, setCarsList] = useState(null);
+	const [carsPage, setCarsPage] = useState(1);
 	const [client, setClient] = useState(null);
 
 	const id = parseInt(router.query.id);
 
 	const query = useQuery({
-		queryKey:	CLIENT_QUERY_KEYS.detail(id),
+		queryKey:	CLIENT_QUERY_KEYS.detail(id, { carsPage }),
 		queryFn: async () => {
-			const client = await getClientDetail(id);
+			const requests = [
+				getClientDetail(id),
+				getCarPage({ page: carsPage, owner_id: id}),
+			];
+
+			const [client, carsList] = await Promise.all(requests);
+			
+			setCarsList(carsList);
 
 			setClientValues(client);
 			setClient(client);
 
-			return client;
+			return { client, carsList};
 		},
 	});
 
@@ -87,6 +97,10 @@ export const ClientDetailProvider = (props) => {
 		router.push(`${PATH.carCreate}?owner_id=${client.id}`);
 	};
 
+	const handleCarPageChange = (page) => {
+		setCarsPage(page);
+	};
+
 	const handleImageChange = () => {
 		//? The GET request is invalidated to trigger a refetch and retrieve the updated data.
 		queryClient.invalidateQueries({ queryKey: CLIENT_QUERY_KEYS.detail(id) });
@@ -110,9 +124,11 @@ export const ClientDetailProvider = (props) => {
 	};
 
 	const valueObj = {
+		carsList,
 		client,
 		error: query.error,
 		formClient,
+		handleCarPageChange,
 		handleClientEdit,
 		handleCreateCar,
 		handleImageChange,

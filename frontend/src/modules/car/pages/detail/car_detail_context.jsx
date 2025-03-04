@@ -27,7 +27,6 @@ export const CarDetailProvider = (props) => {
 	const router = useRouter();
 
 	const [isCarEditing, setIsCarEditing] = useState(false);
-	
 	const [servicesList, setServicesList] = useState(null);
 	const [servicesPage, setServicesPage] = useState(1);
 	const [car, setCar] = useState(null);

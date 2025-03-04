@@ -48,6 +48,7 @@ export const getOneCarValidation = (qParams) => {
 
 export const getCarPageValidation = (qParams) => {
 	const carSchema = joi.object({
+		owner_id: VALIDATIONS.COMMON.ID,
 		page: VALIDATIONS.COMMON.PAGE,
 	});
 
