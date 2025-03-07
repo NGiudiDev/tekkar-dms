@@ -34,7 +34,7 @@ export const SetUserAsClientModal = () => {
 
   const handleConfirmClick = () => {
     personMutation.mutate({ roles: "client,user" });
-  }
+  };
 
   return (
     <Modal
