@@ -35,6 +35,8 @@ export const UserDetailProvider = (props) => {
 	const [formUser, setFormUser] = useState(null);
 	const [user, setUser] = useState(null);
 
+	const [showModal, setShowModal] = useState(null);
+
 	const id = parseInt(router.query.id);
 
 	const query = useQuery({
@@ -49,9 +51,9 @@ export const UserDetailProvider = (props) => {
 		},
 	});
 
-	const userMutation =  useMutation({
-		mutationFn: (modifiedObj) => {
-			return updatePersonDetail(id, modifiedObj);
+	const personMutation =  useMutation({
+		mutationFn: (data) => {
+			return updatePersonDetail(data.id, data.params);
 		},
 		onError: (err) => {
 			const { status } = err.response;
@@ -93,11 +95,22 @@ export const UserDetailProvider = (props) => {
 		queryClient.invalidateQueries({ queryKey: USER_QUERY_KEYS.detail(id) });
 	};
 
+	const handleOcultModal = () => {
+		setShowModal(null);
+	};
+
+	const handleShowModal = (name) => {
+		setShowModal(name);
+	};
+
 	const handleSubmitUser = (values) => {
 		const modifiedObj = getChangedFields(values, formUser);
 
 		if (!isEmptyObject(modifiedObj)) {
-			userMutation.mutate(modifiedObj);
+			personMutation.mutate({
+				id: user.person.id,
+				params: modifiedObj
+			});
 		}
 	};
 
@@ -109,11 +122,14 @@ export const UserDetailProvider = (props) => {
 		error: query.error,
 		formUser,
 		handleImageChange,
+		handleOcultModal,
+		handleShowModal,
 		handleSubmitUser,
 		handleUserEdit,
 		isLoading: query.isLoading || !user,
 		isLoggedUser: id === loggedUser.id,
 		isUserEditing,
+		showModal,
 		user,
 	};
 

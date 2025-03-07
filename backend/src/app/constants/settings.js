@@ -9,4 +9,7 @@ export const SETTINGS = {
   
   //? lists settings.
   PAGE_LIMIT: 20,
+
+  //? users.
+  USER_TYPES_LIST: ["client", "user"],
 };

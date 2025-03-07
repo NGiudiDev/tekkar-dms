@@ -3,6 +3,7 @@ import joi from "joi";
 import { isArLicensePlate } from "../utils/models/cars.utils.js";
 import { getYear } from "../utils/dates.js";
 
+import { SETTINGS } from "./settings.js";
 import { REGEXS } from "./regex.js";
 
 const PERSON_DOC_NUMBER_LENGTH = 8;
@@ -32,6 +33,16 @@ export const VALIDATIONS = {
 		EMAIL: joi.string().email(),
 		NAME: joi.string(),
 		PHONE: joi.string(),
+		ROLES: joi.string().custom((value, helpers) => {
+				if (value) {
+					const valuesArray = value.split(",");
+					const isValidArray = valuesArray.every(item => SETTINGS.USER_TYPES_LIST.includes(item));
+
+					return isValidArray ? value : helpers.error("invalid");
+				}
+
+				return helpers.error("invalid");				
+			}),
 	},
 	USER: {
 		PASSWORD: joi.string(),

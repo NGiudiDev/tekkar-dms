@@ -4,6 +4,7 @@ import { useUserDetailContext } from "./hooks/use_user_detail_context.jsx";
 
 import { PageLoadingLayout, PageMessageLayout, UpdateButton } from "@common/components";
 import { PersonInformationForm, PersonInformationSection } from "@person/components"; 
+import { SetUserAsClientModal, UserActionsDropdown } from "./components";
 import { Form, Formik } from "formik";
 
 import { Box, Flex, IconButton, Text } from "ds-loud-ng";
@@ -42,11 +43,15 @@ export const UserDetailContent = () => {
 					Usuario
 				</Text>
 
-				<IconButton
-					icon={{ icon: ctx.isUserEditing ? "times" : "pencil" }}
-					margin="r-8"
-					onClick={ctx.handleUserEdit}
-				/>
+				<Flex>
+					<IconButton
+						icon={{ icon: ctx.isUserEditing ? "times" : "pencil" }}
+						margin="r-8"
+						onClick={ctx.handleUserEdit}
+					/>
+
+					<UserActionsDropdown />	
+				</Flex>
 			</Flex>
 
 			<Box margin="x-10">
@@ -77,6 +82,9 @@ export const UserDetailContent = () => {
 				)}
 				
 			</Box>
+
+
+			<SetUserAsClientModal />
 		</>
 	);
 };

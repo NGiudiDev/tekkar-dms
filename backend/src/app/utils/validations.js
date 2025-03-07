@@ -118,9 +118,10 @@ export const updatePersonValidation = (qParams) => {
 	const carSchema = joi.object({
 		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,
 		email: VALIDATIONS.PERSON.EMAIL,
+		image_url: VALIDATIONS.COMMON.TEXT,
 		name: VALIDATIONS.PERSON.NAME,
 		phone: VALIDATIONS.PERSON.PHONE,
-		image_url: VALIDATIONS.COMMON.TEXT,
+		roles: VALIDATIONS.PERSON.ROLES,
 	});
 
 	return validate(carSchema, qParams);
