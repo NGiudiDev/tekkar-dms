@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import { useUserDetailContext } from "../hooks/use_user_detail_context.jsx";
 import { useMutation } from "@tanstack/react-query";
@@ -55,5 +55,5 @@ export const SetUserAsClientModal = () => {
         de que deseas continuar?
       </Text>
     </Modal>
-  )
+  );
 };
