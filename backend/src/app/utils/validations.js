@@ -80,8 +80,7 @@ export const createClientValidation = user => {
 	});
 
 	return validate(userSchema, user);
-};
-												
+};								
 
 export const getClientPageValidation = (qParams) => {
 	const clientSchema = joi.object({

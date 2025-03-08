@@ -11,7 +11,7 @@ export const getDate = () => {
 	const argentinaOffset = -3 * 60 * 60 * 1000;
 	
 	return new Date(date.getTime() + argentinaOffset);
-}
+};
 
 export const getYear = () => {
 	const now = getDate();

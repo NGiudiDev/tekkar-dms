@@ -25,6 +25,6 @@ export const authTokenMiddleware = async (req, res, next) => {
 
 		next();
 	} catch (err) {
-		return res.status(500).json();
+		return res.status(500).json({ err });
 	}
 };

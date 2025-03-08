@@ -33,4 +33,4 @@ const getServicesPage = async (page, whereObj) => {
 export const serviceReportModel = {
 	getCar,
 	getServicesPage,
-}
+};

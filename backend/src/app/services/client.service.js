@@ -2,7 +2,6 @@ import { clientModel } from "../models/client.model.js";
 
 import { getPaginationStats } from "../utils/tables.js";
 
-
 const create = async (client) => {
   let createdClient = await clientModel.create(client);
 

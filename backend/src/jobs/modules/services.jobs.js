@@ -30,4 +30,4 @@ export const serviceExpirationReminderJob = async () => {
   } catch (err) {
     console.log(err);
   }
-}
+};

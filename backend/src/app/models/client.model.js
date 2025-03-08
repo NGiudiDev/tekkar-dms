@@ -40,4 +40,4 @@ export const clientModel = {
 	getOne,
   getPage,
   update,
-}
+};

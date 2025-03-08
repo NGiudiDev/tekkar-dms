@@ -35,7 +35,7 @@ const getExpiredServices = async () => {
 	const expiredServices = await services.findAll(queryObj);
 	
 	return expiredServices;
-}
+};
 
 const getOne = async (whereObj) => {
 	const service = await services.findOne({

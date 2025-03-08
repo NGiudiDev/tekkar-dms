@@ -52,4 +52,4 @@ export const carModel = {
 	getOne,
 	getPage,
 	update,
-}
+};

@@ -44,4 +44,4 @@ export const personModel = {
   getOne,
   getPage,
   update,
-}
+};

@@ -23,7 +23,7 @@ export const VALIDATIONS = {
 		TEXT: joi.string(),
 	},
 	SERVICE: {
-		DESCRIPTION: joi.string().empty(null || ""),
+		DESCRIPTION: joi.string().allow(null, ""),
 		MILEAGE: joi.number().integer().min(0),
 		PERFORMED_AT: joi.date().max("now"),
 		SERVICE_DURATION: joi.number().integer().min(0),
