@@ -6,6 +6,8 @@ import { ActionsButton } from "@common/components";
 
 import { Button } from "ds-loud-ng";
 
+import { SET_USER_AS_CLIENT_MODAL_NAME } from "@user/constants/user_consts";
+
 export const UserActionsDropdown = () => {
 	const ctx = useUserDetailContext();
 
@@ -19,7 +21,7 @@ export const UserActionsDropdown = () => {
 				border={{ radius: "0px" }}
 				fullWidth
 				kind="text"
-				onClick={() => ctx.handleShowModal("setUserAsClient")}
+				onClick={() => ctx.handleShowModal(SET_USER_AS_CLIENT_MODAL_NAME)}
 			>
 				Establecer como cliente
 			</Button>

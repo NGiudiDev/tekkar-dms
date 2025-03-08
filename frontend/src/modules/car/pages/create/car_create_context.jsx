@@ -55,7 +55,6 @@ export const CarCreateProvider = (props) => {
 			owner_id: router.query.owner_id,
 			production_year: "",
 		},
-		carValidation,
 		handleSubmitCar,
 	};
 

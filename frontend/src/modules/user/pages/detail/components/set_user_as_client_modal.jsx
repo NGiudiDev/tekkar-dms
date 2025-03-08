@@ -8,6 +8,8 @@ import { Modal, Text } from "ds-loud-ng";
 import { updatePersonDetail } from "@person/services/person_requests_services";
 import toast from "react-hot-toast";
 
+import { SET_USER_AS_CLIENT_MODAL_NAME } from "@user/constants/user_consts";
+
 export const SetUserAsClientModal = () => {
   const ctx = useUserDetailContext();
 
@@ -40,7 +42,7 @@ export const SetUserAsClientModal = () => {
     <Modal
       confirmButton={{ onClick: handleConfirmClick }}
       onClose={ctx.handleOcultModal}
-      show={ctx.showModal === "setUserAsClient"}
+      show={ctx.showModal === SET_USER_AS_CLIENT_MODAL_NAME}
       width="600px"
     >
       <Text margin="b-24" type="title">

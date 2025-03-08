@@ -80,9 +80,7 @@ export const UserDetailContent = () => {
 						person={ctx.user.person}
 					/>
 				)}
-				
 			</Box>
-
 
 			<SetUserAsClientModal />
 		</>

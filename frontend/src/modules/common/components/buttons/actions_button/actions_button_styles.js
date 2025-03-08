@@ -6,6 +6,7 @@ const Panel = styled("div")({
   right: 0,
   top: "100%",
   width: "200px",
+  zIndex: "20",
 });
 
 const Wrapper = styled("div")({
