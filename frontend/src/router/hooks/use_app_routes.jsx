@@ -7,7 +7,7 @@ import { CarCreatePage, CarDetailPage, CarListPage } from "@car/pages";
 import { ClientCreatePage, ClientListPage, ClientDetailPage } from "@client/pages";
 
 //? session pages
-import { LoginPage } from "@session/pages";
+import { LoginPage, PasswordRecoveryPage } from "@session/pages";
 
 //? service pages
 import {
@@ -105,6 +105,16 @@ export const useAppRoutes = () => {
         useAppLayout: false,
       },
       path: PATH.login,
+    },
+    {
+      element: <PasswordRecoveryPage />,
+      name: "password_recovery",
+      options: {
+        isFreeAccess: true,
+        isPrivated: false,
+        useAppLayout: false,
+      },
+      path: PATH.passwordRecovery,
     },
     {
       element: <ServiceCreatePage />,

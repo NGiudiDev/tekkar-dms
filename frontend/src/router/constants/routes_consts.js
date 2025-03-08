@@ -7,6 +7,7 @@ export const PATH = {
 	clientCreate: "/clients/new",
 	clientDetail: "/clients/:id",
 	login: "/login",
+	passwordRecovery: "/password_recovery",
   services: "/services",
 	serviceCreate: "/services/new",
 	serviceDetail: "/services/:id",

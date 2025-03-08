@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Wrapper = styled("div")({
+export const Wrapper = styled("div")({
   boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",

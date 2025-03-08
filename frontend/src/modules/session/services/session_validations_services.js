@@ -5,5 +5,9 @@ import { PERSON_VALIDATIONS } from "@person/constants/person_validations_consts"
 
 export const loginSchema = yup.object().shape({
   email: PERSON_VALIDATIONS.EMAIL.required("Campo requerido."),
-  password: USER_VALIDATIONS.PASSWORD.required("Campo requerido.")
+  password: USER_VALIDATIONS.PASSWORD.required("Campo requerido."),
+});
+
+export const passwordRecoverySchema = yup.object().shape({ 
+	email: PERSON_VALIDATIONS.EMAIL.required("Campo requerido."),
 });

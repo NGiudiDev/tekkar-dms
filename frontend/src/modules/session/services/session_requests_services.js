@@ -27,3 +27,7 @@ export const userLogout = () => {
 			removeLoginOfLocalStorage();
 		});
 };
+
+export const userPasswordRecovery = (data) => {
+	return postAxios("/users/password_recovery", data);
+};

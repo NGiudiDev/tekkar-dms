@@ -4,11 +4,10 @@ import { useLoginContext } from "./hoooks/use_login_context";
 
 import { PersonEmailInput } from "@person/components";
 import { UserPasswordInput } from "@user/components";
+import { SessionLayout } from "@session/components";
 import { Form, Formik } from "formik";
 
 import { Button, Text } from "ds-loud-ng";
-
-import { Styles } from "./login_page_styles";
 
 import { loginSchema } from "@session/services/session_validations_services";
 
@@ -16,7 +15,7 @@ export const LoginContent = () => {
   const ctx = useLoginContext();
 
   return (
-    <Styles.Wrapper>
+    <SessionLayout>
       <Text margin="b-20" type="title">
         Bienvenido 
       </Text>
@@ -46,6 +45,6 @@ export const LoginContent = () => {
       <Button fullWidth kind="text" margin="t-8" onClick={ctx.handleGoToPasswordRecovery}>
         Recuperar contraseña
       </Button>
-    </Styles.Wrapper>
+    </SessionLayout>
   );
 };
