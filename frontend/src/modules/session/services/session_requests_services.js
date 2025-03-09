@@ -35,5 +35,5 @@ export const userPasswordRecovery = (data) => {
 export const userPasswordUpdate = (data, token) => {
 	const headers = { token };
 
-	return postAxios("/users/new_password", data, headers);
+	return postAxios("/users/password_update", data, headers);
 };

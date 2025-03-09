@@ -10,6 +10,8 @@ import { passwordRecoveryEmail } from "../../emails/models/user.emails.js";
 import { compareEncrypt, createToken, hashEncrypt, verifyToken } from "../utils/hashes.js";
 import { getPaginationStats } from "../utils/tables.js";
 
+import { SETTINGS } from "../constants/settings.js";
+
 dotenv.config();
 
 const authentication = async (user_id, token) => {
@@ -145,6 +147,20 @@ const passwordRecovery = async (data) => {
 	return false;
 };
 
+const passwordUpdate = async (data, token) => {
+	const decoded = verifyToken(token);
+	
+	if (!SETTINGS.VALID_TOKEN_TYPES.includes(decoded.type))
+		return false;
+
+	data.password = hashEncrypt(data.password);
+	data.token = null;
+
+	await userModel.update(decoded.user_id, data);
+
+	return true;
+};
+
 const update = async (user_id, data) => {	
 	await userModel.update(user_id, data);
 
@@ -161,5 +177,6 @@ export const userService = {
 	login,
 	logout,
 	passwordRecovery,
+	passwordUpdate,
 	update,
 };

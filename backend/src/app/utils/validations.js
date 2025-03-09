@@ -257,6 +257,14 @@ export const passwordRecoveryValidation = data => {
 	return validate(userSchema, data);
 };
 
+export const passwordUpdateValidation = data => {
+	const userSchema = joi.object({
+		password: VALIDATIONS.USER.PASSWORD.required(),
+	});
+
+	return validate(userSchema, data);
+};
+
 export const updateUserValidation = user => {
 	const userSchema = joi.object({
 		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,

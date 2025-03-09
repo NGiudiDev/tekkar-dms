@@ -12,4 +12,6 @@ export const SETTINGS = {
 
   //? users.
   USER_TYPES_LIST: ["client", "user"],
+
+  VALID_TOKEN_TYPES: ["password_recovery"],
 };

@@ -11,6 +11,7 @@ router.post("/authentication", userController.authentication);
 router.post("/login", userController.login);
 router.post("/logout", authTokenMiddleware, userController.logout);
 router.post("/password_recovery", userController.passwordRecovery);
+router.post("/password_update", userController.passwordUpdate);
 
 //? CRUD endpoints.
 router.get("/", authTokenMiddleware, userController.getPage);

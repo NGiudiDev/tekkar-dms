@@ -9,6 +9,7 @@ import {
 	loginValidation,
 	logoutValidation,
 	passwordRecoveryValidation,
+	passwordUpdateValidation,
 	updateUserValidation,
 } from "../utils/validations.js";
 
@@ -151,6 +152,29 @@ const passwordRecovery = async (req, res) => {
 	}
 };
 
+const passwordUpdate = async (req, res) => {
+	const token = req.headers.authorization;
+
+	if (!token)
+		return res.status(401).json({ message: MESSAGES.INVALID_TOKEN });
+	
+	const errors = passwordUpdateValidation(req.body);
+	
+	if (errors)
+		return res.status(422).json({ errors });
+
+	try {
+		const valid = await userService.passwordUpdate(req.body, token);
+
+		if (valid)
+			return res.status(200).json({ message: MESSAGES.PASSWORD_UPDATE_SUCCESSFUL });
+		
+		return res.status(401).json({ message: MESSAGES.INVALID_TOKEN });
+	} catch(err) {
+		return res.status(500).json({ err });
+	}
+};
+
 const update = async (req, res) => {
 	const errors = updateUserValidation(req.body);
 
@@ -177,5 +201,6 @@ export const userController = {
 	login,
 	logout,
 	passwordRecovery,
+	passwordUpdate,
 	update,
 };

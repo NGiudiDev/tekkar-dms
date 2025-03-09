@@ -4,6 +4,7 @@ export const MESSAGES = {
   IMAGE_NO_UPDATED: "No image was provided",
   INVALID_TOKEN: "invalid token",
   PASSWORD_RECOVERY_EMAIL_SENT: "password recovery email sent",
+  PASSWORD_UPDATE_SUCCESSFUL: "password successfully updated",
   PERSON_EMAIL_DUPLICATED: "email is already registered",
   PERSON_NOT_FOUND: "person not found",
   SERVICE_NOT_FOUND: "service not found",
