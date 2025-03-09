@@ -47,7 +47,6 @@ export const ListPage = (props) => {
 		return (
 			<PageMessageLayout 
 				description={attrs.errorMessage.description}
-				isFullScreen
 				title={attrs.errorMessage.title}
 			/>
 		);
@@ -58,7 +57,6 @@ export const ListPage = (props) => {
 			<PageMessageLayout
 				button={attrs.emptyMessage.button}
 				description={attrs.emptyMessage.description}
-				isFullScreen
 				title={attrs.emptyMessage.title}
 			/>
 		);

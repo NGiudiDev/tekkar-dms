@@ -19,7 +19,6 @@ export const ServiceCreateContent = () => {
 		return(
 			<PageMessageLayout
 				description="Para crear un servicio, es necesario ir al detalle del vehículo y elegir la opción 'agregar servicio' que se encuentra en el menú de acciones."
-				isFullScreen
 				title="Falta seleccionar un vehículo"
 			/>
 		);

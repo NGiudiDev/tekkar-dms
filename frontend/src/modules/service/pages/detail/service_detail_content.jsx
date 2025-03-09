@@ -20,7 +20,6 @@ export const ServiceDetailContent = () => {
 			return (
 				<PageMessageLayout 
 					description="No se pudo encontrar la información del servicio. Por favor, verifique la URL o intente nuevamente más tarde."
-					isFullScreen
 					title="Servicio no encontrado"
 				/>
 			);
@@ -29,7 +28,6 @@ export const ServiceDetailContent = () => {
 		return (
 			<PageMessageLayout 
 				description="Hubo un error al obtener la información, por favor recargue la página o intentelo más tarde."
-				isFullScreen
 				title="Error al obtener la información"
 			/>
 		);

@@ -8,7 +8,7 @@ export const Wrapper = styled("div")((props) => ({
   alignItems: "center", 
   display: "flex",
   flexDirection: "column",
-  height: props.$isFullScreen ? "100%" : "auto",
+  height: props.$isFullScreen ? "100vh" : "100%",
   justifyContent: "center",
   width: "100%",
 }));

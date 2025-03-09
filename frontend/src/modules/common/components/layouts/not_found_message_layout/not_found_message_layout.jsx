@@ -8,7 +8,6 @@ export const NotFoundMessageLayout = () => {
 		<Styles.Wrapper>
 			<PageMessageLayout
 				description="La página que estás buscando no existe"
-				isFullScreen
 				title="Página no encontrada"
 			/>
 		</Styles.Wrapper>

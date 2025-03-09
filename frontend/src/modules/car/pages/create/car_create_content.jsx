@@ -19,7 +19,6 @@ export const CarCreateContent = () => {
     return(
       <PageMessageLayout
         description="Para crear un vehículo, es necesario ir al detalle del cliente y elegir la opción 'agregar vehículo' que se encuentra en el menú de acciones."
-        isFullScreen
         title="Falta seleccionar un cliente"
       />
     );
