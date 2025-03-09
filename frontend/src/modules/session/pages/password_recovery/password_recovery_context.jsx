@@ -42,7 +42,7 @@ export const PasswordRecoveryProvider = (props) => {
 			}
 		},
 		onSuccess: () => {
-			router.push(`${PATH.passwordRecovery}?status=success`);
+			router.push(`${PATH.passwordRecovery}`, { state: { success: true } });
 		},
 	});
 

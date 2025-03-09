@@ -8,6 +8,7 @@ import {
 	getUserPageValidation,
 	loginValidation,
 	logoutValidation,
+	passwordRecoveryValidation,
 	updateUserValidation,
 } from "../utils/validations.js";
 
@@ -131,6 +132,25 @@ const logout = async (req, res) => {
 	}
 };
 
+const passwordRecovery = async (req, res) => {
+	const errors = passwordRecoveryValidation(req.body);
+
+	if (errors)
+		return res.status(422).json({ errors });
+
+	try {
+		const valid = await userService.passwordRecovery(req.body);
+
+		if (valid) {
+			return res.status(200).json({ message: MESSAGES.PASSWORD_RECOVERY_EMAIL_SENT });
+		}
+
+		return res.status(404).json({ message: MESSAGES.USER_NOT_FOUND });
+	} catch(err) {
+		return res.status(500).json({ err });
+	}
+};
+
 const update = async (req, res) => {
 	const errors = updateUserValidation(req.body);
 
@@ -156,5 +176,6 @@ export const userController = {
 	getPage,
 	login,
 	logout,
+	passwordRecovery,
 	update,
 };

@@ -249,6 +249,14 @@ export const logoutValidation = user => {
 	return validate(userSchema, user);
 };
 
+export const passwordRecoveryValidation = data => {
+	const userSchema = joi.object({
+		email: VALIDATIONS.PERSON.EMAIL.required(),
+	});
+
+	return validate(userSchema, data);
+};
+
 export const updateUserValidation = user => {
 	const userSchema = joi.object({
 		doc_number: VALIDATIONS.PERSON.DOC_NUMBER,

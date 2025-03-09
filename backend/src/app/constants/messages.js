@@ -3,6 +3,7 @@ export const MESSAGES = {
   CLIENT_NOT_FOUND: "client not found",
   IMAGE_NO_UPDATED: "No image was provided",
   INVALID_TOKEN: "invalid token",
+  PASSWORD_RECOVERY_EMAIL_SENT: "password recovery email sent",
   PERSON_EMAIL_DUPLICATED: "email is already registered",
   PERSON_NOT_FOUND: "person not found",
   SERVICE_NOT_FOUND: "service not found",

@@ -10,6 +10,7 @@ const router = express.Router();
 router.post("/authentication", userController.authentication);
 router.post("/login", userController.login);
 router.post("/logout", authTokenMiddleware, userController.logout);
+router.post("/password_recovery", userController.passwordRecovery);
 
 //? CRUD endpoints.
 router.get("/", authTokenMiddleware, userController.getPage);

@@ -1,8 +1,16 @@
+import dotenv from "dotenv";
+
+import { emailService } from "../../app/services/email.service.js";
+
 import { personModel } from "../models/person.model.js";
 import { userModel } from "../models/user.model.js";
 
+import { passwordRecoveryEmail } from "../../emails/models/user.emails.js";
+
 import { compareEncrypt, createToken, hashEncrypt, verifyToken } from "../utils/hashes.js";
 import { getPaginationStats } from "../utils/tables.js";
+
+dotenv.config();
 
 const authentication = async (user_id, token) => {
 	const decoded = verifyToken(token);
@@ -101,6 +109,42 @@ const logout = async (user_id) => {
 	return user;
 };
 
+const passwordRecovery = async (data) => {
+	const person = await personModel.getOne(data);
+
+	if (person !== null) {
+		const user = await getOne({ person_id: person.id });
+
+		if (user) {
+			//? generate and save a token.
+			const RECOVERY_USER_TOKEN_OBJ = {
+				user_id: user.id,
+				type: "password_recovery",
+			};
+
+			user.token = createToken(RECOVERY_USER_TOKEN_OBJ);
+			await user.save();
+
+			const userObj = user.toJSON();
+
+			const mailOptions = {
+				subject: "Recupero de contraseña",
+				to: userObj.person.email,
+				html: passwordRecoveryEmail({ 
+					name: userObj.person.name,
+					href: `${process.env.APP_URL}/update_password?token=${user.token}`,
+				}),
+			};
+
+			emailService.send(mailOptions);
+
+			return true;
+		}
+	}
+
+	return false;
+};
+
 const update = async (user_id, data) => {	
 	await userModel.update(user_id, data);
 
@@ -116,5 +160,6 @@ export const userService = {
 	getPage,
 	login,
 	logout,
+	passwordRecovery,
 	update,
 };
