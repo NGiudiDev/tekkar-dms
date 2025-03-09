@@ -31,3 +31,9 @@ export const userLogout = () => {
 export const userPasswordRecovery = (data) => {
 	return postAxios("/users/password_recovery", data);
 };
+
+export const userPasswordUpdate = (data, token) => {
+	const headers = { token };
+
+	return postAxios("/users/new_password", data, headers);
+};

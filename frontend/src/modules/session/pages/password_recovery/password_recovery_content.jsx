@@ -3,9 +3,9 @@ import React from "react";
 import { usePasswordRecoveryContext } from "./hooks/use_password_recovery_context";
 import { useRouter } from "@hooks";
 
+import { PageMessageLayout } from "@common/components";
 import { PersonEmailInput } from "@person/components";
 import { SessionLayout } from "@session/components";
-import { PageMessageLayout } from "@common/components";
 import { Form, Formik } from "formik";
 
 import { Button, Text } from "ds-loud-ng";
@@ -19,7 +19,7 @@ export const PasswordRecoveryContent = () => {
   
 	const router = useRouter();
 
-	if (router.location.state.success) {
+	if (router.location.state?.success) {
 		return (
 			<PageMessageLayout
 				button={{

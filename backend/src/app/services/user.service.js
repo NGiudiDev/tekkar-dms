@@ -132,7 +132,7 @@ const passwordRecovery = async (data) => {
 				to: userObj.person.email,
 				html: passwordRecoveryEmail({ 
 					name: userObj.person.name,
-					href: `${process.env.APP_URL}/update_password?token=${user.token}`,
+					href: `${process.env.APP_URL}/password_update?token=${user.token}`,
 				}),
 			};
 

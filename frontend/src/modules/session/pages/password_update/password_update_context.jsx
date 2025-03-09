@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { PasswordRecoveryContext } from "./hooks/use_password_recovery_context";
+import { PasswordUpdateContext } from "./hooks/use_password_update_context";
 
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "@hooks";
 
-import { userPasswordRecovery } from "../../services/session_requests_services";
+import { userPasswordUpdate } from  "../../services/session_requests_services";
 
 import toast from "react-hot-toast";
 
@@ -16,7 +16,7 @@ const DEFAULT_PROPS = {
 	children: null,
 };
 
-export const PasswordRecoveryProvider = (props) => {
+export const PasswordUpdateProvider = (props) => {
 	const attrs = {
     ...DEFAULT_PROPS,
     ...props,
@@ -24,14 +24,14 @@ export const PasswordRecoveryProvider = (props) => {
 
 	const router = useRouter();
 
-	const passwordRecoveryMutation =  useMutation({
-		mutationFn: (modifiedObj) => userPasswordRecovery(modifiedObj),
+	const passwordUpdateMutation =  useMutation({
+		mutationFn: (modifiedObj) => userPasswordUpdate(modifiedObj, router.query.token),
 		onError: (err) => {
 			const { status } = err.response;
 
 			switch (status) {
-				case 404:
-					toast.error("El email ingresado es inválido.");
+				case 401:
+					toast.error("Se produjo un error de autenticación. Por favor, vuelva a iniciar el proceso de cambio de contraseña.");
 					break;
 				case 422:
 					toast.error("Se han enviado datos que no son permitidos.");
@@ -42,30 +42,25 @@ export const PasswordRecoveryProvider = (props) => {
 			}
 		},
 		onSuccess: () => {
-			router.push(`${PATH.passwordRecovery}`, { state: { success: true } });
+			router.push(`${PATH.passwordUpdate}`, { state: { success: true } });
 		},
 	});
 
 	const handleSubmit = (formValues) => {
-		passwordRecoveryMutation.mutate(formValues);
-	};
-
-	const handleBackToLogin = () => {
-		router.push(PATH.login);
+		passwordUpdateMutation.mutate(formValues);
 	};
 
 	const valueObj = {
-		handleBackToLogin,
 		handleSubmit,
 	};
 
 	return (
-		<PasswordRecoveryContext.Provider value={valueObj}>
+		<PasswordUpdateContext.Provider value={valueObj}>
 			{attrs.children}
-		</PasswordRecoveryContext.Provider>
+		</PasswordUpdateContext.Provider>
 	);
 };
 
-PasswordRecoveryProvider.propTypes = {
+PasswordUpdateProvider.propTypes = {
 	children: PropTypes.node,
 };
